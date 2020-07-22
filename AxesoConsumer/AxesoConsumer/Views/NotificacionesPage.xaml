@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AxesoConsumer.Views.NotificacionesPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    BackgroundColor="White"
+    NavigationPage.HasBackButton="False"
+    NavigationPage.HasNavigationBar="False"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
+            <StackLayout
+                Margin="0,10,0,0"
+                BackgroundColor="White"
+                HeightRequest="70"
+                Orientation="Horizontal"
+                Spacing="0">
+                <Label
+                    Margin="-15,0,0,0"
+                    FontFamily="{StaticResource PingFangMedium}"
+                    FontSize="18"
+                    HorizontalOptions="CenterAndExpand"
+                    LineBreakMode="TailTruncation"
+                    Text="Notificaciones"
+                    TextColor="#2E2E2E"
+                    VerticalOptions="CenterAndExpand"
+                    VerticalTextAlignment="Center" />
+            </StackLayout>
+            <ListView
+                x:Name="listViewNotificaciones"
+                BackgroundColor="WhiteSmoke"
+                HasUnevenRows="True"
+                Header="Listado"
+                SeparatorVisibility="None">
+                <ListView.HeaderTemplate>
+                    <DataTemplate>
+                        <Label
+                            Margin="20,5,20,5"
+                            FontSize="15"
+                            Text="Listado" />
+                    </DataTemplate>
+                </ListView.HeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame
+                                Margin="20,5,20,5"
+                                Padding="0,0,0,0"
+                                HeightRequest="60">
+                                <Grid VerticalOptions="CenterAndExpand">
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                                    </Grid.GestureRecognizers>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+
+                                    <StackLayout
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        HorizontalOptions="FillAndExpand"
+                                        Orientation="Horizontal">
+                                        <Label
+                                            HorizontalOptions="StartAndExpand"
+                                            HorizontalTextAlignment="Start"
+                                            Text="{Binding Hora}"
+                                            VerticalTextAlignment="Center" />
+                                    </StackLayout>
+                                    <StackLayout
+                                        Grid.Row="1"
+                                        Grid.Column="0"
+                                        HorizontalOptions="FillAndExpand"
+                                        Orientation="Horizontal">
+                                        <Label
+                                            HorizontalOptions="StartAndExpand"
+                                            LineBreakMode="TailTruncation"
+                                            Text="{Binding Descripcion}"
+                                            VerticalTextAlignment="Center" />
+                                    </StackLayout>
+
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

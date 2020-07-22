@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Class="AxesoConsumer.Views.CoveragePopUpPage"
+    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup">
+    <!--<pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8"
+            DurationIn="0"
+            DurationOut="0"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"/>
+    </pages:PopupPage.Animation>-->
+    <StackLayout
+        VerticalOptions="Center">
+        <Frame
+        Margin="30"
+        Padding="10">
+            <StackLayout>
+                <Label 
+                    Text="SELECCIONE COBERTURA"
+                    HorizontalOptions="CenterAndExpand"
+                    FontAttributes="Bold"
+                    FontSize="Medium" 
+                    Margin="0,0,0,5"/>
+                <Label 
+                    x:Name="LabelKmPop"
+                    Text="2 km"
+                    HorizontalOptions="CenterAndExpand"
+                    FontAttributes="Bold"
+                    FontSize="Micro" />
+                <Slider 
+                    x:Name="KmSliderPop"
+                    Maximum="15"
+                    HorizontalOptions="FillAndExpand"
+                    MinimumTrackColor="GreenYellow"
+                    MaximumTrackColor="Green"
+                    ThumbColor="{StaticResource AxesoBackgroundColor}"
+                    ValueChanged="KmSliderPop_ValueChanged"/>
+                <Button
+                    x:Name="AcceptCoveragePop"
+                    BackgroundColor="#F4F4F4"
+                    TextColor="{StaticResource FontColor}"
+                    BorderRadius="6"
+                    Text="ACEPTAR"
+                    Image="axeso30"  
+                    HeightRequest="46"
+                    Margin="55,20,55,0"
+                    Padding="8,0,45,0"
+                    Clicked="AcceptCoveragePop_Clicked"/>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</pages:PopupPage>

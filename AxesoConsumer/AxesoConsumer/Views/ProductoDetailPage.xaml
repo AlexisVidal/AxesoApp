@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Class="AxesoConsumer.Views.ProductoDetailPage"
+    xmlns:customControl="clr-namespace:AxesoConsumer.Controls;assembly=AxesoConsumer"
+    xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:pancakeView="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
+    Title="Detalle Producto"
+    BackgroundColor="White"
+    NavigationPage.HasNavigationBar="False"
+    Visual="Material"
+    xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms">
+    <ContentPage.Content>
+        <StackLayout Spacing="0">
+            <StackLayout Spacing="0">
+                <StackLayout
+                    Margin="0,10,0,0"
+                    BackgroundColor="White"
+                    HeightRequest="70"
+                    Orientation="Horizontal"
+                    Spacing="0">
+                    <Image
+                        Margin="10,0,0,0"
+                        HeightRequest="30"
+                        HorizontalOptions="Start"
+                        Source="back"
+                        WidthRequest="25">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="BackButton" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label
+                        Margin="-15,0,0,0"
+                        FontFamily="{StaticResource PingFangMedium}"
+                        FontSize="15"
+                        HorizontalOptions="CenterAndExpand"
+                        LineBreakMode="TailTruncation"
+                        Text="Producto"
+                        TextColor="#2E2E2E"
+                        VerticalOptions="CenterAndExpand"
+                        VerticalTextAlignment="Center"></Label>
+                    <ImageButton
+                    x:Name="PedidoBtnP"
+                    Margin="-15,0,10,0"
+                    WidthRequest="30"
+                    HorizontalOptions="End"
+                    BackgroundColor="Transparent"
+                    Source="ic_action_list.png"
+                    Clicked="PedidoBtnP_Clicked"/>
+                </StackLayout>
+                <StackLayout Margin="10,2,10,5" Spacing="5">
+                    <Image
+                        x:Name="ImagenProduct"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Start"
+                        Source="dropbox.png"></Image>
+                    <Label
+                        x:Name="ProductName"
+                        FontAttributes="Bold"
+                        FontFamily="{StaticResource PingFangMedium}"
+                        FontSize="13"
+                        HorizontalOptions="CenterAndExpand"
+                        LineBreakMode="WordWrap"
+                        Text="{Binding ProductName}"
+                        TextColor="#2E2E2E"
+                        VerticalOptions="Start"
+                        VerticalTextAlignment="Center"></Label>
+                    <StackLayout 
+                        Orientation="Horizontal"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="Center"
+                        Margin="0,20,0,0">
+                        <Label
+                            x:Name="PresentProduct"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Start"
+                            TextColor="Black"
+                            FontFamily="{StaticResource PingFangRegular}"
+                            FontSize="12"
+                            Text="Presentacion:"></Label>
+                        <combobox:SfComboBox 
+                            WidthRequest="160"
+                            HeightRequest="40" 
+                            HorizontalOptions="CenterAndExpand"
+                            Margin="0,-15,0,0"
+                            DropDownCornerRadius="6"
+                            BorderColor="Black"
+                            ShowBorder="True"
+                            ShowDropDownHeaderView="True"
+                            FontFamily="{StaticResource PingFangRegular}"
+                            TextSize="12"
+                            x:Name="PickerUM"
+                            IsEditableMode="False"
+                            SelectionChanged="PickerUM_SelectionChanged"/>
+                    </StackLayout>
+                    <StackLayout 
+                        Orientation="Horizontal"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="Center"
+                        Margin="0,20,0,0">
+                    <Label
+                        x:Name="lblReceta"
+                        HorizontalOptions="CenterAndExpand"
+                        FontFamily="{StaticResource PingFangRegular}"
+                            TextColor="Black"
+                        FontSize="12"
+                        IsVisible="True"
+                        Text="Requiere Receta"/>
+                    </StackLayout>
+                    <StackLayout 
+                        Orientation="Horizontal"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="Center"
+                        Margin="0,20,0,0">
+                        <Label
+                            HorizontalOptions="Start"
+                            VerticalOptions="Start"
+                            TextColor="Black"
+                            FontFamily="{StaticResource PingFangRegular}"
+                            FontSize="12"
+                            Text="Precio Referencial S/."></Label>
+                        <Label
+                            x:Name="PrecioProduct"
+                            HorizontalOptions="CenterAndExpand"
+                            VerticalOptions="Start"
+                            TextColor="Black"
+                            FontFamily="{StaticResource PingFangRegular}"
+                            FontSize="12"></Label>
+                    </StackLayout>
+                    <!--<Button
+                        x:Name="btnInsertProducto"
+                        BackgroundColor="{StaticResource AxesoBackgroundColor}"
+                        CornerRadius="{x:OnPlatform Android=30,
+                                                    iOS=23}"
+                        FontFamily="{StaticResource PingFangMedium}"
+                        FontSize="11"
+                        HeightRequest="40"
+                        HorizontalOptions="Center"
+                        Text="Agregar"
+                        TextColor="White"
+                        WidthRequest="150"
+                        FontAttributes="Bold"
+                        Clicked="btnInsertProducto_Clicked"/>-->
+                    <StackLayout 
+                        x:Name="Container" 
+                        Orientation="Vertical" 
+                        HorizontalOptions="CenterAndExpand"
+                        Margin="0,5,0,5">
+                        <Label 
+                            HorizontalOptions="CenterAndExpand" 
+                            BindingContext="{x:Reference stepper}" 
+                            Text="{Binding Value}" 
+                            FontFamily="{StaticResource PingFangMedium}"
+                            FontSize="16"
+                            FontAttributes="Bold"/>
+                        <Stepper 
+                            Minimum="0" 
+                            Maximum="100" 
+                            x:Name="stepper" 
+                            Increment="1" 
+                            ValueChanged="stepper_ValueChanged"/>
+                    </StackLayout>
+                    <!--<Button
+                        x:Name="btnDeleteProducto"
+                        BackgroundColor="{StaticResource GoogleBackgroundColor}"
+                        CornerRadius="{x:OnPlatform Android=30,
+                                                    iOS=23}"
+                        FontFamily="{StaticResource PingFangMedium}"
+                        FontSize="11"
+                        HeightRequest="40"
+                        WidthRequest="150"
+                        HorizontalOptions="Center"
+                        Text="Eliminar"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        Clicked="btnDeleteProducto_Clicked"/>-->
+                </StackLayout>
+                <ScrollView x:Name="MainScroll">
+                    <StackLayout>
+                        <Label
+                            Margin="25,15,10,0"
+                            FontFamily="{StaticResource PingFangBold}"
+                            FontSize="14"
+                            HorizontalOptions="StartAndExpand"
+                            LineBreakMode="TailTruncation"
+                            Text="Descripcion:"></Label>
+                        <Label
+                            x:Name="ProductDescripcion"
+                            Margin="25,0,25,0"
+                            FontFamily="{StaticResource PingFangMedium}"
+                            FontSize="12"
+                            HorizontalOptions="FillAndExpand"
+                            LineBreakMode="WordWrap"
+                            Text="Descripcion:"></Label>
+                    </StackLayout>
+                    
+                    
+                </ScrollView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AxesoConsumer.Views.ConfirmaCotizacionPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+    xmlns:customControl="clr-namespace:AxesoConsumer.Controls"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:local="clr-namespace:AxesoConsumer.Models"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    NavigationPage.HasNavigationBar="False"
+    Visual="Material"
+    mc:Ignorable="d">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="customControl:StandardEntry">
+                <Setter Property="Padding" Value="13" />
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="BorderColor" Value="#BEBEBE" />
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="CornerRadius" Value="8" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource FontColor}" />
+                <Setter Property="Margin" Value="25,0,25,0" />
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="HeightRequest" Value="40" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="StartAndExpand">
+            <StackLayout
+                Margin="0,10,0,0"
+                BackgroundColor="White"
+                HeightRequest="50"
+                Orientation="Horizontal"
+                Spacing="0">
+                <Image
+                    Margin="10,0,0,0"
+                    HeightRequest="30"
+                    HorizontalOptions="Start"
+                    Source="back"
+                    WidthRequest="25">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="BackButton" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label
+                    Margin="-15,0,0,0"
+                    FontFamily="{StaticResource PingFangMedium}"
+                    FontSize="15"
+                    HorizontalOptions="CenterAndExpand"
+                    LineBreakMode="TailTruncation"
+                    Text="Confirmación"
+                    TextColor="#2E2E2E"
+                    VerticalOptions="CenterAndExpand"
+                    VerticalTextAlignment="Center" />
+            </StackLayout>
+            <StackLayout
+                HorizontalOptions="FillAndExpand"
+                Orientation="Horizontal"
+                VerticalOptions="Start">
+                <customControl:StandardEntry
+                    x:Name="FarmaSolicDireccion"
+                    FontAttributes="Bold"
+                    FontSize="14"
+                    HorizontalOptions="FillAndExpand"
+                    HorizontalTextAlignment="Center"
+                    IsEnabled="False"
+                    Keyboard="Text"
+                    Placeholder="Nombre Completo" />
+            </StackLayout>
+            <StackLayout
+                Margin="0,10,0,0"
+                HorizontalOptions="CenterAndExpand"
+                Orientation="Horizontal"
+                VerticalOptions="Start">
+                <Label
+                    FontFamily="{StaticResource PingFangRegular}"
+                    FontSize="14"
+                    Text="Total a pagar"
+                    VerticalOptions="Center" />
+                <customControl:StandardEntry
+                    x:Name="ltproductos"
+                    FontAttributes="Bold"
+                    FontFamily="{StaticResource PingFangRegular}"
+                    FontSize="14"
+                    HorizontalOptions="FillAndExpand"
+                    HorizontalTextAlignment="Center"
+                    IsEnabled="False"
+                    Keyboard="Text"
+                    Placeholder=""
+                    TextColor="Black"
+                    WidthRequest="130" />
+            </StackLayout>
+            <StackLayout
+                HorizontalOptions="CenterAndExpand"
+                Orientation="Horizontal"
+                VerticalOptions="Start">
+                <Label
+                    FontFamily="{StaticResource PingFangRegular}"
+                    FontSize="14"
+                    Text="Forma de pago"
+                    VerticalOptions="Center" />
+                <combobox:SfComboBox
+                    x:Name="PickerForma"
+                    Margin="0,5,0,0"
+                    BorderColor="Black"
+                    DropDownCornerRadius="6"
+                    FontFamily="{StaticResource PingFangRegular}"
+                    HeightRequest="40"
+                    HorizontalOptions="CenterAndExpand"
+                    IsEditableMode="False"
+                    SelectionChanged="PickerForma_SelectionChanged"
+                    ShowBorder="False"
+                    ShowDropDownHeaderView="True"
+                    VerticalOptions="Center"
+                    Watermark="Seleccione..."
+                    WidthRequest="160" />
+            </StackLayout>
+            <StackLayout
+                HorizontalOptions="CenterAndExpand"
+                Orientation="Horizontal"
+                VerticalOptions="Start">
+                <Label
+                    FontFamily="{StaticResource PingFangRegular}"
+                    FontSize="14"
+                    Text="Paga con"
+                    VerticalOptions="Center" />
+                <customControl:StandardEntry
+                    x:Name="lpagaproductos"
+                    FontAttributes="Bold"
+                    FontFamily="{StaticResource PingFangRegular}"
+                    FontSize="14"
+                    HorizontalOptions="FillAndExpand"
+                    HorizontalTextAlignment="Center"
+                    IsEnabled="True"
+                    Keyboard="Numeric"
+                    Placeholder=""
+                    TextColor="Black"
+                    WidthRequest="130" />
+            </StackLayout>
+            <StackLayout
+                HorizontalOptions="CenterAndExpand"
+                Orientation="Vertical"
+                VerticalOptions="Start">
+                <Button
+                    x:Name="btnAceptarCotizacion"
+                    Margin="40,30,40,10"
+                    BackgroundColor="#00acee"
+                    BorderRadius="6"
+                    Clicked="btnAceptarCotizacion_Clicked"
+                    HeightRequest="46"
+                    Text="Confirmar Compra"
+                    TextColor="White"
+                    WidthRequest="200" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

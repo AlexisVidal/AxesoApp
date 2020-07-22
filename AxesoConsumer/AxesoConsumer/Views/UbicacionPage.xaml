@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewmodels="clr-namespace:AxesoConsumer.ViewModels;assembly=AxesoConsumer"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             mc:Ignorable="d"
+             x:Class="AxesoConsumer.Views.UbicacionPage"
+             NavigationPage.HasNavigationBar="False"
+             NavigationPage.HasBackButton="False"
+             xmlns:controls="clr-namespace:AxesoConsumer.Controls">
+    <ContentPage.BindingContext>
+        <viewmodels:UbicacionPageViewModel></viewmodels:UbicacionPageViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <controls:CustomMap
+                x:Name="customMap"
+                Margin="0,0,0,100"
+                IsShowingUser="true"
+                MapType="Street" />
+
+
+            <StackLayout
+                Orientation="Horizontal"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="EndAndExpand"
+                Margin="0,0,0,50">
+                <Button
+                    x:Name="RangeBtn"
+                    Text="1Km"
+                    FontSize="Medium"
+                    IsVisible="True"
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    WidthRequest="82"
+                    HorizontalOptions="Start"
+                    Clicked="RangeBtn_Clicked"
+                    BorderWidth="1"
+                    BorderColor="{StaticResource AxesoBackgroundColor}"/>
+                <Button
+                    x:Name="EmpezarBtn"
+                    Text="Empezar"
+                    IsVisible="True"
+                    Clicked="EmpezarBtn_Clicked"
+                    WidthRequest="200"
+                    HorizontalOptions="FillAndExpand"
+                    BackgroundColor="{StaticResource AxesoBackgroundColor}"
+                    TextColor="White"/>
+                <Button
+                    x:Name="CotizaBtn"
+                    Text="0 S/."
+                    IsVisible="True"
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    WidthRequest="82"
+                    Clicked="CotizaBtn_Clicked"
+                    HorizontalOptions="End"
+                    BorderWidth="1"
+                    BorderColor="{StaticResource AxesoBackgroundColor}"/>
+            </StackLayout>
+            <SearchBar 
+                x:Name="searchAddress"
+                FontSize="11"
+                WidthRequest="100"
+                BackgroundColor="White"
+                VerticalOptions="EndAndExpand"
+                SearchButtonPressed="searchAddress_SearchButtonPressed"
+                Placeholder="Buscar direccion"></SearchBar>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

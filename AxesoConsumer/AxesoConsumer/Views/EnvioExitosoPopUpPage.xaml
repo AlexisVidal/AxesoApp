@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Class="AxesoConsumer.Views.EnvioExitosoPopUpPage"
+    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup">
+    <!--<pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8"
+            DurationIn="0"
+            DurationOut="0"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"/>
+    </pages:PopupPage.Animation>-->
+    <StackLayout
+        VerticalOptions="Center">
+        <Frame
+        Margin="30"
+        Padding="10">
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <Image
+                    Source="check.png"
+                    HeightRequest="90"></Image>
+                
+                <Label 
+                    Text="Tu solicitud ha sido enviada a la red de farmacias de AXESO."
+                    TextColor="Black"
+                    FontSize="11"
+                    FontFamily="{StaticResource PingFangBold}"
+                    HorizontalOptions="CenterAndExpand" 
+                    HorizontalTextAlignment="Center"/>
+                <!--<Label 
+                    Text="En los próximos 16 minutos, 6 farmacias prodrían enviarte cotizaciones."
+                    TextColor="Black"
+                    FontSize="11"
+                    Margin="0,0,0,10"
+                    FontFamily="{StaticResource PingFangBold}"
+                    HorizontalOptions="CenterAndExpand" 
+                    HorizontalTextAlignment="Center"/>-->
+                <Label
+                FontAttributes="Bold"
+                FontSize="16"
+                FontFamily="{StaticResource PingFangBold}"
+                HorizontalOptions="CenterAndExpand"
+                Text="Gracias por elegir AXESO!" 
+                    HorizontalTextAlignment="Center"/>
+                <Button
+                    x:Name="AcceptEnvio"
+                    BackgroundColor="#F4F4F4"
+                    TextColor="{StaticResource FontColor}"
+                    BorderRadius="6"
+                    Text="ACEPTAR"
+                    HeightRequest="46"
+                    Margin="55,20,55,0"
+                    Clicked="AcceptEnvio_Clicked"/>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</pages:PopupPage>

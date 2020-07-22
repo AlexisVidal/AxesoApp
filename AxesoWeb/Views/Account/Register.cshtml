@@ -1,0 +1,74 @@
+﻿@using Axeso_BE
+@using Vereyon.Web
+@using Axeso_Resources
+@Html.RenderFlashMessages()
+@model UsuarioModel
+@{
+    Layout = null;
+    string connected = ViewBag.IsConnected;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>@Resources.AppName | Registry</title>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="~/Content/animate.css" rel="stylesheet">
+    <link href="~/Content/style.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+
+    <div class="middle-box text-center loginscreen   animated fadeInDown">
+        <div>
+            <div>
+
+                <h1 class="logo-name" style="color:black;font-size:100px">@Resources.AppName</h1>
+
+            </div>
+            <p>@Resources.CreateAccount</p>
+            @using (Html.BeginForm("Register", "Pages", FormMethod.Post))
+            {
+                <div class="form-group">
+                    @Html.TextBoxFor(t => t.Email, new { placeholder = Resources.EmailPlaceHolder, @class = "form-control", @required = "", @type = "email" })
+                </div>
+                <div class="form-group">
+                    @Html.TextBoxFor(t => t.Descripcion, new { placeholder = Resources.NamePlaceHolder, @class = "form-control", @required = "", @type = "text" })
+                </div>
+                <div class="form-group">
+                    @Html.TextBoxFor(t => t.Token, new { placeholder = Resources.PasswordPlaceHolder, @class = "form-control", @type = "password", @required = "" })
+                </div>
+                <div class="form-group">
+                    @Html.TextBoxFor(t => t.Telefono, new { placeholder = Resources.PhonePlaceHolder, @class = "form-control", @required = "", @type = "text" })
+                </div>
+                @*<div class="form-group">
+                    @Html.TextBoxFor(t => t.dire, new { placeholder = Resources.PhoneRequired, @class = "form-control", @required = "", @type = "text" })
+                </div>*@
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            @*<input type="checkbox">*@
+                            @Html.CheckBoxFor(t => t.Activo, false)
+                            <i></i> @Resources.Agree
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary block full-width m-b">@Resources.Register</button>
+
+                <p class="text-muted text-center"><small>@Resources.NoAccount</small></p>
+                <a class="btn btn-sm btn-white btn-block" href="@Url.Action("Index", "Account")">Login</a>
+            }
+            <p class="m-t"> <small>@Resources.AppName &copy; 2020</small> </p>
+        </div>
+    </div>
+</body>
+
+</html>

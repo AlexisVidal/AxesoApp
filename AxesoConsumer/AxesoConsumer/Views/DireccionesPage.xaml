@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AxesoConsumer.Views.DireccionesPage"
+             NavigationPage.HasNavigationBar="False"
+              xmlns:customControl="clr-namespace:AxesoConsumer.Controls"
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit">
+    <ContentPage.Content>
+
+        <StackLayout
+            VerticalOptions="StartAndExpand">
+            <StackLayout
+                    Margin="0,10,0,0"
+                    BackgroundColor="White"
+                    HeightRequest="50"
+                    Orientation="Horizontal"
+                    Spacing="0">
+                <Image
+                        Margin="10,0,0,0"
+                        HeightRequest="30"
+                        HorizontalOptions="Start"
+                        Source="back"
+                        WidthRequest="25">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="BackButton" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label
+                        Margin="-15,0,0,0"
+                        FontFamily="{StaticResource PingFangMedium}"
+                        FontSize="15"
+                        HorizontalOptions="CenterAndExpand"
+                        LineBreakMode="TailTruncation"
+                        Text="Direcciones"
+                        TextColor="#2E2E2E"
+                        VerticalOptions="CenterAndExpand"
+                        VerticalTextAlignment="Center"></Label>
+            </StackLayout>
+
+            <ListView x:Name="DireccionesItems" 
+                      Margin="0,25,0,25"
+                      CachingStrategy="RecycleElement" 
+                      HasUnevenRows="True"
+                      SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.8*"/>
+                                    <ColumnDefinition Width="0.2*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Label 
+                                    Grid.Column="0" 
+                                    Grid.Row="0"
+                                    Text="{Binding Direccion}" 
+                                    VerticalTextAlignment="Center" 
+                                    HorizontalTextAlignment="Start" 
+                                    HorizontalOptions="StartAndExpand" 
+                                    VerticalOptions="Center"
+                                    Margin="25,20,10,0"
+                                    FontSize="15"
+                                    FontAttributes="Bold"
+                                    LineBreakMode="WordWrap"/>
+                                <Label 
+                                    Grid.Column="0" 
+                                    Grid.Row="1"
+                                    Text="{Binding Nombre}" 
+                                    VerticalTextAlignment="Start" 
+                                    HorizontalTextAlignment="Start" 
+                                    HorizontalOptions="StartAndExpand" 
+                                    Margin="25,0,10,0"
+                                    VerticalOptions="Start"
+                                    FontSize="Medium"/>
+                                <ImageButton
+                                    x:Name="btnModificaDireccion"
+                                    Source="ic_action_create"
+                                    BackgroundColor="Transparent"
+                                    Clicked="btnModificaDireccion_Clicked"
+                                    CommandParameter="{Binding UsuarioDireccionID}" 
+                                    Grid.Column="1" 
+                                    Grid.RowSpan="2"
+                                    HorizontalOptions="CenterAndExpand" 
+                                    VerticalOptions="CenterAndExpand" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button
+                x:Name="btnAgregaDireccion"
+                TextColor="{StaticResource FontColor}"
+                BorderRadius="6"
+                Text="Agregar"
+                HeightRequest="46"
+                Margin="45,10,45,10"
+                Clicked="btnAgregaDireccion_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

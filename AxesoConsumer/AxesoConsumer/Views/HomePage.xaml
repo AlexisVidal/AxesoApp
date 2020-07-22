@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AxesoConsumer.Views.HomePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+    xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+    xmlns:customControl="clr-namespace:AxesoConsumer.Controls"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:listviewx="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+    xmlns:localcontrols="clr-namespace:AxesoConsumer.Controls;assembly=AxesoConsumer"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    NavigationPage.HasBackButton="False"
+    NavigationPage.HasNavigationBar="False"
+    xmlns:converter="clr-namespace:AxesoConsumer.Converters"
+    mc:Ignorable="d">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:ImageSourceConverter x:Key="imageSourceConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout
+            Margin="0,0,0,0"
+            HorizontalOptions="FillAndExpand"
+            Orientation="Vertical"
+            VerticalOptions="FillAndExpand">
+            <StackLayout
+                BackgroundColor="{StaticResource AxesoBackgroundColor}"
+                HorizontalOptions="FillAndExpand"
+                Orientation="Horizontal"
+                VerticalOptions="Start">
+                <combobox:SfComboBox
+                    x:Name="comboDirecciones"
+                    Margin="25,0,2,0"
+                    BorderColor="Black"
+                    DropDownCornerRadius="6"
+                    HeightRequest="46"
+                    HorizontalOptions="FillAndExpand"
+                    IsEditableMode="False"
+                    SelectedDropDownItemColor="White"
+                    SelectionChanged="comboDirecciones_SelectionChanged"
+                    ShowBorder="False"
+                    ShowDropDownHeaderView="True"
+                    TextColor="White"
+                    TextSize="13"
+                    Watermark="Seleccione direccion..."
+                    WatermarkColor="White" />
+                <ImageButton
+                    x:Name="addAddressBtn"
+                    Margin="0,0,5,0"
+                    BackgroundColor="Transparent"
+                    Clicked="addAddressBtn_Clicked"
+                    HorizontalOptions="End"
+                    Source="pin.png"
+                    WidthRequest="30" />
+            </StackLayout>
+            <StackLayout
+                HorizontalOptions="FillAndExpand"
+                Orientation="Horizontal"
+                VerticalOptions="Start">
+                <combobox:SfComboBox
+                    x:Name="comboFarmacias"
+                    Margin="25,0,25,0"
+                    BorderColor="Black"
+                    DropDownCornerRadius="6"
+                    HeightRequest="46"
+                    HorizontalOptions="FillAndExpand"
+                    IsEditableMode="False"
+                    SelectionChanged="comboFarmacias_SelectionChanged"
+                    ShowBorder="False"
+                    ShowDropDownFooterView="True"
+                    ShowDropDownHeaderView="True"
+                    TextSize="13"
+                    Watermark="Farmacias cerca a ti...">
+                    <combobox:SfComboBox.DropDownHeaderView>
+                        <StackLayout BackgroundColor="#f0f0f0">
+                            <!--<Label
+                                x:Name="label2"
+                                Text="Ver información"
+                                FontSize="15"
+                                VerticalTextAlignment="Center"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                TextColor="Black" />-->
+                            <Button
+                                x:Name="btnViewFarmacias"
+                                Clicked="btnViewFarmacias_Clicked"
+                                Text="Ver farmacias" />
+                        </StackLayout>
+                    </combobox:SfComboBox.DropDownHeaderView>
+                </combobox:SfComboBox>
+
+            </StackLayout>
+            <StackLayout
+                HorizontalOptions="FillAndExpand"
+                Orientation="Horizontal"
+                VerticalOptions="Start">
+                <customControl:CrossSearchBar
+                    x:Name="searchBtn"
+                    Margin="20,0,20,0"
+                    FontFamily="{StaticResource PingFangLight}"
+                    FontSize="13"
+                    HorizontalOptions="FillAndExpand"
+                    Placeholder="Estoy buscando esto"
+                    SearchButtonPressed="searchBtn_SearchButtonPressed" />
+            </StackLayout>
+            <StackLayout
+                Margin="25,15,25,15"
+                HeightRequest="120"
+                Orientation="Vertical">
+                <Label
+                    FontAttributes="Bold"
+                    FontFamily="{StaticResource PingFangBold}"
+                    Text="Marcas" />
+                <listviewx:SfListView
+                    x:Name="ListViewMarcas"
+                    IsScrollBarVisible="False"
+                    ItemSize="100"
+                    Orientation="Horizontal"
+                    SelectionChanged="ListViewMarcas_SelectionChanged"
+                    SelectionMode="Single">
+                    <listviewx:SfListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <controls:CircleImage
+                                    Aspect="AspectFill"
+                                    HeightRequest="90"
+                                    HorizontalOptions="CenterAndExpand"
+                                    Source="{Binding Imagen, Converter={StaticResource imageSourceConverter}}"
+                                    WidthRequest="90" />
+                            </Grid>
+                        </DataTemplate>
+                    </listviewx:SfListView.ItemTemplate>
+                </listviewx:SfListView>
+            </StackLayout>
+
+
+            <StackLayout
+                Margin="5,5,5,5"
+                HeightRequest="450"
+                Orientation="Vertical"
+                VerticalOptions="Start">
+                <ScrollView VerticalScrollBarVisibility="Never">
+
+                    <customControl:RepeaterView
+                        x:Name="ListViewCategorias"
+                        BackgroundColor="White"
+                        Spacing="5"
+                        VerticalOptions="Start">
+                        <customControl:RepeaterView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout
+                                        BackgroundColor="#f7f7f7"
+                                        Orientation="Horizontal"
+                                        VerticalOptions="Start">
+                                        <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                                        </StackLayout.GestureRecognizers>
+                                        <Image
+                                            Aspect="AspectFill"
+                                            HeightRequest="110"
+                                            Source="{Binding Imagen, Converter={StaticResource imageSourceConverter}}" />
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </customControl:RepeaterView.ItemTemplate>
+                    </customControl:RepeaterView>
+
+                </ScrollView>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

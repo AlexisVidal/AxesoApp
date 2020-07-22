@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application
+    x:Class="AxesoConsumer.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:customControl="clr-namespace:AxesoConsumer.Controls;assembly=AxesoConsumer"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="TimelineColor">#E4B6C3</Color>
+            <x:String x:Key="DefaultLat">-12.0479015</x:String>
+            <x:String x:Key="DefaultLon">-77.0340639</x:String>
+
+            <x:String x:Key="AdminUser">noreply@farmaxeso.com</x:String>
+            <x:String x:Key="AdminPassWord">$ecret0</x:String>
+            <x:String x:Key="SMTPName">premium92.web-hosting.com</x:String>
+            <x:String x:Key="SMTPPort">587</x:String>
+
+            <!--  Facebook  -->
+            <x:String x:Key="FacebookAppID">540380996583528</x:String>
+            <x:String x:Key="FacebookAuthURL">https://www.facebook.com/dialog/oauth/</x:String>
+            <x:String x:Key="FacebookRedirectURL">https://www.facebook.com/connect/login_success.html</x:String>
+            <x:String x:Key="FacebookScope">email</x:String>
+            <!--  Colors  -->
+            <Color x:Key="MainColor">#FFFFFF</Color>
+            <Color x:Key="FontColor">#000000</Color>
+            <Color x:Key="TwitterColor">#00acee</Color>
+            <Color x:Key="AccentColor1">#FF5521</Color>
+            <Color x:Key="AccentColor2">#4DB84B</Color>
+            <Color x:Key="BackgroundColor">#DAEBF2</Color>
+            <Color x:Key="MasterBackgroundColor">#2A9134</Color>
+            <Color x:Key="AxesoBackgroundColor">#98CA3F</Color>
+            <Color x:Key="FacebookBackgroundColor">#334f8d</Color>
+            <Color x:Key="GoogleBackgroundColor">#d74031</Color>
+            <Color x:Key="NavigationBarColor">White</Color>
+            <Color x:Key="NavigationBarTextColor">White</Color>
+            <x:String x:Key="Fontsize">11</x:String>
+            <x:String x:Key="FontsizeText">11</x:String>
+            <x:String x:Key="FontsizeTitle">15</x:String>
+            <x:String x:Key="LogoWidth">300</x:String>
+            <x:String x:Key="TipoNegocioID">1</x:String>
+            <OnPlatform x:Key="PingFangBold" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Fonts/PingFangBold.ttf#PingFang" />
+                <On Platform="iOS" Value="PingFangHK-Semibold" />
+            </OnPlatform>
+            <OnPlatform x:Key="PingFangLight" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Fonts/PingFangLight.ttf#PingFang" />
+                <On Platform="iOS" Value="PingFangHK-Light" />
+            </OnPlatform>
+            <OnPlatform x:Key="PingFangMedium" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Fonts/PingFangMedium.ttf#PingFang" />
+                <On Platform="iOS" Value="PingFangHK-Medium" />
+            </OnPlatform>
+            <OnPlatform x:Key="PingFangRegular" x:TypeArguments="x:String">
+                <On Platform="Android" Value="Fonts/PingFangRegular.ttf#PingFang" />
+                <On Platform="iOS" Value="PingFangHK-Regular" />
+            </OnPlatform>
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource PingFangRegular}" />
+            </Style>
+            <Style x:Key="IconViewStyle" TargetType="customControl:IconView">
+                <Setter Property="Foreground" Value="{StaticResource AxesoBackgroundColor}" />
+                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="WidthRequest" Value="30" />
+                <Setter Property="Margin" Value="20,0,0,0" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

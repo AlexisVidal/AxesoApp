@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage  
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Class="AxesoConsumer.Views.ErroPopUpPage"
+    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup">
+    <StackLayout
+        VerticalOptions="Center">
+        <Frame
+        Margin="30"
+        Padding="10">
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <Image
+                    Source="warning.png"
+                    HeightRequest="60"></Image>
+                <Label
+                FontAttributes="Bold"
+                FontSize="16"
+                FontFamily="{StaticResource PingFangBold}"
+                HorizontalOptions="CenterAndExpand"
+                Text="ADVERTENCIA" />
+                <Label 
+                    x:Name="lErrore"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    FontSize="12"
+                    HorizontalTextAlignment="Center"
+                    FontFamily="{StaticResource PingFangBold}"
+                    HorizontalOptions="CenterAndExpand" />
+                <Button
+                    x:Name="AcceptError"
+                    BackgroundColor="#F4F4F4"
+                    TextColor="{StaticResource FontColor}"
+                    BorderRadius="6"
+                    Text="ACEPTAR"
+                    HeightRequest="46"
+                    Margin="55,20,55,0"
+                    Clicked="AcceptError_Clicked"/>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</pages:PopupPage>

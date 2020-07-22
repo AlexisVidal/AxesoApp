@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AxesoConsumer.Views.SeguimientoTabbedPage"
+             NavigationPage.HasNavigationBar="False"
+             NavigationPage.HasBackButton="False"
+            BarBackgroundColor="White"
+            BackgroundColor="White"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.BarItemColor="#737373"
+            android:TabbedPage.BarSelectedItemColor="#98CA3F">
+    <!--Pages can be added as references or inline-->
+    <ContentPage 
+      IconImageSource="ic_action_format_align_center.png"
+      Title="Lista">
+        <ListView x:Name="listViewSolicitudes" CachingStrategy="RecycleElement" HasUnevenRows="True" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell Height="60" >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.1*"/>
+                                <ColumnDefinition Width="0.8*"/>
+                                <ColumnDefinition Width="0.1*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Column="0" 
+                                   Text="{Binding NroItem}" 
+                                   VerticalTextAlignment="Center" 
+                                   HorizontalTextAlignment="Center" 
+                                   HorizontalOptions="Center" 
+                                   Margin="2"/>
+                            <Label Grid.Column="1" Text="{Binding FechaEnviado}" VerticalTextAlignment="Center" Margin="2"/>
+                            <Image Grid.Column="2" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Source="ic_flecha_derecha.png" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage>
+    <ContentPage 
+      IconImageSource="ic_action_billete_gris.png"
+      Title="Cotizaciones" >
+        <ListView x:Name="listViewCotizaciones" 
+                  CachingStrategy="RecycleElementAndDataTemplate" 
+                  HasUnevenRows="True" 
+                  IsGroupingEnabled="True" 
+                  GroupShortNameBinding="{Binding Key}"
+                  GroupDisplayBinding="{Binding Key}">
+            
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell Height="90" >
+                        <Grid>
+
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="CotizacionGestureRecognizer_Tapped"/>
+                            </Grid.GestureRecognizers>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.7*"/>
+                                <ColumnDefinition Width="0.3*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <StackLayout 
+                                Orientation="Vertical" 
+                                VerticalOptions="Center"
+                                HorizontalOptions="Start">
+                                <Label Grid.Column="0" 
+                                       Margin="15,0,5,0"
+                                       Text="{Binding FarmaciaNombre}" />
+                                <Label Grid.Column="0" 
+                                       Margin="15,0,5,0"
+                                       Text="{Binding Distancia}"/>
+                                <Label Grid.Column="0" 
+                                       Margin="15,0,5,0"
+                                       Text="{Binding CantProductosString}"/>
+                                <Label Grid.Column="0" 
+                                       Margin="15,0,5,0"
+                                       Text="{Binding Total}"/>
+                            </StackLayout>
+                            <Button 
+                                x:Name="btnUbicacion"
+                                Grid.Column="1"
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="Center"
+                                Text="Ubicacion"
+                                Clicked="btnUbicacion_Clicked"
+                                CommandParameter="{Binding DataFarmaciasID}"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage>
+    <ContentPage 
+      IconImageSource="ic_action_shopping_gris.png"
+      Title="Pedidos" />
+</TabbedPage>

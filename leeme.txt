@@ -1,0 +1,198 @@
+Configuracion envio email:
+==========================
+email: noreply@farmaxeso.com
+clave: $ecret0
+host: premium92.web-hosting.com
+puerto: 587
+
+
+Clave para generacion de APK: 4X3s0f4rm4
+
+Usuario
+email: alexis.vidal@outlook.com
+Clave: 221084
+
+-------------------------- SQL SERVER --------------------------
+:::Instancia:::
+local   JARVIS_SERVER\SQLAXESO
+publica 190.117.184.215,1436\SQLAXESO
+UID		dba
+PWD		@x3$0!2020
+
+:::Cuenta de servicio:::
+UID		JARVIS_SERVER\SQLServcesUser
+PWD		@xeso2020
+----------------------------------------------------------------
+:: SQL Server ::
+Servidor        190.117.137.98
+                JARVIS_SERVER
+Usuario         sa
+contraseña      Al22xis84
+
+Servidor        190.117.137.98\SQL_2017
+                JARVIS_SERVER\SQL_2017
+Usuario         sa
+contraseña      ServerVidal2020**
+
+Base de datos   DBAxeso_OLTP
+Usuario         AxesoUser
+contraseña      FB48148F-D7DA-414F-A5FA-3AF957187826
+----------------------------------------------------------------
+
+
+
+
+:: Modelo ::
+C:\Users\Jorge\Dropbox\axeso\db.model.axeso.xlsx
+C:\Users\Jorge\Dropbox\code\VS2019\Axeso_SLN\DBAxeso_OLTP
+
+
+graphql postman get localhost:64034/graphql?query={culturas{ iD culturaID culturaID_pad nombre }  }
+
+http://localhost:64035/ui/playground
+
+
+
+alexis.vidal@outlook.com
+221084
+
+mutation($usuario: usuarioInput!) {
+  createUsuario(usuario: $usuario) {
+    usuarioID
+    tipoUsuarioID
+    usuario
+    descripcion
+    email
+    telefono
+    activo
+    bloqueado
+    token
+    fchHraCreacion
+  }
+}
+
+{
+  "usuario": {
+    "usuarioID": 2,
+    "tipoUsuarioID": "1",
+    "usuario": "alexis@gmail.com",
+    "descripcion": "alex",
+    "email": "alexis@gmail.com",
+    "telefono": "947187022",
+    "activo": true,
+    "bloqueado": false,
+    "fchHraCreacion": "02/02/2020",
+    "token": "12345"
+  }
+}
+
+
+
+
+recursos:
+
+https://dev.to/dotnet/how-you-can-build-a-web-api-using-graphql-net-core-and-entity-framework-1ago
+https://www.c-sharpcorner.com/article/graphql-in-net-core-web-api-with-entity-framework-core-part-one/
+https://medium.com/volosoft/building-graphql-apis-with-asp-net-core-419b32a5305b
+https://fullstackmark.com/post/17/building-a-graphql-api-with-aspnet-core-2-and-entity-framework-core
+https://code-maze.com/graphql-mutations/
+https://medium.com/@calebmer/when-to-use-graphql-non-null-fields-4059337f6fc8
+https://afana.me/archive/2011/01/14/aspnet-mvc-internationalization.aspx/
+https://code-maze.com/consume-graphql-api-with-asp-net-core/
+
+https://github.com/kishancool11/GoogleLoginMVC
+https://tutorialslink.com/Articles/How-to-login-with-facebook-in-aspnet-mvc/2
+
+
+cd C:\Program Files\Java\jre1.8.0_172\bin
+keytool -exportcert AxesoUI -keystore "C:\Users\Alex\AppData\Local\Xamarin\Mono for Android\Keystore\AxesoUI" | openssl sha1 -binary | openssl base64    CLAVE HASH
+keytool -list -v -keystore "%LocalAppData%\Xamarin\Mono for Android\debug.keystore" -alias AxesoUI -storepass android -keypass android
+
+https://www.youtube.com/watch?v=D8Bs4FP9npQ
+
+AxesoUINative
+SHA1: CC:F8:D7:8A:4B:D2:6B:0A:C4:3D:85:1E:5A:56:FC:95:8D:92:05:45
+com.axeso.axesocliente
+android: 1092140892133-bba5rp6hghh1td9fvsrqae8bl2pt3rlb.apps.googleusercontent.com
+ios: 1092140892133-35cgckhon2hlhl0kbh753u0od7t73gba.apps.googleusercontent.com
+
+HASHKEY: 2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+jWD9lMopPT0igyrubVPtNveKDbc=
+com.axeso.axesocliente.AxesoUI.Droid.MainActivity
+
+https://github.com/CrossGeeks/FacebookClientPlugin/blob/master/docs/FacebookPortalSetup.md
+
+
+Playground:  http://localhost/AxesoGraphQL/ui/playground
+
+
+sistemas.farmaxeso@gmail.com
+Al22xis84
+google api AIzaSyAJ2Y_hbwcXftOfQbnUD_8ZNjpzwMQ3Dgs
+
+
+columna 1 #34cc67
+columna 2 #009865
+
+test 1 #1E9924
+test 2 #00A676
+test 3 #034732
+test 4 #568203
+test 5 #ACC96E
+test 6 #80A82B
+test 7 #98CA3F
+
+
+C:\Program Files\Java\jdk-13.0.2\bin>keytool -list -v -keystore "C:\Users\Administrador\AppData\Local\Xamarin\Mono for Android\debug.keystore" -alias androiddebugkey -storepass android -keypass android
+Alias name: androiddebugkey
+Creation date: 11 mar. 2020
+Entry type: PrivateKeyEntry
+Certificate chain length: 1
+Certificate[1]:
+Owner: CN=Android Debug, O=Android, C=US
+Issuer: CN=Android Debug, O=Android, C=US
+Serial number: 2f7e6efc
+Valid from: Wed Mar 11 06:30:19 COT 2020 until: Fri Mar 04 06:30:19 COT 2050
+Certificate fingerprints:
+         SHA1: 82:F2:67:EE:DA:D6:11:74:E1:26:C8:50:D8:0D:04:B5:7F:E1:91:36
+         SHA256: 63:C0:C4:AB:EF:BC:F4:76:8E:82:C6:3B:95:AF:80:2F:D1:09:07:4A:09:0C:A9:14:A5:EF:FE:6A:06:6A:0D:63
+Signature algorithm name: SHA256withRSA
+Subject Public Key Algorithm: 2048-bit RSA key
+Version: 3
+
+Extensions:
+
+#1: ObjectId: 2.5.29.14 Criticality=false
+SubjectKeyIdentifier [
+KeyIdentifier [
+0000: 4D 7E 1C 3D D4 F2 1A E0   1E 54 86 10 FB 71 79 FB  M..=.....T...qy.
+0010: E9 F2 77 54                                        ..wT
+]
+]
+
+
+Warning:
+The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS12 which is an industry standard format using "keytool -importkeystore -srckeystore C:\Users\Administrador\AppData\Local\Xamarin\Mono for Android\debug.keystore -destkeystore C:\Users\Administrador\AppData\Local\Xamarin\Mono for Android\debug.keystore -deststoretype pkcs12".
+
+
+Cliente OAuth 314791326411-l4do85avd3kp3ju2bbtoust7s4o5pn1f.apps.googleusercontent.com
+Cliente OAuth Ios 314791326411-j7n9i0v7macm934mr92rfbvhs41cbinj.apps.googleusercontent.com
+
+google login https://www.youtube.com/watch?v=ZCPENg5wP8o   https://docs.microsoft.com/en-us/samples/xamarin/xamarin-forms-samples/webservices-oauthnativeflow/
+
+
+facebook login
+keytool -exportcert -alias "C:\Users\Administrador\AppData\Local\Xamarin\Mono for Android\debug.keystore" -keystore "C:\Users\Administrador\AppData\Local\Xamarin\Mono for Android\debug.keystore" | "C:\openssl\bin\openssl.exe" sha1 -binary | "C:\openssl\bin\openssl.exe" base64
+Identificador de la app --> 540380996583528
+Clave secreta de la app --> a996176dcd1653782b85df0961f0c07f
+Nombre para mostrar  --> AxesoUI
+sha key --> 2B+USOMMFEJhSZst9VDKGfckfgQ=
+
+
+
+android studio
+Alias: AndroidDebugKey
+MD5: DA:8B:CC:57:C5:92:E7:5C:CC:A5:1D:D4:F0:3C:6F:1B
+SHA1: DF:68:E1:17:CA:86:D4:BD:FD:DF:01:87:53:E1:96:20:0F:23:06:62
+SHA-256: A6:7F:B3:62:03:A0:75:0B:17:3D:6F:3B:D9:09:1D:82:65:45:1A:F2:1A:41:4C:BB:8C:08:C7:C2:FE:C5:5E:F2
+Valid until: mi�rcoles 13 de julio de 2050

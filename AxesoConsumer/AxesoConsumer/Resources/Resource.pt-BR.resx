@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddPerson" xml:space="preserve">
+    <value>Inserir pessoa</value>
+  </data>
+  <data name="Age" xml:space="preserve">
+    <value>Idade</value>
+  </data>
+  <data name="AgeRange" xml:space="preserve">
+    <value>Deve estar entre 10 e 130</value>
+  </data>
+  <data name="AgeRequired" xml:space="preserve">
+    <value>Você deve inserir sua idade</value>
+  </data>
+  <data name="Agree" xml:space="preserve">
+    <value>Eu concordo com os termos e política</value>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>Axeso</value>
+  </data>
+  <data name="Biography" xml:space="preserve">
+    <value>Biografia</value>
+  </data>
+  <data name="ChooseYourLanguage" xml:space="preserve">
+    <value>Escolha seu idioma</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Criar</value>
+  </data>
+  <data name="CreateAccount" xml:space="preserve">
+    <value>Criar uma conta</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Correio eletrônico</value>
+  </data>
+  <data name="EmailInvalid" xml:space="preserve">
+    <value>O email digitado não é válido</value>
+  </data>
+  <data name="EmailRequired" xml:space="preserve">
+    <value>Você deve digitar seu email</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>Primeiro nome</value>
+  </data>
+  <data name="FirstNameLong" xml:space="preserve">
+    <value>Deve ter menos de 50 caracteres</value>
+  </data>
+  <data name="FirstNameRequired" xml:space="preserve">
+    <value>Você deve digitar seu nome</value>
+  </data>
+  <data name="HaveAccount" xml:space="preserve">
+    <value>Já tem uma conta?</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Sobrenome</value>
+  </data>
+  <data name="LastNameLong" xml:space="preserve">
+    <value>Deve ter menos de 50 caracteres</value>
+  </data>
+  <data name="LastNameRequired" xml:space="preserve">
+    <value>Você deve digitar seu sobrenome</value>
+  </data>
+  <data name="LoginTitle" xml:space="preserve">
+    <value>Entre para vê-lo em ação</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>Fechar Sessão</value>
+  </data>
+  <data name="LogOn" xml:space="preserve">
+    <value>Iniciar sessão</value>
+  </data>
+  <data name="NoAccount" xml:space="preserve">
+    <value>Não possui uma conta?</value>
+  </data>
+  <data name="PasswordForgot" xml:space="preserve">
+    <value>esqueceu sua senha?</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Telefone de contato</value>
+  </data>
+  <data name="PhoneInvalid" xml:space="preserve">
+    <value>O telefone digitado não é válido</value>
+  </data>
+  <data name="PhoneRequired" xml:space="preserve">
+    <value>Você deve digitar seu número de telefone</value>
+  </data>
+  <data name="PlatformTitle" xml:space="preserve">
+    <value>Plataforma Web</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Registre-se</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nome completo</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Bem-vindo ao Axeso</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Perfil</value>
+  </data>
+  <data name="Contacts" xml:space="preserve">
+    <value>Contatos</value>
+  </data>
+  <data name="Mailbox" xml:space="preserve">
+    <value>Caixa de correio</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Sair</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Comercial</value>
+  </data>
+  <data name="List" xml:space="preserve">
+    <value>Lista</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Procure algo ...</value>
+  </data>
+  <data name="Accept" xml:space="preserve">
+    <value>Aceitar</value>
+  </data>
+  <data name="EmailValidation" xml:space="preserve">
+    <value>Você precisa inserir o seu endereço de email.</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Erro</value>
+  </data>
+  <data name="EmailPlaceHolder" xml:space="preserve">
+    <value>Você precisa inserir o seu endereço de email.</value>
+  </data>
+  <data name="Rememberme" xml:space="preserve">
+    <value>Lembre-me neste dispositivo!</value>
+  </data>
+  <data name="PasswordValidation" xml:space="preserve">
+    <value>Digite uma senha.</value>
+  </data>
+  <data name="SomethingWrong" xml:space="preserve">
+    <value>Algo deu errado, Por favor tente novamente.</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Logon</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Senha</value>
+  </data>
+  <data name="PasswordPlaceHolder" xml:space="preserve">
+    <value>Insira sua senha.</value>
+  </data>
+  <data name="Forgot" xml:space="preserve">
+    <value>esqueceu sua senha?</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Informações</value>
+  </data>
+  <data name="MyLanguages" xml:space="preserve">
+    <value>Idiomas</value>
+  </data>
+  <data name="NamePlaceHolder" xml:space="preserve">
+    <value>Insira seu nome completo</value>
+  </data>
+  <data name="RePasswordPlaceHolder" xml:space="preserve">
+    <value>Insira novamente a sua senha</value>
+  </data>
+  <data name="Adress" xml:space="preserve">
+    <value>Endereço</value>
+  </data>
+  <data name="AdressRequired" xml:space="preserve">
+    <value>É necessário endereço!</value>
+  </data>
+  <data name="AdressHolder" xml:space="preserve">
+    <value>Você deve inserir um endereço!</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="Politics" xml:space="preserve">
+    <value>https://axesoweb.000webhostapp.com/politica.html</value>
+  </data>
+  <data name="AcceptTerms" xml:space="preserve">
+    <value>Você deve aceitar os Termos de Uso</value>
+  </data>
+  <data name="Terms" xml:space="preserve">
+    <value>Termos de uso</value>
+  </data>
+  <data name="Nombre" xml:space="preserve">
+    <value>Nome:</value>
+  </data>
+  <data name="NameValidation" xml:space="preserve">
+    <value>Você deve inserir um nome completo válido!</value>
+  </data>
+  <data name="RePasswordValidation" xml:space="preserve">
+    <value>Você deve inserir a mesma senha duas vezes.</value>
+  </data>
+  <data name="AdressValidation" xml:space="preserve">
+    <value>Você deve inserir um endereço válido!</value>
+  </data>
+  <data name="AgreeValidation" xml:space="preserve">
+    <value>É necessário aceitar os Termos de Uso.</value>
+  </data>
+  <data name="PhoneValidation" xml:space="preserve">
+    <value>Você deve inserir um telefone válido!</value>
+  </data>
+  <data name="TurnOnInternet" xml:space="preserve">
+    <value>Por favor, ative suas configurações de internet!</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Êxito</value>
+  </data>
+  <data name="SuccessRegister" xml:space="preserve">
+    <value>Registro bem sucedido!</value>
+  </data>
+  <data name="PasswordRecovery" xml:space="preserve">
+    <value>Recuperação de senha</value>
+  </data>
+  <data name="PasswordYourNew" xml:space="preserve">
+    <value>Sua nova senha é</value>
+  </data>
+  <data name="PasswordDontForget" xml:space="preserve">
+    <value>Por favor, não se esqueça de alterá-lo para uma lembrança fácil para você.</value>
+  </data>
+  <data name="PasswordRecoveryText" xml:space="preserve">
+    <value>Uma senha será enviada para o seu endereço de e-mail.</value>
+  </data>
+  <data name="Recover" xml:space="preserve">
+    <value>Recuperar</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Senha atual</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Nova senha:</value>
+  </data>
+  <data name="ConfirmNewPassword" xml:space="preserve">
+    <value>Confirmar nova senha</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Alterar Senha</value>
+  </data>
+  <data name="Modify" xml:space="preserve">
+    <value>&amp;Modificar</value>
+  </data>
+  <data name="Ubications" xml:space="preserve">
+    <value>Ubicações</value>
+  </data>
+  <data name="PasswordDiferent" xml:space="preserve">
+    <value>As senhas não correspondem.</value>
+  </data>
+</root>

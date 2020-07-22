@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AxesoConsumer.Views.ProfilePage"
+             NavigationPage.HasNavigationBar="False"
+             NavigationPage.HasBackButton="False"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"  >
+    <ContentPage.Content>
+        <StackLayout
+            Padding="15,40,20,0">
+            <Grid   
+            HorizontalOptions="StartAndExpand" 
+            VerticalOptions="Start">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.3*" />
+                    <ColumnDefinition Width="0.7*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <controls:CircleImage 
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    Grid.RowSpan="2"
+                    Source="user98" 
+                    Aspect="AspectFit" 
+                    BorderColor="{StaticResource AxesoBackgroundColor}"
+                    BorderThickness="2">
+                    <controls:CircleImage.WidthRequest>
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <On Platform="Android, iOS">75</On>
+                            <On Platform="WinPhone">95</On>
+                        </OnPlatform>
+                    </controls:CircleImage.WidthRequest>
+                    <controls:CircleImage.HeightRequest>
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <On Platform="Android, iOS">75</On>
+                            <On Platform="WinPhone">95</On>
+                        </OnPlatform>
+                    </controls:CircleImage.HeightRequest>
+                </controls:CircleImage>
+                <Label 
+                    x:Name="NombreUsuario"
+                    Margin="15,0,0,0"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="EndAndExpand"
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    Text="{Binding NombreUsuario}"
+                    FontAttributes="Bold"/>
+                <Label 
+                    x:Name="EmailUsuario"
+                    Margin="15,0,0,0"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="StartAndExpand"
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    Text="{Binding EmailUsuario}"/>
+            </Grid>
+            <BoxView 
+                    Margin="10,10,10,10"
+                    HeightRequest="1" 
+                    BackgroundColor="Gray" 
+                    HorizontalOptions="FillAndExpand" />
+            <StackLayout
+                Margin="25,0,0,0">
+                <syncfusion:SfButton 
+                    ShowIcon="True"
+                    x:Name="DireccionesBtn"
+                    ImageSource="pin.png"
+                    Text="Direcciones"
+                    BorderWidth="0"
+                    Margin="0,0,160,0"
+                    HeightRequest="60"
+                    TextColor="Black"
+                    BackgroundColor="Transparent"
+                    CornerRadius="2"
+                    FontSize="15"
+                    HorizontalOptions="StartAndExpand"
+                    Clicked="DireccionesBtn_Clicked">
+                </syncfusion:SfButton>
+                <syncfusion:SfButton 
+                    ShowIcon="True"
+                    x:Name="TerminosBtn"
+                    ImageSource="ic_action_format_align_center_black.png"
+                    Text="Términos de uso"
+                    BorderWidth="0"
+                    Margin="0,0,160,0"
+                    HeightRequest="60"
+                    TextColor="Black"
+                    BackgroundColor="Transparent"
+                    CornerRadius="2"
+                    FontSize="15"
+                    HorizontalOptions="StartAndExpand"
+                    Clicked="TerminosBtn_Clicked">
+                </syncfusion:SfButton>
+                <syncfusion:SfButton 
+                    ShowIcon="True"
+                    x:Name="HistorialBtn"
+                    ImageSource="ic_action_assignment_black.png"
+                    Text="Historial de compras"
+                    BorderWidth="0"
+                    Margin="0,0,130,0"
+                    HeightRequest="60"
+                    TextColor="Black"
+                    BackgroundColor="Transparent"
+                    CornerRadius="2"
+                    FontSize="15"
+                    HorizontalOptions="StartAndExpand"
+                    Clicked="HistorialBtn_Clicked">
+                </syncfusion:SfButton>
+                <syncfusion:SfButton 
+                    ShowIcon="True"
+                    x:Name="CambioPassBtn"
+                    ImageSource="ic_action_create_black.png"
+                    Text="Cambio de contraseña"
+                    BorderWidth="0"
+                    Margin="0,0,120,0"
+                    HeightRequest="60"
+                    TextColor="Black"
+                    BackgroundColor="Transparent"
+                    CornerRadius="2"
+                    FontSize="15"
+                    HorizontalOptions="StartAndExpand"
+                    Clicked="CambioPassBtn_Clicked">
+                </syncfusion:SfButton>
+                <syncfusion:SfButton 
+                    ShowIcon="True"
+                    x:Name="CloseSessionBtn"
+                    ImageSource="ic_exit_to_app_black.png"
+                    Text="Cerrar sesión"
+                    BorderWidth="0"
+                    Margin="0,0,180,0"
+                    HeightRequest="60"
+                    TextColor="Black"
+                    BackgroundColor="Transparent"
+                    CornerRadius="2"
+                    FontSize="15"
+                    HorizontalOptions="StartAndExpand"
+                    Clicked="CloseSessionBtn_Clicked">
+                </syncfusion:SfButton>
+               </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

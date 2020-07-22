@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Class="AxesoConsumer.Views.EnvioExitosoPage"
+    Title="Detalle Producto"
+    BackgroundColor="White"
+    NavigationPage.HasNavigationBar="False"
+    Visual="Material">
+    <ContentPage.Content>
+        <StackLayout
+            Orientation="Vertical"
+            VerticalOptions="CenterAndExpand">
+            <Image
+                Source="smileyface.png"
+                HeightRequest="200"></Image>
+            <Label
+                Margin="0,25,0,25"
+                HorizontalOptions="CenterAndExpand"
+                FontAttributes="Bold"
+                FontSize="Large"
+                Text="Gracias por elegir Axeso!"></Label>
+            <Label
+                HorizontalOptions="CenterAndExpand"
+                FontAttributes="None"
+                FontSize="Medium"
+                Text="Tu solicitud ha sido enviada a la red de farmacias de AXESO."
+                Margin="20,0,20,20"></Label>
+            <Label
+                FontAttributes="None"
+                FontSize="Medium"
+                Text="En los próximos 15 minutos, 6 farmacias podrían enviarte cotizaciones."
+                Margin="20,0,20,20"></Label>
+            <Button
+                    x:Name="btnConfirmarSolicitud"
+                    BackgroundColor="#F4F4F4"
+                    TextColor="{StaticResource FontColor}"
+                    BorderRadius="6"
+                    Text="Continuar"
+                    Image="axeso30"  
+                    HeightRequest="46"
+                    Margin="70,10,70,10"
+                    Clicked="btnConfirmarSolicitud_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

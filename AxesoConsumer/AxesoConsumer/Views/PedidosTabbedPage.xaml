@@ -1,0 +1,475 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage
+    x:Class="AxesoConsumer.Views.PedidosTabbedPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:cardView="clr-namespace:CardView;assembly=CardView"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:syncCheckBox="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    android:TabbedPage.BarItemColor="#737373"
+    android:TabbedPage.BarSelectedItemColor="#98CA3F"
+    BackgroundColor="White"
+    BarBackgroundColor="White"
+    NavigationPage.HasBackButton="False"
+    NavigationPage.HasNavigationBar="False"
+    mc:Ignorable="d">
+    <ContentPage Title="Solicitudes" IconImageSource="ic_action_format_align_center.png">
+        <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+            <StackLayout BackgroundColor="LightGray">
+                <ListView
+                    x:Name="listViewSolicitudes"
+                    BackgroundColor="WhiteSmoke"
+                    HasUnevenRows="True"
+                    Header="En curso"
+                    SeparatorVisibility="None">
+                    <ListView.HeaderTemplate>
+                        <DataTemplate>
+                            <Label
+                                Margin="20,5,20,5"
+                                FontSize="15"
+                                Text="En curso" />
+                        </DataTemplate>
+                    </ListView.HeaderTemplate>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame
+                                    Margin="20,5,20,5"
+                                    Padding="0,0,0,0"
+                                    HeightRequest="60">
+                                    <Grid VerticalOptions="CenterAndExpand">
+                                        <Grid.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="SolicitudGestureRecognizer_Tapped" />
+                                        </Grid.GestureRecognizers>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="10" />
+                                            <ColumnDefinition Width="0.8*" />
+                                            <ColumnDefinition Width="0.1*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <StackLayout
+                                            Grid.Row="0"
+                                            Grid.RowSpan="2"
+                                            Grid.Column="0"
+                                            Margin="2,-5,0,-5"
+                                            BackgroundColor="{Binding Color}"
+                                            HorizontalOptions="FillAndExpand"
+                                            VerticalOptions="FillAndExpand"
+                                            WidthRequest="10" />
+                                        <StackLayout
+                                            Grid.Row="0"
+                                            Grid.Column="1"
+                                            HorizontalOptions="FillAndExpand"
+                                            Orientation="Horizontal">
+                                            <Label
+                                                HorizontalOptions="End"
+                                                HorizontalTextAlignment="End"
+                                                Text="Solicitud"
+                                                VerticalTextAlignment="Center" />
+                                            <Label
+                                                HorizontalOptions="End"
+                                                HorizontalTextAlignment="End"
+                                                Text="{Binding NroItem}"
+                                                VerticalTextAlignment="Center" />
+                                            <Label
+                                                HorizontalOptions="CenterAndExpand"
+                                                Text="{Binding FechaEnviado}"
+                                                VerticalTextAlignment="Center" />
+                                        </StackLayout>
+                                        <StackLayout
+                                            Grid.Row="1"
+                                            Grid.Column="1"
+                                            HorizontalOptions="FillAndExpand"
+                                            Orientation="Horizontal">
+                                            <Label
+                                                Margin="0,0,-2,0"
+                                                HorizontalOptions="Start"
+                                                HorizontalTextAlignment="Start"
+                                                LineBreakMode="TailTruncation"
+                                                Text="{Binding TotalProductos}"
+                                                VerticalTextAlignment="Center" />
+                                            <Label
+                                                Margin="-2,0,-2,0"
+                                                HorizontalOptions="Start"
+                                                HorizontalTextAlignment="Start"
+                                                LineBreakMode="TailTruncation"
+                                                Text="| Total: S/."
+                                                VerticalTextAlignment="Center" />
+                                            <Label
+                                                HorizontalOptions="CenterAndExpand"
+                                                LineBreakMode="TailTruncation"
+                                                Text="{Binding PrecioTotal}"
+                                                VerticalTextAlignment="Center" />
+                                            <Label
+                                                Margin="-2,0,-2,0"
+                                                HorizontalOptions="Start"
+                                                HorizontalTextAlignment="Start"
+                                                LineBreakMode="TailTruncation"
+                                                Text="|"
+                                                VerticalTextAlignment="Center" />
+                                            <Label
+                                                HorizontalOptions="CenterAndExpand"
+                                                LineBreakMode="TailTruncation"
+                                                Text="{Binding SCotizado}"
+                                                VerticalTextAlignment="Center" />
+                                        </StackLayout>
+                                        <Image
+                                            Grid.RowSpan="2"
+                                            Grid.Column="2"
+                                            HorizontalOptions="Start"
+                                            Source="ic_flecha_derecha.png"
+                                            VerticalOptions="CenterAndExpand" />
+                                    </Grid>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <StackLayout BackgroundColor="LightGray">
+                <ListView
+                    x:Name="listViewSolicitudesOld"
+                    BackgroundColor="WhiteSmoke"
+                    HasUnevenRows="True"
+                    Header="Anteriores"
+                    SeparatorVisibility="None">
+                    <ListView.HeaderTemplate>
+                        <DataTemplate>
+                            <Label
+                                Margin="20,5,20,5"
+                                FontSize="15"
+                                Text="Anteriores" />
+                        </DataTemplate>
+                    </ListView.HeaderTemplate>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame
+                                    Margin="20,5,20,5"
+                                    Padding="0,0,0,0"
+                                    HeightRequest="60">
+                                    <Grid VerticalOptions="CenterAndExpand">
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="10" />
+                                            <ColumnDefinition Width="0.8*" />
+                                            <ColumnDefinition Width="0.1*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <StackLayout
+                                            Grid.Row="0"
+                                            Grid.RowSpan="2"
+                                            Grid.Column="0"
+                                            Margin="2,-5,0,-5"
+                                            BackgroundColor="{Binding Color}"
+                                            HorizontalOptions="FillAndExpand"
+                                            VerticalOptions="FillAndExpand"
+                                            WidthRequest="10" />
+                                        <StackLayout
+                                            Grid.Row="0"
+                                            Grid.Column="1"
+                                            HorizontalOptions="FillAndExpand"
+                                            Orientation="Horizontal">
+                                            <Label
+                                                HorizontalOptions="End"
+                                                HorizontalTextAlignment="End"
+                                                Text="Solicitud"
+                                                VerticalTextAlignment="Center" />
+                                            <Label
+                                                HorizontalOptions="End"
+                                                HorizontalTextAlignment="End"
+                                                Text="{Binding NroItem}"
+                                                VerticalTextAlignment="Center" />
+                                            <Label
+                                                HorizontalOptions="CenterAndExpand"
+                                                Text="{Binding FechaEnviado}"
+                                                VerticalTextAlignment="Center" />
+                                        </StackLayout>
+                                        <StackLayout
+                                            Grid.Row="1"
+                                            Grid.Column="1"
+                                            HorizontalOptions="FillAndExpand"
+                                            Orientation="Horizontal">
+                                            <Label
+                                                Margin="0,0,-2,0"
+                                                HorizontalOptions="Start"
+                                                HorizontalTextAlignment="Start"
+                                                LineBreakMode="TailTruncation"
+                                                Text="{Binding TotalProductos}"
+                                                VerticalTextAlignment="Center" />
+                                            <Label
+                                                Margin="-2,0,-2,0"
+                                                HorizontalOptions="Start"
+                                                HorizontalTextAlignment="Start"
+                                                LineBreakMode="TailTruncation"
+                                                Text="| Total: S/."
+                                                VerticalTextAlignment="Center" />
+                                            <Label
+                                                HorizontalOptions="CenterAndExpand"
+                                                LineBreakMode="TailTruncation"
+                                                Text="{Binding PrecioTotal}"
+                                                VerticalTextAlignment="Center" />
+                                            <Label
+                                                Margin="-2,0,-2,0"
+                                                HorizontalOptions="Start"
+                                                HorizontalTextAlignment="Start"
+                                                LineBreakMode="TailTruncation"
+                                                Text="|"
+                                                VerticalTextAlignment="Center" />
+                                            <Label
+                                                HorizontalOptions="CenterAndExpand"
+                                                Text="{Binding SCotizado}"
+                                                VerticalTextAlignment="Center" />
+                                        </StackLayout>
+                                        <ImageButton
+                                            x:Name="imgbtnoldsolic"
+                                            Grid.RowSpan="2"
+                                            Grid.Column="2"
+                                            BackgroundColor="Transparent"
+                                            Clicked="imgbtnoldsolic_Clicked"
+                                            CommandParameter="{Binding SolicitudID}"
+                                            HorizontalOptions="Start"
+                                            Source="ic_flecha_derecha.png"
+                                            VerticalOptions="CenterAndExpand" />
+                                    </Grid>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Pedidos" IconImageSource="ic_action_shopping_gris.png">
+        <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+            <StackLayout BackgroundColor="LightGray">
+                <ListView
+                    x:Name="listViewCotizaciones"
+                    BackgroundColor="WhiteSmoke"
+                    CachingStrategy="RecycleElementAndDataTemplate"
+                    HasUnevenRows="True"
+                    Header="En curso"
+                    SeparatorVisibility="None">
+                    <ListView.HeaderTemplate>
+                        <DataTemplate>
+                            <Label
+                                Margin="20,5,20,5"
+                                FontSize="15"
+                                Text="En curso" />
+                        </DataTemplate>
+                    </ListView.HeaderTemplate>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame
+                                    Margin="20,5,20,5"
+                                    Padding="0,0,0,0"
+                                    HeightRequest="60">
+                                    <Grid VerticalOptions="CenterAndExpand">
+                                        <Grid.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="CotizacionGestureRecognizer_Tapped" />
+                                        </Grid.GestureRecognizers>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="10" />
+                                            <ColumnDefinition Width="0.8*" />
+                                            <ColumnDefinition Width="0.1*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <StackLayout
+                                            Grid.Row="0"
+                                            Grid.RowSpan="2"
+                                            Grid.Column="0"
+                                            Margin="2,-5,0,-5"
+                                            BackgroundColor="{Binding Color}"
+                                            HorizontalOptions="FillAndExpand"
+                                            VerticalOptions="FillAndExpand"
+                                            WidthRequest="10" />
+                                        <StackLayout
+                                            Grid.Row="0"
+                                            Grid.Column="1"
+                                            HorizontalOptions="FillAndExpand"
+                                            Orientation="Horizontal">
+                                            <Label
+                                                HorizontalOptions="End"
+                                                HorizontalTextAlignment="End"
+                                                Text="{Binding Titulo}"
+                                                VerticalTextAlignment="Center" />
+                                            <Label
+                                                HorizontalOptions="CenterAndExpand"
+                                                Text="{Binding FechaGenerado}"
+                                                VerticalTextAlignment="Center" />
+                                        </StackLayout>
+                                        <StackLayout
+                                            Grid.Row="1"
+                                            Grid.Column="1"
+                                            HorizontalOptions="FillAndExpand"
+                                            Orientation="Horizontal">
+                                            <Label
+                                                Margin="0,0,-2,0"
+                                                HorizontalOptions="Start"
+                                                HorizontalTextAlignment="Start"
+                                                LineBreakMode="TailTruncation"
+                                                Text="{Binding CantProductosString}"
+                                                VerticalTextAlignment="Center" />
+                                            <Label
+                                                Margin="-2,0,-2,0"
+                                                HorizontalOptions="Start"
+                                                HorizontalTextAlignment="Start"
+                                                LineBreakMode="TailTruncation"
+                                                Text="| Total:"
+                                                VerticalTextAlignment="Center" />
+                                            <Label
+                                                HorizontalOptions="CenterAndExpand"
+                                                LineBreakMode="TailTruncation"
+                                                Text="{Binding Total}"
+                                                VerticalTextAlignment="Center" />
+                                            <Label
+                                                Margin="-2,0,-2,0"
+                                                HorizontalOptions="Start"
+                                                HorizontalTextAlignment="Start"
+                                                LineBreakMode="TailTruncation"
+                                                Text="|"
+                                                VerticalTextAlignment="Center" />
+                                            <Label
+                                                HorizontalOptions="CenterAndExpand"
+                                                LineBreakMode="TailTruncation"
+                                                Text="{Binding SEstado}"
+                                                VerticalTextAlignment="Center" />
+                                        </StackLayout>
+                                        <Image
+                                            Grid.RowSpan="2"
+                                            Grid.Column="2"
+                                            HorizontalOptions="Start"
+                                            Source="ic_flecha_derecha.png"
+                                            VerticalOptions="CenterAndExpand" />
+                                    </Grid>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <StackLayout BackgroundColor="LightGray">
+                <ListView
+                    x:Name="listViewCotizacionesOld"
+                    BackgroundColor="WhiteSmoke"
+                    CachingStrategy="RecycleElementAndDataTemplate"
+                    HasUnevenRows="True"
+                    Header="Finalizados"
+                    SeparatorVisibility="None">
+                    <ListView.HeaderTemplate>
+                        <DataTemplate>
+                            <Label
+                                Margin="20,5,20,5"
+                                FontSize="15"
+                                Text="Finalizados" />
+                        </DataTemplate>
+                    </ListView.HeaderTemplate>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame
+                                    Margin="20,5,20,5"
+                                    Padding="0,0,0,0"
+                                    HeightRequest="60">
+                                    <Grid VerticalOptions="CenterAndExpand">
+                                        <Grid.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="CotizacionGestureRecognizer_Tapped" />
+                                        </Grid.GestureRecognizers>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="10" />
+                                            <ColumnDefinition Width="0.8*" />
+                                            <ColumnDefinition Width="0.1*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <StackLayout
+                                            Grid.Row="0"
+                                            Grid.RowSpan="2"
+                                            Grid.Column="0"
+                                            Margin="2,-5,0,-5"
+                                            BackgroundColor="{Binding Color}"
+                                            HorizontalOptions="FillAndExpand"
+                                            VerticalOptions="FillAndExpand"
+                                            WidthRequest="10" />
+                                        <StackLayout
+                                            Grid.Row="0"
+                                            Grid.Column="1"
+                                            HorizontalOptions="FillAndExpand"
+                                            Orientation="Horizontal">
+                                            <Label
+                                                HorizontalOptions="End"
+                                                HorizontalTextAlignment="End"
+                                                Text="{Binding Titulo}"
+                                                VerticalTextAlignment="Center" />
+                                            <Label
+                                                HorizontalOptions="CenterAndExpand"
+                                                Text="{Binding FechaGenerado}"
+                                                VerticalTextAlignment="Center" />
+                                        </StackLayout>
+                                        <StackLayout
+                                            Grid.Row="1"
+                                            Grid.Column="1"
+                                            HorizontalOptions="FillAndExpand"
+                                            Orientation="Horizontal">
+                                            <Label
+                                                Margin="0,0,-2,0"
+                                                HorizontalOptions="Start"
+                                                HorizontalTextAlignment="Start"
+                                                LineBreakMode="TailTruncation"
+                                                Text="{Binding CantProductosString}"
+                                                VerticalTextAlignment="Center" />
+                                            <Label
+                                                Margin="-2,0,-2,0"
+                                                HorizontalOptions="Start"
+                                                HorizontalTextAlignment="Start"
+                                                LineBreakMode="TailTruncation"
+                                                Text="| Total:"
+                                                VerticalTextAlignment="Center" />
+                                            <Label
+                                                HorizontalOptions="CenterAndExpand"
+                                                LineBreakMode="TailTruncation"
+                                                Text="{Binding Total}"
+                                                VerticalTextAlignment="Center" />
+                                            <Label
+                                                Margin="-2,0,-2,0"
+                                                HorizontalOptions="Start"
+                                                HorizontalTextAlignment="Start"
+                                                LineBreakMode="TailTruncation"
+                                                Text="|"
+                                                VerticalTextAlignment="Center" />
+                                            <Label
+                                                HorizontalOptions="CenterAndExpand"
+                                                LineBreakMode="TailTruncation"
+                                                Text="{Binding SEstado}"
+                                                VerticalTextAlignment="Center" />
+                                        </StackLayout>
+                                        <Image
+                                            Grid.RowSpan="2"
+                                            Grid.Column="2"
+                                            HorizontalOptions="Start"
+                                            Source="ic_flecha_derecha.png"
+                                            VerticalOptions="CenterAndExpand" />
+                                    </Grid>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage>
+</TabbedPage>

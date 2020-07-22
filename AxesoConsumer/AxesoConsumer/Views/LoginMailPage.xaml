@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AxesoConsumer.Views.LoginMail"
+             xmlns:controls="clr-namespace:AxesoConsumer.Controls;assembly=AxesoConsumer"
+             BackgroundColor="{StaticResource AxesoBackgroundColor}"
+             NavigationPage.HasNavigationBar="False"
+             NavigationPage.HasBackButton="True"
+             xmlns:i18n="clr-namespace:AxesoConsumer.Helpers">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="controls:StandardEntry">
+                <Setter Property="Padding" Value="13" />
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="BorderColor" Value="#BEBEBE" />
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="CornerRadius" Value="8" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource FontColor}" />
+                <Setter Property="Margin" Value="50,0,50,0" />
+                <Setter Property="FontSize" Value="12" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout
+            VerticalOptions="StartAndExpand">
+            <StackLayout
+                    Margin="0,10,0,0"
+                    BackgroundColor="Transparent"
+                    HeightRequest="50"
+                    Orientation="Horizontal"
+                    Spacing="0">
+                <Image
+                    Margin="10,0,0,0"
+                    HeightRequest="30"
+                    HorizontalOptions="Start"
+                    Source="backwhite"
+                    BackgroundColor="Transparent"
+                    WidthRequest="25">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="BackButton" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <!--<Label
+                        Margin="-15,0,0,0"
+                        FontFamily="{StaticResource PingFangMedium}"
+                        FontSize="15"
+                        HorizontalOptions="CenterAndExpand"
+                        LineBreakMode="TailTruncation"
+                        Text="Solicitud"
+                        TextColor="#2E2E2E"
+                        VerticalOptions="CenterAndExpand"
+                        VerticalTextAlignment="Center"></Label>-->
+            </StackLayout>
+            <ScrollView
+            VerticalOptions="StartAndExpand">
+                <StackLayout
+            Padding="5,35,5,0">
+                    <Image Source="logowhite"
+                   Aspect="AspectFit"
+                   WidthRequest="230"
+                       Margin="0,0,0,8">
+                    </Image>
+                    <controls:StandardEntry 
+                    Text="{Binding Email, Mode=TwoWay}" 
+                    Placeholder="{i18n:Translate Email}" 
+                    Keyboard="Email"/>
+                    <controls:StandardEntry 
+                    Text="{Binding Password, Mode=TwoWay}" 
+                    Placeholder="{i18n:Translate Password}"
+                    Keyboard="Text"
+                    IsPassword="True"/>
+                    <Label HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand"
+                       Margin="0">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span 
+                                Text="{i18n:Translate Forgot}"
+                                TextColor="Blue"
+                                TextDecorations="Underline">
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding RecoverPasswordMail}" />
+                                    </Span.GestureRecognizers>
+                                </Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <StackLayout
+                    Margin="50,0,50,5"
+                    Orientation="Horizontal"
+                    VerticalOptions="CenterAndExpand"
+                    IsVisible="False">
+                        <Label 
+                    HorizontalOptions="StartAndExpand"
+                    Text="{i18n:Translate Rememberme}"
+                    VerticalOptions="Center"
+                    TextColor="White"/>
+                        <Switch
+                        IsToggled="{Binding IsRemembered, Mode=TwoWay}"
+                        HorizontalOptions="End"
+                        ThumbColor="White"
+                        OnColor="Gray"></Switch>
+                    </StackLayout>
+                    <StackLayout
+                    Margin="50,0,50,0"
+                    Orientation="Vertical">
+                        <Button
+                        x:Name="LoginMailB"
+                        BackgroundColor="#F4F4F4"
+                        TextColor="{StaticResource FontColor}"
+                        BorderRadius="6"
+                        Text="Entrar"
+                        HeightRequest="46"
+                        Margin="0,0,0,2"
+                        Padding="8,0,45,0"
+                        Image="axeso30"  
+                        Command="{Binding LoginMailB}"/>
+                        <Label 
+                        HorizontalOptions="Center"
+                        Text="¿Aún no tienes cuenta en Axeso?"
+                        VerticalOptions="Center"
+                        TextColor="White"
+                        FontSize="12"/>
+                        <Button
+                        BackgroundColor="{StaticResource TwitterColor}"
+                        TextColor="White"
+                        BorderRadius="6"
+                        Text="{i18n:Translate Register}"
+                        HeightRequest="46"
+                        Margin="0,0,0,2"
+                        Command="{Binding RegisterMail}"/>
+                    </StackLayout>
+                    <StackLayout
+                    Margin="15,20,15,0"
+                    Orientation="Horizontal"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="EndAndExpand">
+                        <Label 
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Entrar implica que has leido y aceptado los Términos y condiciones y Políticas de privacidad"
+                    VerticalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    TextColor="White"
+                        FontSize="11"/>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

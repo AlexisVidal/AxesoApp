@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AxesoConsumer.Views.RegistroPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:AxesoConsumer.Controls;assembly=AxesoConsumer"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    BackgroundColor="{StaticResource AxesoBackgroundColor}"
+    NavigationPage.HasNavigationBar="False"
+    mc:Ignorable="d">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="controls:StandardEntry">
+                <Setter Property="Padding" Value="13" />
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="BorderColor" Value="#BEBEBE" />
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="CornerRadius" Value="8" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource FontColor}" />
+                <Setter Property="Margin" Value="50,0,50,0" />
+                <Setter Property="FontSize" Value="12" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="StartAndExpand">
+            <StackLayout
+                Margin="0,10,0,0"
+                BackgroundColor="Transparent"
+                HeightRequest="50"
+                Orientation="Horizontal"
+                Spacing="0">
+                <Image
+                    Margin="10,0,0,0"
+                    BackgroundColor="Transparent"
+                    HeightRequest="30"
+                    HorizontalOptions="Start"
+                    Source="backwhite"
+                    WidthRequest="25">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="BackButton" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <!--<Label
+                        Margin="-15,0,0,0"
+                        FontFamily="{StaticResource PingFangMedium}"
+                        FontSize="15"
+                        HorizontalOptions="CenterAndExpand"
+                        LineBreakMode="TailTruncation"
+                        Text="Solicitud"
+                        TextColor="#2E2E2E"
+                        VerticalOptions="CenterAndExpand"
+                        VerticalTextAlignment="Center"></Label>-->
+            </StackLayout>
+            <ScrollView VerticalOptions="StartAndExpand">
+                <StackLayout Padding="5,10,5,0">
+                    <Image
+                        Aspect="AspectFit"
+                        Source="logowhite"
+                        WidthRequest="230" />
+                    <controls:StandardEntry
+                        Keyboard="Email"
+                        Placeholder="Correo Electronico"
+                        Text="{Binding EmailRegistro, Mode=TwoWay}" />
+                    <controls:StandardEntry
+                        Keyboard="Text"
+                        Placeholder="Nombre Completo"
+                        Text="{Binding NameRegistro, Mode=TwoWay}" />
+                    <controls:StandardEntry
+                        IsPassword="True"
+                        Keyboard="Text"
+                        Placeholder="Contraseña"
+                        Text="{Binding PasswordRegistro, Mode=TwoWay}" />
+                    <controls:StandardEntry
+                        IsPassword="True"
+                        Keyboard="Text"
+                        Placeholder="Confirmar Contraeña"
+                        Text="{Binding RePasswordRegistro, Mode=TwoWay}" />
+                    <StackLayout
+                        Margin="50,0,50,0"
+                        HorizontalOptions="FillAndExpand"
+                        Orientation="Horizontal"
+                        VerticalOptions="CenterAndExpand">
+                        <controls:DatePickerCtrl
+                            x:Name="DPNacimiento"
+                            Date="{Binding FechaNacimientoRegistro, Mode=TwoWay}"
+                            FontSize="12"
+                            HeightRequest="45"
+                            HorizontalOptions="FillAndExpand"
+                            Placeholder="Fecha Nacimiento">
+                            <DatePicker.Format>
+                                dd-MM-yyyy
+                            </DatePicker.Format>
+                        </controls:DatePickerCtrl>
+                    </StackLayout>
+                    <StackLayout Margin="50,20,50,0" Orientation="Vertical">
+                        <Button
+                            x:Name="AgregarRegistro"
+                            Margin="0,0,0,2"
+                            BackgroundColor="{StaticResource TwitterColor}"
+                            BorderRadius="6"
+                            Command="{Binding AgregarRegistro}"
+                            HeightRequest="46"
+                            Text="Registrar"
+                            TextColor="White" />
+                    </StackLayout>
+                    <StackLayout
+                        Margin="50,0,50,5"
+                        HorizontalOptions="CenterAndExpand"
+                        Orientation="Horizontal"
+                        VerticalOptions="CenterAndExpand">
+                        <Switch
+                            HorizontalOptions="End"
+                            IsToggled="{Binding IsRemembered, Mode=TwoWay}"
+                            OnColor="Gray"
+                            ThumbColor="White" />
+                        <Label
+                            FontSize="12"
+                            HorizontalOptions="StartAndExpand"
+                            Text="Soy mayor de edad"
+                            TextColor="White"
+                            VerticalOptions="Center" />
+
+                    </StackLayout>
+                    <StackLayout
+                        Margin="25,10,25,0"
+                        HorizontalOptions="CenterAndExpand"
+                        Orientation="Horizontal"
+                        VerticalOptions="EndAndExpand">
+                        <Label
+                            FontSize="12"
+                            HorizontalOptions="CenterAndExpand"
+                            HorizontalTextAlignment="Center"
+                            Text="Registrarse implica que has leido y aceptado los Términos y condiciones y Políticas de privacidad"
+                            TextColor="White"
+                            VerticalOptions="Center" />
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

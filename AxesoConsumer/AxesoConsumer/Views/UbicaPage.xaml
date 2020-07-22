@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AxesoConsumer.Views.UbicaPage"
+             xmlns:controls="clr-namespace:AxesoConsumer.Controls" 
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps">
+    <ContentPage.Content>
+        <Grid>
+            
+            <maps:Map
+                x:Name="MyMap"
+                IsShowingUser="true"
+                MapType="Street"
+                Margin="0,0,0,92"
+                MapClicked="MyMap_MapClicked"/>
+            <Button
+                x:Name="RangeBtn"
+                Margin="10,10,10,10"
+                Text="1Km"
+                IsVisible="True"
+                BackgroundColor="{StaticResource AxesoBackgroundColor}"
+                TextColor="White"
+                HeightRequest="50"
+                VerticalOptions="Start"
+                HorizontalOptions="Start"/>
+            <Button
+                x:Name="EmpezarBtnU"
+                Text="Empezar"
+                IsVisible="True"
+                BackgroundColor="{StaticResource AxesoBackgroundColor}"
+                TextColor="White"
+                VerticalOptions="EndAndExpand"
+                HorizontalOptions="FillAndExpand"
+                Margin="8,0,8,46"/>
+            <SearchBar x:Name="searchAddress"
+                       VerticalOptions="EndAndExpand"
+                       BackgroundColor="White"
+                       Placeholder="Buscar direccion"></SearchBar>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

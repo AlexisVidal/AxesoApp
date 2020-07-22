@@ -1,0 +1,204 @@
+﻿@using Axeso_BE
+@using Axeso_Resources
+@using AxesoWeb.Models
+@model UsuarioModel
+@{
+    Layout = null;
+    string connected = ViewBag.IsConnected;
+}
+@using Vereyon.Web
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>@Resources.AppName | Login</title>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <link href="~/Content/animate.css" rel="stylesheet">
+    <link href="~/Content/style.css" rel="stylesheet">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+ 
+</head>
+
+<body class="gray-bg">
+
+    <div class="middle-box text-center loginscreen  animated fadeInDown">
+        <div>
+            <div>
+
+                <h1 class="logo-name" style="color:black;font-size:100px">@Resources.AppName</h1>
+
+            </div>
+
+            @Html.Hidden("conexion", @connected)
+            <h3>@Resources.Welcome</h3>
+            <p>
+                @Resources.PlatformTitle
+            </p>
+            <p>@Resources.LoginTitle</p>
+            @using (Html.BeginForm("Index", "Account", FormMethod.Post))
+            {
+                <div class="form-group">
+                    @Html.TextBoxFor(t => t.Usuario, new { placeholder = Resources.EmailRequired, @class = "form-control", @required = "", @type = "email" })
+                </div>
+                <div class="form-group">
+                    @Html.TextBoxFor(t => t.Token, new { placeholder = "Contraseña", @class = "form-control", @type = "password", @required = "" })
+
+                </div>
+                <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
+
+                <a href="#"><small>@Resources.PasswordForgot</small></a>
+                <p class="text-muted text-center"><small>@Resources.NoAccount</small></p>
+                <a class="btn btn-sm btn-white btn-block" href="@Url.Action("Register", "Account")">@Resources.CreateAccount</a>
+            }
+            <div class="ingresa--redes">
+                <div class="regularText">
+                    O ingresa con
+                </div>
+                <hr style="height:10px;margin:0" />
+                <div class="socialNetworkLogin" id="socialNetworkLogin">
+                    <button type="button" class="fbkButton" name="button" onclick="location.href='@Url.Action("Facebook", "Account")'">
+                        <div class="lazy elco-login_icono_log_facebook display-left"></div>
+                        <span>
+                            Facebook
+                        </span>
+                    </button>
+                    <button type="button" class="googleButton" name="button" onclick="location.href='@Url.Action("SignIn", new { type = "Google" })'">
+                        <div class="lazy elco-login_icono_log_google display-left"></div>
+                        <span>
+                            Google
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <p class="m-t"> <small>@Resources.AppName &copy; 2020</small> </p>
+
+            
+        </div>
+    </div>
+
+</body>
+
+</html>
+<style>
+    .navigation--middle .nav__left .site-search .input-group .input-group-border>.input-group-btn .js_search_button img.lazy {
+        vertical-align: sub;
+        height: 35px;
+        width: 35px
+    }
+    .socialNetworkLogin {
+    overflow: hidden
+}
+    .fbkButton,
+    .mkp--login--component .my--account--menu button.fbkButton,
+    .mobile--view .my--account--menu .modal--register-cont .ingresa--redes.fbkButton,
+    .mobile--view .my--account--menu button.fbkButton,
+    .register--modal .ingresa--redes.fbkButton {
+        float: left;
+        background-color: #48629b
+    }
+
+    .googleButton,
+    .mkp--login--component .my--account--menu button.googleButton,
+    .mobile--view .my--account--menu .modal--register-cont .ingresa--redes.googleButton,
+    .mobile--view .my--account--menu button.googleButton,
+    .register--modal .ingresa--redes.googleButton {
+        float: right;
+        background-color: #dc4838
+    }
+
+    .fbkButton,
+    .googleButton,
+    .mkp--login--component .my--account--menu button.fbkButton,
+    .mkp--login--component .my--account--menu button.googleButton,
+    .mobile--view .my--account--menu .modal--register-cont .ingresa--redes.fbkButton,
+    .mobile--view .my--account--menu .modal--register-cont .ingresa--redes.googleButton,
+    .mobile--view .my--account--menu button.fbkButton,
+    .mobile--view .my--account--menu button.googleButton,
+    .register--modal .ingresa--redes.fbkButton,
+    .register--modal .ingresa--redes.googleButton {
+        width: 48%;
+        color: #fff;
+        border: none;
+        padding: 0;
+        line-height: 40px;
+        height: 40px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px
+    }
+
+        .fbkButton span,
+        .googleButton span {
+            display: inline-block;
+            margin-left: -20px
+        }
+
+        .fbkButton img,
+        .googleButton img {
+            height: 100%;
+            float: left
+        }
+        .display-left {
+    float: left
+}
+
+.display-right {
+    float: right
+}
+
+.display-inline-block {
+    display: inline-block
+}
+    .mobile--view .my--account--menu .modal--register-cont .ingresa--redes,
+    .register--modal .ingresa--redes {
+        text-align: center;
+        margin-bottom: 10px
+    }
+
+        .mobile--view .my--account--menu .modal--register-cont .ingresa--redes .regularText,
+        .register--modal .ingresa--redes .regularText {
+            margin-top: 0 !important
+        }
+
+        .mkp--login--component .my--account--menu .regularText,
+        .mobile--view .my--account--menu .modal--register-cont .ingresa--redes .regularText,
+        .mobile--view .my--account--menu .regularText,
+        .register--modal .ingresa--redes .regularText,
+        .regularText {
+            color: #575756;
+            display: inline-block;
+            background-color: #fff;
+            z-index: 1;
+            padding: 0 20px;
+            margin-top: 15px
+        }
+
+        .hr--ingresa,
+        .mkp--login--component .my--account--menu hr,
+        .mobile--view .my--account--menu .modal--register-cont .ingresa--redes hr,
+        .mobile--view .my--account--menu hr,
+        .register--modal .ingresa--redes hr {
+            margin-top: -5px;
+            margin-bottom: 15px
+        }
+    .elco-login_icono_log_facebook {
+        background-image: url(../../Images/sprite-elco.png);
+        background-position: -653px -762px;
+        width: 40px;
+        height: 40px
+    }
+
+    .elco-login_icono_log_google {
+        background-image: url(../../Images/sprite-elco.png);
+        background-position: -693px -762px;
+        width: 40px;
+        height: 40px
+    }
+</style>
+

@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "940121152350",
+    "firebase_url": "https://axesoapp-a802c.firebaseio.com",
+    "project_id": "axesoapp-a802c",
+    "storage_bucket": "axesoapp-a802c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:940121152350:android:7635f32f57afb2af614dcf",
+        "android_client_info": {
+          "package_name": "com.axeso.axesoconsumidor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "940121152350-7fcl6darlkfh3egkji37l2ch6g477291.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.axeso.axesoconsumidor",
+            "certificate_hash": "df68e117ca86d4bdfddf018753e196200f230662"
+          }
+        },
+        {
+          "client_id": "940121152350-pta1k5gvh419nmj31djav046n5q7fd0m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.axeso.axesoconsumidor",
+            "certificate_hash": "82f267eedad61174e126c850d80d04b57fe19136"
+          }
+        },
+        {
+          "client_id": "940121152350-cir6anqdokt99fr6jjcuq2q4pl4a30db.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWKxPgC3Pbfqv3R88-ctP8tY26pSJyw_E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "940121152350-cir6anqdokt99fr6jjcuq2q4pl4a30db.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

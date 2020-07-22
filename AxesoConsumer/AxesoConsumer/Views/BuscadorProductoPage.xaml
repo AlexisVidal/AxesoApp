@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AxesoConsumer.Views.BuscadorProductoPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converter="clr-namespace:AxesoConsumer.Converters"
+    xmlns:customControl="clr-namespace:AxesoConsumer.Controls"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:local="clr-namespace:AxesoConsumer.Models"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pancakeView="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:plugin="clr-namespace:Plugin.Badge.Abstractions;assembly=Plugin.Badge.Abstractions"
+    Title="Buscador"
+    NavigationPage.HasNavigationBar="False"
+    mc:Ignorable="d">
+    <ContentPage.BindingContext>
+        <local:CategoriaInfoRepository />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:ImageSourceConverter x:Key="imageSourceConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+
+        <StackLayout VerticalOptions="StartAndExpand">
+            <StackLayout
+                Margin="0,10,0,0"
+                BackgroundColor="White"
+                HeightRequest="50"
+                Orientation="Horizontal"
+                Spacing="0">
+                <Image
+                    Margin="10,0,0,0"
+                    HeightRequest="26"
+                    HorizontalOptions="Start"
+                    Source="back"
+                    WidthRequest="25">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="BackButton" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label
+                    Margin="-15,0,0,0"
+                    FontFamily="{StaticResource PingFangMedium}"
+                    FontSize="15"
+                    HorizontalOptions="CenterAndExpand"
+                    LineBreakMode="TailTruncation"
+                    Text="Buscador"
+                    TextColor="#2E2E2E"
+                    VerticalOptions="CenterAndExpand"
+                    VerticalTextAlignment="Center" />
+                <ImageButton
+                    x:Name="PedidoBtn"
+                    Margin="-15,0,10,0"
+                    BackgroundColor="Transparent"
+                    Clicked="PedidoBtn_Clicked"
+                    HorizontalOptions="End"
+                    IsVisible="False"
+                    Source="ic_action_list.png"
+                    WidthRequest="30" />
+            </StackLayout>
+            <StackLayout
+                Margin="0,-10,0,0"
+                HorizontalOptions="StartAndExpand"
+                Orientation="Horizontal"
+                VerticalOptions="FillAndExpand">
+                <SearchBar
+                    x:Name="searchBtn"
+                    FontFamily="{StaticResource PingFangLight}"
+                    FontSize="11"
+                    HorizontalOptions="FillAndExpand"
+                    Placeholder="Estoy buscando esto"
+                    SearchButtonPressed="searchBtn_SearchButtonPressed"
+                    WidthRequest="350" />
+                <!--<ImageButton
+                    x:Name="PedidoBtn"
+                    WidthRequest="30"
+                    HorizontalOptions="End"
+                    BackgroundColor="Transparent"
+                    Source="ic_action_list.png"
+                    Clicked="PedidoBtn_Clicked"/>-->
+            </StackLayout>
+            <!--<StackLayout
+                Margin="20,0,0,0"
+                VerticalOptions="EndAndExpand"
+                HorizontalOptions="StartAndExpand"
+                IsVisible="False">
+                <Label
+                    x:Name="lcantfarmacias"
+                    FontSize="11"
+                    Text="6 Farmacias conectadas en 2km a la redonda"></Label>
+            </StackLayout>-->
+            <!--<Label
+                x:Name="lcategorias"
+                Margin="10,5,10,0"
+                FontAttributes="None"
+                FontFamily="{StaticResource PingFangMedium}"
+                FontSize="12"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                Text="Categorias"
+                TextColor="#2E2E2E" />-->
+            <ScrollView
+                Margin="10,0,10,10"
+                HorizontalOptions="Center"
+                HorizontalScrollBarVisibility="Never"
+                MinimumHeightRequest="120"
+                Orientation="Horizontal"
+                VerticalOptions="FillAndExpand"
+                VerticalScrollBarVisibility="Never">
+                <customControl:RepeaterView x:Name="ListViewCategory" Orientation="Horizontal">
+                    <customControl:RepeaterView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <pancakeView:PancakeView
+                                        x:Name="pancakeCategory"
+                                        Margin="5"
+                                        Padding="0"
+                                        BackgroundColor="{StaticResource AxesoBackgroundColor}"
+                                        CornerRadius="30"
+                                        Elevation="1"
+                                        HasShadow="False"
+                                        HeightRequest="40"
+                                        WidthRequest="100">
+                                        <pancakeView:PancakeView.GestureRecognizers>
+                                            <TapGestureRecognizer CommandParameter="{Binding Titulo}" Tapped="ClickCategoryDetail" />
+                                        </pancakeView:PancakeView.GestureRecognizers>
+                                        <!--<customControl:IconView
+                                                Margin="10"
+                                                BackgroundColor="White"
+                                                Foreground="{StaticResource FontColor}"
+                                                HeightRequest="60"
+                                                HorizontalOptions="FillAndExpand"
+                                                Source="{Binding Image}"
+                                                WidthRequest="115" />-->
+                                        <Label
+                                            x:Name="Titulo"
+                                            FontSize="10"
+                                            HorizontalOptions="CenterAndExpand"
+                                            HorizontalTextAlignment="Center"
+                                            Style="{StaticResource LabelStyle}"
+                                            Text="{Binding Titulo}"
+                                            TextColor="White"
+                                            VerticalTextAlignment="Center" />
+                                    </pancakeView:PancakeView>
+                                    <!--<Label
+                                        x:Name="Titulo"
+                                        FontSize="10"
+                                        HorizontalOptions="CenterAndExpand"
+                                        HorizontalTextAlignment="Center"
+                                        Style="{StaticResource LabelStyle}"
+                                        Text="{Binding Titulo}"
+                                        TextColor="#2E2E2E"
+                                        VerticalTextAlignment="Center">
+                                    </Label>-->
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </customControl:RepeaterView.ItemTemplate>
+                </customControl:RepeaterView>
+
+            </ScrollView>
+            <Label
+                x:Name="lbproductos"
+                Margin="20,0,10,0"
+                FontAttributes="None"
+                FontFamily="{StaticResource PingFangMedium}"
+                FontSize="12"
+                HorizontalOptions="Start"
+                Text="Resultados"
+                TextColor="#2E2E2E"
+                VerticalOptions="Start" />
+            <ScrollView>
+                <customControl:RepeaterView
+                    x:Name="BasketItems"
+                    BackgroundColor="White"
+                    Spacing="5"
+                    VerticalOptions="Start">
+                    <customControl:RepeaterView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout
+                                    BackgroundColor="#f7f7f7"
+                                    Orientation="Horizontal"
+                                    VerticalOptions="Start">
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="ProductListRecognizer_Tapped" />
+                                    </StackLayout.GestureRecognizers>
+                                    <StackLayout
+                                        Padding="10"
+                                        BackgroundColor="#f7f7f7"
+                                        HorizontalOptions="Start">
+                                        <Image
+                                            Aspect="AspectFit"
+                                            HeightRequest="60"
+                                            Source="{Binding Imagen, Converter={StaticResource imageSourceConverter}}"
+                                            WidthRequest="60" />
+
+                                    </StackLayout>
+                                    <StackLayout BackgroundColor="#f7f7f7" VerticalOptions="CenterAndExpand">
+                                        <Label
+                                            FontFamily="{StaticResource PingFangMedium}"
+                                            FontSize="12"
+                                            MaxLines="2"
+                                            Text="{Binding Nombre}"
+                                            TextColor="#2E2E2E" />
+                                        <!--<Label
+                                            FontFamily="{StaticResource PingFangRegular}"
+                                            FontSize="10"
+                                            Text="{Binding Abreviatura}"
+                                            TextColor="#917A7A" />-->
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label
+                                                FontFamily="{StaticResource PingFangMedium}"
+                                                FontSize="10"
+                                                IsVisible="{Binding RequiereReceta}"
+                                                Text="Requiere Receta"
+                                                TextColor="#917A7A" />
+                                            <Label
+                                                FontFamily="{StaticResource PingFangMedium}"
+                                                FontSize="10"
+                                                IsVisible="{Binding RequiereReceta}"
+                                                Text=" - "
+                                                TextColor="#917A7A" />
+                                            <Label
+                                                FontFamily="{StaticResource PingFangMedium}"
+                                                FontSize="10"
+                                                Text="{Binding UnidadMedida.Nombre}"
+                                                TextColor="#917A7A" />
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label
+                                                FontFamily="{StaticResource PingFangMedium}"
+                                                FontSize="10"
+                                                Text="Precio Referencial S/."
+                                                TextColor="#917A7A" />
+                                            <Label
+                                                FontFamily="{StaticResource PingFangMedium}"
+                                                FontSize="10"
+                                                Text="{Binding PrecioRef_com}"
+                                                TextColor="#917A7A" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <!--<Button
+                                        x:Name="btnShowProducto"
+                                        Margin="0,20,10,20"
+                                        BackgroundColor="{StaticResource AxesoBackgroundColor}"
+                                        CornerRadius="{x:OnPlatform Android=30,
+                                                                    iOS=23}"
+                                        FontFamily="{StaticResource PingFangMedium}"
+                                        FontSize="10"
+                                        HeightRequest="40"
+                                        HorizontalOptions="EndAndExpand"
+                                        Text="Agregar"
+                                        TextColor="White"
+                                        Clicked="btnShowProducto_Clicked"
+                                        CommandParameter="{Binding ProductoID}"/>-->
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </customControl:RepeaterView.ItemTemplate>
+                </customControl:RepeaterView>
+
+            </ScrollView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

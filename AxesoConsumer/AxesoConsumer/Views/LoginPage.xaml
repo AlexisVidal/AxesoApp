@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:i18n="clr-namespace:AxesoConsumer.Helpers"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AxesoConsumer.Views.LoginPage"
+             xmlns:controls="clr-namespace:AxesoConsumer.Controls;assembly=AxesoConsumer"
+             xmlns:local="clr-namespace:AxesoConsumer.ViewModels"
+             BackgroundColor="{StaticResource AxesoBackgroundColor}"
+             NavigationPage.HasNavigationBar="False">    
+    <ContentPage.Content>
+        <ScrollView
+            VerticalOptions="StartAndExpand">
+            <StackLayout
+            Padding="5,35,5,0">
+                <Image Source="logowhite"
+                   Aspect="AspectFit"
+                   WidthRequest="230"
+                       Margin="0,0,0,8">
+                </Image>
+                <ActivityIndicator
+                    IsRunning="{Binding IsRunning, Mode=TwoWay}"
+                    VerticalOptions="CenterAndExpand"
+                    HeightRequest="10"/>
+                <StackLayout
+                    Margin="50,0,50,0"
+                    Orientation="Horizontal"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand">
+                    <Label 
+                    HorizontalOptions="StartAndExpand"
+                    Text="Continuar con:"
+                    VerticalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    TextColor="White"/>
+                </StackLayout>
+                <StackLayout
+                    Margin="40,0,40,0"
+                    Orientation="Vertical">
+                    <Button
+                        BackgroundColor="#F4F4F4"
+                        TextColor="{StaticResource FontColor}"
+                        BorderRadius="6"
+                        Text="Facebook"
+                        HeightRequest="46"
+                        Image="facebook30"  
+                        Margin="0,0,0,2"
+                        Padding="8,0,45,0"
+                        Command="{Binding FACEBOOK}"/>
+                    <Button
+                        x:Name="LoginGoogle"
+                        BackgroundColor="#F4F4F4"
+                        TextColor="{StaticResource FontColor}"
+                        BorderRadius="6"
+                        Text="Google"
+                        Image="google30"  
+                        HeightRequest="46"
+                        Margin="0,0,0,2"
+                        Padding="8,0,45,0"
+                        Command="{Binding LoginGoogle}"/>
+                    <Button
+                        x:Name="Login"
+                        BackgroundColor="#F4F4F4"
+                        TextColor="{StaticResource FontColor}"
+                        BorderRadius="6"
+                        Text="{i18n:Translate Login}"
+                        Image="axeso30"  
+                        HeightRequest="46"
+                        
+                        Margin="0,0,0,2"
+                        Padding="8,0,45,0"
+                        Command="{Binding Login}"/>
+                    <Label 
+                        HorizontalOptions="Center"
+                        Text="o"
+                        VerticalOptions="Center"
+                        TextColor="White"/>
+                    <Button
+                        BackgroundColor="{StaticResource TwitterColor}"
+                        TextColor="White"
+                        BorderRadius="6"
+                        Text="Registrar"
+                        HeightRequest="46"
+                        Margin="0,0,0,2"
+                        Command="{Binding Register}"/>
+                </StackLayout>
+                <StackLayout
+                    Margin="25,20,25,0"
+                    Orientation="Horizontal"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="EndAndExpand">
+                    <Label 
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Continuar implica que has leido y aceptado los Términos y condiciones y Políticas de privacidad"
+                    VerticalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    TextColor="White"
+                        FontSize="12"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage  
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+    mc:Ignorable="d"
+    x:Class="AxesoConsumer.Views.TerminosPage">
+    <!--<pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8"
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"/>
+    </pages:PopupPage.Animation>-->
+    <!--You can use any elements here which are extended from Xamarin.Forms.View-->
+
+    <ScrollView
+            VerticalOptions="CenterAndExpand">
+        <Frame
+            Margin="40"
+            Padding="10">
+            <StackLayout 
+        VerticalOptions="CenterAndExpand" 
+        HorizontalOptions="CenterAndExpand" 
+        Padding="20, 20, 20, 20">
+                <Label
+            TextColor="Black"
+            FontAttributes="Bold"
+            FontSize="Large"
+            TextDecorations="Underline"
+            Text="Términos y condiciones"
+            HorizontalOptions="CenterAndExpand"/>
+                <Label
+            TextColor="Black"
+            FontAttributes="Bold"
+            FontSize="Subtitle"
+            Text="Titular y Responsable del tratamiento de los Datos"
+            HorizontalOptions="CenterAndExpand"/>
+                <Label
+            TextColor="Black"
+            FontAttributes="Bold"
+            FontSize="Medium"
+            Text="Clases de Datos recogidos"/>
+                <Label
+            TextColor="Black"
+            FontSize="Small"
+            Text="El Titular no proporciona una lista de categorías de Datos Personales recogidos."/>
+                <Label
+            TextColor="Black"
+            FontSize="Small"
+            Text="La información completa referente a cada categoría de Datos Personales que se recogen se proporciona en las secciones de la presente política de privacidad dedicadas a tal fin o mediante textos explicativos específicos que se muestran antes de la recogida de dichos Datos.
+Los Datos Personales podrán ser proporcionados libremente por el Usuario o, en caso de los Datos de Uso, serán recogidos automáticamente cuando se utilice esta Aplicación."/>
+                <Label
+            TextColor="Black"
+            FontSize="Small"
+            Text="Todos los Datos solicitados por esta Aplicación son obligatorios y la negativa a proporcionarlos podrá imposibilitar que esta Aplicación pueda proceder a la prestación del Servicio. En los casos en los que esta Aplicación indique específicamente que ciertos Datos no son obligatorios, los Usuarios serán libres de no comunicar tales Datos sin que esto tenga consecuencia alguna sobre la disponibilidad o el funcionamiento del Servicio. Los Usuarios que tengan dudas sobre qué Datos son obligatorios pueden contactar con el Titular."/>
+                <Label
+            TextColor="Black"
+            FontSize="Small"
+            Text="El uso de Cookies - o de otras herramientas de seguimiento - por parte de esta Aplicación o por los titulares de servicios de terceros utilizados por esta Aplicación tiene como finalidad la prestación del Servicio solicitado por el Usuario, además de cualesquiera otras finalidades que se describan en el presente documento y en la Política de Cookies, en caso de estar disponible."/>
+                <Label
+            TextColor="Black"
+            FontSize="Small"
+            Text="El Usuario asume la responsabilidad respecto de los Datos Personales de terceros que se obtengan, publiquen o compartan a través de esta Aplicación y declara por la presente que tiene el consentimiento de dichos terceros para proporcionar dichos Datos al Titular."/>
+                <Button
+                    x:Name="AcceptTermsBtn"
+                    BackgroundColor="#F4F4F4"
+                    TextColor="{StaticResource FontColor}"
+                    BorderRadius="6"
+                    Text="ACEPTO"
+                    HeightRequest="46"
+                    Image="axeso30"  
+                    Margin="0,0,0,2"
+                    Padding="8,0,45,0"
+                    Clicked="AcceptTermsBtn_Clicked"/>
+            </StackLayout>
+            
+        </Frame>
+    </ScrollView>
+
+</pages:PopupPage>
