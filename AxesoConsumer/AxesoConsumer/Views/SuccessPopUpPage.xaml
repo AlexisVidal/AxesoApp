@@ -25,9 +25,9 @@
         Margin="30"
         Padding="10">
             <StackLayout VerticalOptions="CenterAndExpand">
-                <Image
+                <!--<Image
                     Source="check.png"
-                    HeightRequest="60"></Image>
+                    HeightRequest="60"></Image>-->
                 <Label
                 FontAttributes="Bold"
                 FontSize="16"

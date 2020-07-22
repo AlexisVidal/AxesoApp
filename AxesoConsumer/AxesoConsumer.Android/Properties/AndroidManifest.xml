@@ -4,7 +4,7 @@
 	<application android:label="Axeso Consumidor" android:icon="@drawable/ic_launcher" android:usesCleartextTraffic="true">
 		<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
 		<meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id" />
-		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyAJ2Y_hbwcXftOfQbnUD_8ZNjpzwMQ3Dgs" />
+		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyCnf4JAzC6Aq5Xk5WelK5nxlJ7yGc7oefo" />
 		<activity android:name="com.facebook.FacebookActivity" android:hardwareAccelerated="false" android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation" android:label="@string/facebook_app_name" />
 		<activity android:name="com.facebook.CustomTabActivity" android:exported="true">
 			<intent-filter>

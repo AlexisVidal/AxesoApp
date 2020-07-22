@@ -131,9 +131,19 @@ namespace AxesoConsumer.Views
                 firsth = (100 * solicurso.Count);
             }
             listViewSolicitudes.ItemsSource = null;
-            listViewSolicitudes.ItemsSource = solicurso.OrderByDescending(x => x.NroItem).ToList();
-            listViewSolicitudes.HeightRequest = firsth;
-            listViewSolicitudes.ItemSelected += ListViewSolicitudes_ItemSelected;
+            if (solicurso.Any())
+            {
+                listViewSolicitudes.ItemsSource = solicurso.OrderByDescending(x => x.NroItem).ToList();
+                listViewSolicitudes.HeightRequest = firsth;
+                listViewSolicitudes.ItemSelected += ListViewSolicitudes_ItemSelected;
+                listViewSolicitudes.IsVisible = true;
+                NoItems.IsVisible = false;
+            }
+            else
+            {
+                listViewSolicitudes.IsVisible = false;
+                NoItems.IsVisible = true;
+            }
 
             List<SolicitudList> soliante = new List<SolicitudList>();
             soliante = listasolicitud.Where(x => x.Fecha.Date < DateTime.Now.Date).ToList();
@@ -144,9 +154,20 @@ namespace AxesoConsumer.Views
                 twoh = (100 * soliante.ToList().Count);
             }
             listViewSolicitudesOld.ItemsSource = null;
-            listViewSolicitudesOld.ItemsSource = soliante.OrderByDescending(x => x.NroItem).ToList();
-            listViewSolicitudesOld.HeightRequest = twoh;
-            listViewSolicitudesOld.ItemSelected += ListViewSolicitudesOld_ItemSelected;
+            if (soliante.Any())
+            {
+                listViewSolicitudesOld.ItemsSource = soliante.OrderByDescending(x => x.NroItem).ToList();
+                listViewSolicitudesOld.HeightRequest = twoh;
+                listViewSolicitudesOld.ItemSelected += ListViewSolicitudesOld_ItemSelected;
+                listViewSolicitudesOld.IsVisible = true;
+                NoItems2.IsVisible = false;
+            }
+            else
+            {
+                listViewSolicitudesOld.IsVisible = false;
+                NoItems2.IsVisible = true;
+            }
+            
 
 
             #region pedidos
