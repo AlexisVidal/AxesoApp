@@ -56,6 +56,13 @@ namespace AxesoConsumer.Views
                     listViewNotificaciones.ItemsSource = null;
                     listViewNotificaciones.ItemsSource = listNotificacion.OrderByDescending(x => x.Fecha).ToList();
                     listViewNotificaciones.ItemSelected += ListViewNotificaciones_ItemSelected;
+                    listViewNotificaciones.IsVisible = true;
+                    NoItems5.IsVisible = false;
+                }
+                else
+                {
+                    listViewNotificaciones.IsVisible = false;
+                    NoItems5.IsVisible = true;
                 }
             }
 

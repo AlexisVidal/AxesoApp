@@ -128,13 +128,24 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <Image
+                <StackLayout
                     x:Name="NoItems"
+                    HeightRequest="120"
+                    HorizontalOptions="CenterAndExpand"
                     IsVisible="false"
-                    Source="sinpedido.png"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    HeightRequest="120"></Image>
+                    Orientation="Vertical"
+                    VerticalOptions="CenterAndExpand">
+                    <Image
+                        HorizontalOptions="CenterAndExpand"
+                        Source="sinpedido.png"
+                        VerticalOptions="CenterAndExpand" />
+                    <Label
+                        Margin="0,-30,0,0"
+                        HorizontalOptions="CenterAndExpand"
+                        HorizontalTextAlignment="Center"
+                        Text="No se encontró información para mostrar"
+                        VerticalOptions="CenterAndExpand" />
+                </StackLayout>
             </StackLayout>
             <StackLayout BackgroundColor="LightGray">
                 <ListView
@@ -249,13 +260,24 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <Image
+                <StackLayout
                     x:Name="NoItems2"
+                    HeightRequest="120"
+                    HorizontalOptions="CenterAndExpand"
                     IsVisible="false"
-                    Source="sinpedido.png"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    HeightRequest="120"></Image>
+                    Orientation="Vertical"
+                    VerticalOptions="CenterAndExpand">
+                    <Image
+                        HorizontalOptions="CenterAndExpand"
+                        Source="sinpedido.png"
+                        VerticalOptions="CenterAndExpand" />
+                    <Label
+                        Margin="0,-30,0,0"
+                        HorizontalOptions="CenterAndExpand"
+                        HorizontalTextAlignment="Center"
+                        Text="No se encontró información para mostrar"
+                        VerticalOptions="CenterAndExpand" />
+                </StackLayout>
             </StackLayout>
         </StackLayout>
     </ContentPage>
@@ -369,6 +391,24 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
+                <StackLayout
+                    x:Name="NoItems3"
+                    HeightRequest="120"
+                    HorizontalOptions="CenterAndExpand"
+                    IsVisible="false"
+                    Orientation="Vertical"
+                    VerticalOptions="CenterAndExpand">
+                    <Image
+                        HorizontalOptions="CenterAndExpand"
+                        Source="sinpedido.png"
+                        VerticalOptions="CenterAndExpand" />
+                    <Label
+                        Margin="0,-30,0,0"
+                        HorizontalOptions="CenterAndExpand"
+                        HorizontalTextAlignment="Center"
+                        Text="No se encontró información para mostrar"
+                        VerticalOptions="CenterAndExpand" />
+                </StackLayout>
             </StackLayout>
             <StackLayout BackgroundColor="LightGray">
                 <ListView
@@ -478,6 +518,24 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
+                <StackLayout
+                    x:Name="NoItems4"
+                    HeightRequest="120"
+                    HorizontalOptions="CenterAndExpand"
+                    IsVisible="false"
+                    Orientation="Vertical"
+                    VerticalOptions="CenterAndExpand">
+                    <Image
+                        HorizontalOptions="CenterAndExpand"
+                        Source="sinpedido.png"
+                        VerticalOptions="CenterAndExpand" />
+                    <Label
+                        Margin="0,-30,0,0"
+                        HorizontalOptions="CenterAndExpand"
+                        HorizontalTextAlignment="Center"
+                        Text="No se encontró información para mostrar"
+                        VerticalOptions="CenterAndExpand" />
+                </StackLayout>
             </StackLayout>
         </StackLayout>
     </ContentPage>

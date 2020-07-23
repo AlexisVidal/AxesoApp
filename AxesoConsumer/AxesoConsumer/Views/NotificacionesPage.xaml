@@ -90,6 +90,24 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <StackLayout
+                x:Name="NoItems5"
+                HeightRequest="120"
+                HorizontalOptions="CenterAndExpand"
+                IsVisible="false"
+                Orientation="Vertical"
+                VerticalOptions="CenterAndExpand">
+                <Image
+                    HorizontalOptions="CenterAndExpand"
+                    Source="sinpedido.png"
+                    VerticalOptions="CenterAndExpand" />
+                <Label
+                    Margin="0,-30,0,0"
+                    HorizontalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center"
+                    Text="No se encontró información para mostrar"
+                    VerticalOptions="CenterAndExpand" />
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

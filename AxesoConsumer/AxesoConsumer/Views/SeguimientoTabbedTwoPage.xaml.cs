@@ -167,7 +167,7 @@ namespace AxesoConsumer.Views
                 listViewSolicitudesOld.IsVisible = false;
                 NoItems2.IsVisible = true;
             }
-            
+
 
 
             #region pedidos
@@ -270,9 +270,20 @@ namespace AxesoConsumer.Views
                     firstc = (100 * pedidocurso.ToList().Count);
                 }
                 listViewCotizaciones.ItemsSource = null;
-                listViewCotizaciones.ItemsSource = pedidocurso.OrderBy(x => x.PedidoID).ToList();
-                listViewCotizaciones.HeightRequest = firstc;
-                listViewCotizaciones.ItemSelected += ListViewCotizaciones_ItemSelected;
+                if (pedidocurso.Any())
+                {
+                    listViewCotizaciones.ItemsSource = pedidocurso.OrderBy(x => x.PedidoID).ToList();
+                    listViewCotizaciones.HeightRequest = firstc;
+                    listViewCotizaciones.ItemSelected += ListViewCotizaciones_ItemSelected;
+                    listViewCotizaciones.IsVisible = true;
+                    NoItems3.IsVisible = false;
+                }
+                else
+                {
+                    listViewCotizaciones.IsVisible = false;
+                    NoItems3.IsVisible = true;
+                }
+
 
                 double twoc = 100;
                 if (pedidoanterior.ToList().Count == 1)
@@ -284,9 +295,27 @@ namespace AxesoConsumer.Views
                     twoc = (100 * pedidoanterior.ToList().Count);
                 }
                 listViewCotizacionesOld.ItemsSource = null;
-                listViewCotizacionesOld.ItemsSource = pedidoanterior.OrderBy(x => x.PedidoID).ToList();
-                listViewCotizacionesOld.HeightRequest = twoc;
-                listViewCotizacionesOld.ItemSelected += ListViewCotizacionesOld_ItemSelected;
+                if (pedidoanterior.Any())
+                {
+                    listViewCotizacionesOld.ItemsSource = pedidoanterior.OrderBy(x => x.PedidoID).ToList();
+                    listViewCotizacionesOld.HeightRequest = twoc;
+                    listViewCotizacionesOld.ItemSelected += ListViewCotizacionesOld_ItemSelected;
+                    listViewCotizacionesOld.IsVisible = true;
+                    NoItems4.IsVisible = false;
+                }
+                else
+                {
+                    listViewCotizacionesOld.IsVisible = false;
+                    NoItems4.IsVisible = true;
+                }
+
+            }
+            else
+            {
+                listViewCotizaciones.IsVisible = false;
+                NoItems3.IsVisible = true;
+                listViewCotizacionesOld.IsVisible = false;
+                NoItems4.IsVisible = true;
             }
             #endregion
 

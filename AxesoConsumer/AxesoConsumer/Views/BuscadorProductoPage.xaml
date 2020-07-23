@@ -195,7 +195,7 @@
                                         <Image
                                             Aspect="AspectFit"
                                             HeightRequest="60"
-                                            Source="{Binding Imagen, Converter={StaticResource imageSourceConverter}}"
+                                            Source="{Binding Imagen}"
                                             WidthRequest="60" />
 
                                     </StackLayout>
