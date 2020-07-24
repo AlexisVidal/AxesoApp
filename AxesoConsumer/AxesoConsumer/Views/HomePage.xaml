@@ -5,6 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
     xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+    xmlns:converter="clr-namespace:AxesoConsumer.Converters"
     xmlns:customControl="clr-namespace:AxesoConsumer.Controls"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:listviewx="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
@@ -12,7 +13,6 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     NavigationPage.HasBackButton="False"
     NavigationPage.HasNavigationBar="False"
-    xmlns:converter="clr-namespace:AxesoConsumer.Converters"
     mc:Ignorable="d">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -127,7 +127,7 @@
                                     Aspect="AspectFill"
                                     HeightRequest="90"
                                     HorizontalOptions="CenterAndExpand"
-                                    Source="{Binding Imagen, Converter={StaticResource imageSourceConverter}}"
+                                    Source="{Binding Imagen}"
                                     WidthRequest="90" />
                             </Grid>
                         </DataTemplate>
