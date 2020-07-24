@@ -31,8 +31,6 @@
     </NavigationPage>
     <NavigationPage Title="Seguimiento" Icon="ic_action_eye_green.png">
         <x:Arguments>
-            <!--<views:SeguimientoTabbedPage />-->
-            <!--<views:PedidosTabbedPage />-->
             <views:SeguimientoTabbedTwoPage />
         </x:Arguments>
     </NavigationPage>
