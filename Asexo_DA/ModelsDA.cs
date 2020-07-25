@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
-using System.Configuration;
 using System.Security.Cryptography;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -20,8 +19,8 @@ namespace Axeso_DA
     public class ModelsDA
     {
         //string urlgraphql = Settings.Default.AxesoUri;
-        //string urlgraphql = "http://190.117.184.215/AxesoGraphQL/graphql";
-        string urlgraphql = "http://192.168.1.100/AxesoGraphQL/graphql";
+        string urlgraphql = "http://190.117.184.215/AxesoGraphQL/graphql";
+        //string urlgraphql = "http://192.168.1.100/AxesoGraphQL/graphql";
         UsuarioInput usuarioi = null;
         AnyBoolModel respuestabool = null;
         #region UnidadMedida

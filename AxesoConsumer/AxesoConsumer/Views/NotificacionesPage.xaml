@@ -32,16 +32,15 @@
                 x:Name="listViewNotificaciones"
                 BackgroundColor="WhiteSmoke"
                 HasUnevenRows="True"
-                Header="Listado"
                 SeparatorVisibility="None">
-                <ListView.HeaderTemplate>
+                <!--<ListView.HeaderTemplate>
                     <DataTemplate>
                         <Label
                             Margin="20,5,20,5"
                             FontSize="15"
                             Text="Listado" />
                     </DataTemplate>
-                </ListView.HeaderTemplate>
+                </ListView.HeaderTemplate>-->
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -67,6 +66,8 @@
                                         HorizontalOptions="FillAndExpand"
                                         Orientation="Horizontal">
                                         <Label
+                                            Margin="10,0,10,0"
+                                            FontAttributes="Bold"
                                             HorizontalOptions="StartAndExpand"
                                             HorizontalTextAlignment="Start"
                                             Text="{Binding Hora}"
@@ -78,8 +79,10 @@
                                         HorizontalOptions="FillAndExpand"
                                         Orientation="Horizontal">
                                         <Label
+                                            Margin="10,-8,10,0"
                                             HorizontalOptions="StartAndExpand"
                                             LineBreakMode="TailTruncation"
+                                            MaxLines="2"
                                             Text="{Binding Descripcion}"
                                             VerticalTextAlignment="Center" />
                                     </StackLayout>
