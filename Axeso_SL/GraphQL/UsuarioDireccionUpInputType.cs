@@ -18,6 +18,8 @@ namespace Axeso_SL.GraphQL
             Field<FloatGraphType>("latitud");
             Field<FloatGraphType>("longitud");
             Field<BooleanGraphType>("activo");
+            Field<IntGraphType>("distritoID");
+            Field<StringGraphType>("departamento");
         }
     }
 }

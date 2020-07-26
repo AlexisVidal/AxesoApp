@@ -557,11 +557,21 @@ namespace Axeso_SL.Repositories
 
         #endregion
 
+        #region Distrito
+        public async Task<IEnumerable<Distrito>> GetAllDistritos()
+        {
+            return await _context
+                .Distrito
+                .Where(q => q.Estado.Equals("1"))
+                .ToListAsync();
+        }
+        #endregion
         #region UsuarioDireccion
         public async Task<IEnumerable<UsuarioDireccion>> GetAllUsuarioDireccion()
         {
             return await _context
                 .UsuarioDireccion
+                .Include(x=>x.Distrito)
                 .Where(q => q.Activo)
                 .ToListAsync();
         }
@@ -569,6 +579,7 @@ namespace Axeso_SL.Repositories
         {
             var xyz = await _context
                 .UsuarioDireccion
+                .Include(x => x.Distrito)
                 .Where(x => x.Activo && x.UsuarioID == usuario)
                 .ToListAsync();
             return xyz;
@@ -577,6 +588,7 @@ namespace Axeso_SL.Repositories
         {
             var xyz = _context
                 .UsuarioDireccion
+                .Include(x => x.Distrito)
                 .Where(x => x.Activo && x.UsuarioDireccionID == usuariodireccionid)
                 .FirstOrDefault();
             return xyz;
@@ -605,6 +617,8 @@ namespace Axeso_SL.Repositories
                 usuariodirec.Longitud = usuariodirnew.Longitud;
                 usuariodirec.Activo = usuariodirnew.Activo;
                 usuariodirec.UsuarioID = usuariodirnew.UsuarioID;
+                usuariodirec.DistritoID = usuariodirnew.DistritoID;
+                usuariodirec.Departamento = usuariodirnew.Departamento;
                 _context.UsuarioDireccion.Update(usuariodirec);
                 await _context.SaveChangesAsync();
             }

@@ -18,7 +18,10 @@ namespace Axeso_SL.GraphQL
             Field(a => a.Latitud);
             Field(a => a.Longitud);
             Field(a => a.Activo);
+            Field(a => a.DistritoID);
+            Field(a => a.Departamento);
             Field<UsuarioType>(nameof(UsuarioDireccion.Usuarios));
+            Field<DistritoType>(nameof(UsuarioDireccion.Distrito));
         }
     }
 }

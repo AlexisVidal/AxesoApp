@@ -19,8 +19,8 @@ namespace Axeso_DA
     public class ModelsDA
     {
         //string urlgraphql = Settings.Default.AxesoUri;
-        string urlgraphql = "http://190.117.184.215/AxesoGraphQL/graphql";
-        //string urlgraphql = "http://192.168.1.100/AxesoGraphQL/graphql";
+        //string urlgraphql = "http://190.117.184.215/AxesoGraphQL/graphql";
+        string urlgraphql = "http://192.168.1.100/AxesoGraphQL/graphql";
         UsuarioInput usuarioi = null;
         AnyBoolModel respuestabool = null;
         #region UnidadMedida
@@ -1509,7 +1509,37 @@ namespace Axeso_DA
 
         #endregion
 
-        #region Cotizaciones
+        #region UsuarioDireccion
+        public async Task<IEnumerable<Distrito>> GetAllDistritos()
+        {
+            List<Distrito> lstEntidad = null;
+            using (GraphQLClient graphQLClient = new GraphQLClient(urlgraphql))
+            {
+                var query = new GraphQLRequest
+                {
+                    Query = @" 
+                        { 
+                        distritos{
+                            distritoID
+                            codigoPostal
+                            nombre
+                            estado
+                          }
+                        }",
+                };
+                var response = await graphQLClient.PostAsync(query);
+                var lists = response.GetDataFieldAs<List<Distrito>>("distritos");
+                if (lists.Any())
+                {
+                    lstEntidad = lists;
+                }
+            }
+            return lstEntidad;
+        }
+
+        #endregion
+
+        #region UsuarioDireccion
         public async Task<IEnumerable<UsuarioDireccion>> GetAllUsuarioDireccion()
         {
             List<UsuarioDireccion> lstEntidad = null;
@@ -1521,13 +1551,19 @@ namespace Axeso_DA
                         { 
                         usuarioDireccion
                             {
-                            usuarioDireccionID
-                            usuarioID
-                            nombre
-                            direccion
-                            latitud
-                            longitud
-                            activo
+                                usuarioDireccionID
+                                usuarioID
+                                nombre
+                                direccion
+                                latitud
+                                longitud
+                                activo
+                                distritoID
+                                departamento
+                                distrito {
+                                  codigoPostal
+                                  nombre
+                                }
                             }
                         }",
                 };
@@ -1558,6 +1594,12 @@ namespace Axeso_DA
                                 latitud
                                 longitud
                                 activo
+                                distritoID
+                                departamento
+                                distrito {
+                                    codigoPostal
+                                    nombre
+                                }
                             }
                         }",
                     Variables = new { UsuarioDireccionUsuarioID = usuarioDireccionUsuarioID }
@@ -1641,6 +1683,12 @@ namespace Axeso_DA
                                 latitud
                                 longitud
                                 activo
+                                distritoID
+                                departamento
+                                distrito {
+                                    codigoPostal
+                                    nombre
+                                }
                             }
                         }",
                     Variables = new { UsuarioDireccionID = usuarioDireccionID }
@@ -1677,6 +1725,8 @@ namespace Axeso_DA
                             latitud
                             longitud
                             activo
+                            distritoID
+                            departamento
                           }
                         }",
                     Variables = new { usuarioDireccion = usuarioDireccionToCreate }
@@ -1702,6 +1752,8 @@ namespace Axeso_DA
                         latitud
                         longitud
                         activo
+                        distritoID
+                        departamento
                   }
                }",
                     Variables = new { usuariodirnew = usuarioDireccionToUpdate }

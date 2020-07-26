@@ -26,6 +26,7 @@ namespace AxesoConsumer.Views
         string direccion = "";
         string etiqueta = "";
         Geocoder geoCoder;
+        List<Distrito> distritolist = new List<Distrito>();
         public DireccionDetailPage()
         {
             InitializeComponent();
@@ -83,7 +84,14 @@ namespace AxesoConsumer.Views
                     DeleteDireccion.IsVisible = true;
                 }
             }
-
+            var distritosx = await modelb.GetAllDistritos();
+            if (distritosx.Any())
+            {
+                distritolist = (List<Distrito>)distritosx.OrderBy(x=>x.Nombre).ToList();
+            }
+            PickerDistrito.DisplayMemberPath = "Nombre";
+            PickerDistrito.SelectedValuePath = "DistritoID";
+            PickerDistrito.DataSource = distritolist;
             await PopupNavigation.Instance.RemovePageAsync(loadingPage);
         }
         private void BackButton(object sender, EventArgs e)
@@ -284,6 +292,11 @@ namespace AxesoConsumer.Views
             Direccion.Text = direccion;
 
             await PopupNavigation.Instance.RemovePageAsync(loadingPage);
+        }
+
+        private void PickerDistrito_SelectionChanged(object sender, Syncfusion.XForms.ComboBox.SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

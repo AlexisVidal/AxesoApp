@@ -114,5 +114,9 @@ namespace Axeso_SL.Interfaces
 
         Task<IEnumerable<PedidoLineaTiempo>> GetAllPedidoLineaTiempoByPedido(int pedidoID);
         Task<IEnumerable<Notificacion>> GetAllNotificacionByUsuario(int usuario);
+
+        #region Distrito
+        Task<IEnumerable<Distrito>> GetAllDistritos();
+        #endregion
     }
 }

@@ -416,6 +416,9 @@ namespace Axeso_SL.GraphQL
                }
            );
 
+            Field<ListGraphType<DistritoType>>(
+                "distritos",
+                resolve: context => repository.GetAllDistritos());
         }
     }
 

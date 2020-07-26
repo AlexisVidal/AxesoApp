@@ -77,6 +77,7 @@
     <Compile Include="AccountViewModel.cs" />
     <Compile Include="DataFarmacias.cs" />
     <Compile Include="DateTimeConverter .cs" />
+    <Compile Include="Distrito.cs" />
     <Compile Include="EncryptedTokenModel.cs" />
     <Compile Include="FacebookResponse.cs" />
     <Compile Include="MailModel.cs" />

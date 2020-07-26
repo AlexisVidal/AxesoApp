@@ -258,6 +258,11 @@ namespace Axeso_BL
             return await modelDAL.GetAllNotificacionByUsuario(notificacionusuarioID);
         }
 
+        public async Task<IEnumerable<Distrito>> GetAllDistritos()
+        {
+            return await modelDAL.GetAllDistritos();
+        }
+
         #region Nodejs
         public async Task<Usuarios> ValidaLogueo(Usuarios usuario)
         {

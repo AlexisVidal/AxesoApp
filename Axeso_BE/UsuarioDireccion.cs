@@ -21,6 +21,13 @@ namespace Axeso_BE
         public double Longitud { get; set; }
         public bool Activo { get; set; }
 
+        [ForeignKey("DistritoID")]
+        public int DistritoID { get; set; }
+        public string Departamento { get; set; }
+
+        [Column("Distrito")]
+        public virtual Distrito Distrito { get; set; }
+
         [Column("Usuarios")]
         public virtual Usuarios Usuarios { get; set; }
     }

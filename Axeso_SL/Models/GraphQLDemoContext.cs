@@ -24,6 +24,7 @@ namespace Axeso_SL
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<TipoProductoTipoNegocio>().HasKey(ba => new { ba.TipoProductoID, ba.TipoNegocioID });
             modelBuilder.Entity<Categoria>().HasKey(p=>p.CategoriaID);
+            modelBuilder.Entity<Distrito>().HasKey(p=>p.DistritoID);
             modelBuilder.Entity<PedidoLineaTiempo>().HasKey(p=>p.PedidoLineaTiempoID);
             modelBuilder.Entity<Producto>().HasKey(ba => new { ba.ProductoID, ba.TipoNegocioID });
             modelBuilder.Entity<Producto>().HasOne(p => p.Categoria).WithMany(p => p.Producto).HasForeignKey(p => p.CategoriaID);
@@ -54,6 +55,7 @@ namespace Axeso_SL
 
             modelBuilder.Entity<UsuarioDireccion>().HasKey(x => x.UsuarioDireccionID);
             modelBuilder.Entity<UsuarioDireccion>().HasOne(x => x.Usuarios).WithMany(x => x.UsuarioDireccion).HasForeignKey(p => p.UsuarioID);
+            modelBuilder.Entity<UsuarioDireccion>().HasOne(x => x.Distrito).WithMany(x => x.UsuarioDireccion).HasForeignKey(p => p.DistritoID);
             modelBuilder.Entity<UsuarioIngreso>().HasKey(x => x.UsuarioIngresoID);
             modelBuilder.Entity<ProductoMarca>().HasKey(x => x.ProductoMarcaID);
             modelBuilder.Entity<Notificacion>().HasKey(x => x.NotificacionID);
@@ -67,6 +69,7 @@ namespace Axeso_SL
         }
 
         public virtual DbSet<Cultura> Cultura { get; set; }
+        public virtual DbSet<Distrito> Distrito { get; set; }
         public virtual DbSet<PedidoLineaTiempo> PedidoLineaTiempo { get; set; }
         public virtual DbSet<Pedido> Pedido { get; set; }
         public virtual DbSet<PedidoProducto> PedidoProducto { get; set; }
