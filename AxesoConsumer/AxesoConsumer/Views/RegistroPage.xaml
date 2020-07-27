@@ -45,7 +45,7 @@
                 </Image>
                 <!--<Label
                         Margin="-15,0,0,0"
-                        FontFamily="{StaticResource PingFangMedium}"
+                         
                         FontSize="15"
                         HorizontalOptions="CenterAndExpand"
                         LineBreakMode="TailTruncation"

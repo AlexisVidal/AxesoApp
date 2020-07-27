@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Axeso_BE
 {
-    public class UsuarioDireccionInput
+    public class UsuarioDireccionInputU
     {
+        public int UsuarioDireccionID { get; set; }
         public int UsuarioID { get; set; }
         public string Nombre { get; set; }
         public string Direccion { get; set; }

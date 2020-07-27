@@ -25,6 +25,8 @@ namespace AxesoConsumer.Views
         double longitude = 0;
         string direccion = "";
         string etiqueta = "";
+        string departamento = "";
+        int iddistrito = -1;
         Geocoder geoCoder;
         List<Distrito> distritolist = new List<Distrito>();
         public DireccionDetailPage()
@@ -37,6 +39,14 @@ namespace AxesoConsumer.Views
             base.OnAppearing();
             var loadingPage = new LoadingPopupPage();
             await PopupNavigation.Instance.PushAsync(loadingPage);
+            var distritosx = await modelb.GetAllDistritos();
+            if (distritosx.Any())
+            {
+                distritolist = (List<Distrito>)distritosx.OrderBy(x => x.Nombre).ToList();
+            }
+            PickerDistrito.DisplayMemberPath = "Nombre";
+            PickerDistrito.SelectedValuePath = "DistritoID";
+            PickerDistrito.DataSource = distritolist;
             if (direccionusuarioid == 0)
             {
                 var pin = new Pin
@@ -53,6 +63,8 @@ namespace AxesoConsumer.Views
                 Etiqueta.Text = etiqueta;
                 Direccion.Text = direccion;
                 DeleteDireccion.IsVisible = false;
+                Departamento.Text = departamento;
+                PickerDistrito.SelectedIndex = iddistrito;
             }
             else
             {
@@ -66,6 +78,8 @@ namespace AxesoConsumer.Views
                         longitude = usudireccion.Longitud;
                         direccion = usudireccion.Direccion;
                         etiqueta = usudireccion.Nombre;
+                        departamento = usudireccion.Departamento;
+                        iddistrito = usudireccion.DistritoID;
                     }
 
                     var pin = new Pin
@@ -82,16 +96,11 @@ namespace AxesoConsumer.Views
                     Etiqueta.Text = etiqueta;
                     Direccion.Text = direccion;
                     DeleteDireccion.IsVisible = true;
+                    Departamento.Text = departamento;
+                    PickerDistrito.SelectedValue = iddistrito;
                 }
             }
-            var distritosx = await modelb.GetAllDistritos();
-            if (distritosx.Any())
-            {
-                distritolist = (List<Distrito>)distritosx.OrderBy(x=>x.Nombre).ToList();
-            }
-            PickerDistrito.DisplayMemberPath = "Nombre";
-            PickerDistrito.SelectedValuePath = "DistritoID";
-            PickerDistrito.DataSource = distritolist;
+           
             await PopupNavigation.Instance.RemovePageAsync(loadingPage);
         }
         private void BackButton(object sender, EventArgs e)
@@ -117,7 +126,7 @@ namespace AxesoConsumer.Views
                     Settings.Longitude = positionactual.Center.Longitude;
                     SetAddress(Settings.Latitude, Settings.Longitude);
 
-                    UsuarioDireccion entidadinsert = new UsuarioDireccion()
+                    UsuarioDireccionInputU entidadinsert = new UsuarioDireccionInputU()
                     {
                         UsuarioDireccionID = direccionusuarioid,
                         Nombre = etiqueta,
@@ -125,7 +134,9 @@ namespace AxesoConsumer.Views
                         Direccion = direccion,
                         Latitud = latitude,
                         Longitud = longitude,
-                        Activo = false
+                        Activo = false,
+                        DistritoID = iddistrito,
+                        Departamento = Departamento.Text
                     };
                     var rgistrodireccion = await modelb.UpdateUsuarioDireccion(entidadinsert);
                     if (rgistrodireccion != null)
@@ -163,6 +174,12 @@ namespace AxesoConsumer.Views
                 await PopupNavigation.Instance.PushAsync(new ErroPopUpPage());
                 return;
             }
+            if (iddistrito == -1)
+            {
+                Settings.ErrorText = "Seleccione distrito!";
+                await PopupNavigation.Instance.PushAsync(new ErroPopUpPage());
+                return;
+            }
             var loadingPage = new LoadingPopupPage();
             await PopupNavigation.Instance.PushAsync(loadingPage);
             bool resultado = true;
@@ -182,7 +199,10 @@ namespace AxesoConsumer.Views
                         Direccion = Direccion.Text,
                         Latitud = Settings.Latitude,
                         Longitud = Settings.Longitude,
-                        Activo = true
+                        Activo = true,
+                        DistritoID = iddistrito,
+                        Departamento = Departamento.Text
+
                     };
                     var rgistrodireccion = await modelb.AddUsuarioDireccion(entidadinsert);
                     if (rgistrodireccion != null)
@@ -197,7 +217,7 @@ namespace AxesoConsumer.Views
                     Settings.Longitude = positionactual.Center.Longitude;
                     SetAddress(Settings.Latitude, Settings.Longitude);
 
-                    UsuarioDireccion entidadinsert = new UsuarioDireccion()
+                    UsuarioDireccionInputU entidadinsert = new UsuarioDireccionInputU()
                     {
                         UsuarioDireccionID = direccionusuarioid,
                         Nombre = Etiqueta.Text,
@@ -205,7 +225,9 @@ namespace AxesoConsumer.Views
                         Direccion = Direccion.Text,
                         Latitud = Settings.Latitude,
                         Longitud = Settings.Longitude,
-                        Activo = true
+                        Activo = true,
+                        DistritoID = iddistrito,
+                        Departamento = Departamento.Text
                     };
                     var rgistrodireccion = await modelb.UpdateUsuarioDireccion(entidadinsert);
                     if (rgistrodireccion != null)
@@ -293,10 +315,18 @@ namespace AxesoConsumer.Views
 
             await PopupNavigation.Instance.RemovePageAsync(loadingPage);
         }
-
+        string distrito = "";
         private void PickerDistrito_SelectionChanged(object sender, Syncfusion.XForms.ComboBox.SelectionChangedEventArgs e)
         {
-
+            iddistrito = 0;
+           
+            var seleccion = (Distrito)e.Value;
+            if (seleccion != null)
+            {
+                int position = PickerDistrito.SelectedIndex;
+                iddistrito = seleccion.DistritoID;
+                distrito = seleccion.Nombre;
+            }
         }
     }
 }

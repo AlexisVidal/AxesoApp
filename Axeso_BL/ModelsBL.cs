@@ -196,7 +196,7 @@ namespace Axeso_BL
         {
             return await modelDAL.AddUsuarioDireccion(usuarioDireccionToCreate);
         }
-        public async Task<UsuarioDireccion> UpdateUsuarioDireccion(UsuarioDireccion usuarioDireccionToUpdate)
+        public async Task<UsuarioDireccion> UpdateUsuarioDireccion(UsuarioDireccionInputU usuarioDireccionToUpdate)
         {
             return await modelDAL.UpdateUsuarioDireccion(usuarioDireccionToUpdate);
         }

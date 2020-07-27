@@ -324,6 +324,17 @@ namespace Axeso_SL.GraphQL
            );
 
             Field<UsuarioDireccionType>(
+              "usuarioDireccionIDU",
+              arguments: new QueryArguments(new QueryArgument<NonNullGraphType<IntGraphType>>
+              { Name = "usuarioDireccionIDU" }),
+              resolve: context =>
+              {
+                  var usuariodireccionid = context.GetArgument<int>("usuarioDireccionIDU");
+                  return repository.GetAllUsuarioDireccionByIdU(usuariodireccionid);
+              }
+          );
+
+            Field<UsuarioDireccionType>(
                "usuarioDireccionID",
                arguments: new QueryArguments(new QueryArgument<NonNullGraphType<IntGraphType>>
                { Name = "usuarioDireccionID" }),

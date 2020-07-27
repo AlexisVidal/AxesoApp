@@ -147,7 +147,7 @@ namespace AxesoConsumer.Views
                 mensaje2 = "Solo se le mostrarán los primeros 100.";
                 mensaje3 = "Para obtener mejores resultados, indique mas criterios de busqueda.";
             }
-            await PopupNavigation.Instance.PushAsync(new CantProdPopUpPage(imagen, mensaje, mensaje2, mensaje3));
+            //await PopupNavigation.Instance.PushAsync(new CantProdPopUpPage(imagen, mensaje, mensaje2, mensaje3));
             if (productos.Any())
             {
                 lbproductos.IsVisible = true;
@@ -242,7 +242,7 @@ namespace AxesoConsumer.Views
                 mensaje2 = "Solo se le mostrarán los primeros 100.";
                 mensaje3 = "Para obtener mejores resultados, indique mas criterios de busqueda.";
             }
-            await PopupNavigation.Instance.PushAsync(new CantProdPopUpPage(imagen, mensaje, mensaje2, mensaje3));
+            //await PopupNavigation.Instance.PushAsync(new CantProdPopUpPage(imagen, mensaje, mensaje2, mensaje3));
 
 
 
@@ -399,7 +399,7 @@ namespace AxesoConsumer.Views
                     mensaje2 = "Solo se le mostrarán los primeros 100.";
                     mensaje3 = "Para obtener mejores resultados, indique mas criterios de busqueda.";
                 }
-                await PopupNavigation.Instance.PushAsync(new CantProdPopUpPage(imagen, mensaje, mensaje2, mensaje3));
+                //await PopupNavigation.Instance.PushAsync(new CantProdPopUpPage(imagen, mensaje, mensaje2, mensaje3));
 
                 foreach (var item in xcategorias)
                 {
@@ -437,7 +437,7 @@ namespace AxesoConsumer.Views
 
                 }
             }
-            await PopupNavigation.RemovePageAsync(loadingPage);
+            await PopupNavigation.Instance.RemovePageAsync(loadingPage);
             this.IsEnabled = true;
             if (!primertitulo.Equals(""))
             {

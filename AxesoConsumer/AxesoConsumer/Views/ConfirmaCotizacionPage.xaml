@@ -46,7 +46,7 @@
                 </Image>
                 <Label
                     Margin="-15,0,0,0"
-                    FontFamily="{StaticResource PingFangMedium}"
+                     
                     FontSize="15"
                     HorizontalOptions="CenterAndExpand"
                     LineBreakMode="TailTruncation"
@@ -75,14 +75,14 @@
                 Orientation="Horizontal"
                 VerticalOptions="Start">
                 <Label
-                    FontFamily="{StaticResource PingFangRegular}"
+                     
                     FontSize="14"
                     Text="Total a pagar"
                     VerticalOptions="Center" />
                 <customControl:StandardEntry
                     x:Name="ltproductos"
                     FontAttributes="Bold"
-                    FontFamily="{StaticResource PingFangRegular}"
+                     
                     FontSize="14"
                     HorizontalOptions="FillAndExpand"
                     HorizontalTextAlignment="Center"
@@ -97,7 +97,7 @@
                 Orientation="Horizontal"
                 VerticalOptions="Start">
                 <Label
-                    FontFamily="{StaticResource PingFangRegular}"
+                     
                     FontSize="14"
                     Text="Forma de pago"
                     VerticalOptions="Center" />
@@ -106,7 +106,7 @@
                     Margin="0,5,0,0"
                     BorderColor="Black"
                     DropDownCornerRadius="6"
-                    FontFamily="{StaticResource PingFangRegular}"
+                     
                     HeightRequest="40"
                     HorizontalOptions="CenterAndExpand"
                     IsEditableMode="False"
@@ -122,14 +122,14 @@
                 Orientation="Horizontal"
                 VerticalOptions="Start">
                 <Label
-                    FontFamily="{StaticResource PingFangRegular}"
+                     
                     FontSize="14"
                     Text="Paga con"
                     VerticalOptions="Center" />
                 <customControl:StandardEntry
                     x:Name="lpagaproductos"
                     FontAttributes="Bold"
-                    FontFamily="{StaticResource PingFangRegular}"
+                     
                     FontSize="14"
                     HorizontalOptions="FillAndExpand"
                     HorizontalTextAlignment="Center"

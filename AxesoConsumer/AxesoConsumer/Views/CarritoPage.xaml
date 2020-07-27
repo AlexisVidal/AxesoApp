@@ -22,7 +22,7 @@
                 Spacing="0">
                 <Label
                     Margin="-15,0,0,0"
-                    FontFamily="{StaticResource PingFangMedium}"
+                    
                     FontSize="18"
                     HorizontalOptions="CenterAndExpand"
                     LineBreakMode="TailTruncation"
@@ -110,30 +110,30 @@
                                         VerticalOptions="CenterAndExpand"
                                         WidthRequest="200">
                                         <Label
-                                            FontFamily="{StaticResource PingFangMedium}"
+                                            
                                             FontSize="11"
                                             MaxLines="2"
                                             Text="{Binding Nombre}"
                                             TextColor="#2E2E2E" />
                                         <StackLayout Orientation="Horizontal">
                                             <Label
-                                                FontFamily="{StaticResource PingFangMedium}"
+                                                
                                                 FontSize="11"
                                                 Text="{Binding Cantidad}"
                                                 TextColor="#2E2E2E" />
                                             <Label
-                                                FontFamily="{StaticResource PingFangMedium}"
+                                                
                                                 FontSize="11"
                                                 Text="{Binding UnidadNombre}"
                                                 TextColor="#2E2E2E" />
                                             <Label
-                                                FontFamily="{StaticResource PingFangMedium}"
+                                                
                                                 FontSize="11"
                                                 IsVisible="{Binding RequiereReceta}"
                                                 Text="|"
                                                 TextColor="#2E2E2E" />
                                             <Label
-                                                FontFamily="{StaticResource PingFangMedium}"
+                                                
                                                 FontSize="11"
                                                 IsVisible="{Binding RequiereReceta}"
                                                 Text="Requiere Receta"
@@ -141,12 +141,12 @@
                                         </StackLayout>
                                         <StackLayout Orientation="Horizontal">
                                             <Label
-                                                FontFamily="{StaticResource PingFangMedium}"
+                                                
                                                 FontSize="11"
                                                 Text="Precio Ref.:"
                                                 TextColor="#2E2E2E" />
                                             <Label
-                                                FontFamily="{StaticResource PingFangMedium}"
+                                                
                                                 FontSize="11"
                                                 HorizontalOptions="Start"
                                                 Text="{Binding PrecioTotal, StringFormat='{0:C2}'}"
@@ -176,7 +176,7 @@
                     <Label
                         x:Name="lbnPrecioSub"
                         Margin="0,0,0,0"
-                        FontFamily="{StaticResource PingFangMedium}"
+                        
                         FontSize="14"
                         HorizontalOptions="EndAndExpand"
                         LineBreakMode="TailTruncation"
@@ -184,7 +184,7 @@
                         TextColor="#2E2E2E" />
                     <Label
                         Margin="0,0,0,0"
-                        FontFamily="{StaticResource PingFangMedium}"
+                        
                         FontSize="14"
                         HorizontalOptions="EndAndExpand"
                         LineBreakMode="TailTruncation"
@@ -193,7 +193,7 @@
                     <Label
                         x:Name="lbnPrecioTot"
                         Margin="0,0,0,0"
-                        FontFamily="{StaticResource PingFangMedium}"
+                        
                         FontSize="14"
                         HorizontalOptions="EndAndExpand"
                         LineBreakMode="TailTruncation"

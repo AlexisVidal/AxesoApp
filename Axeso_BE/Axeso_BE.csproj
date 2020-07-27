@@ -115,6 +115,7 @@
     <Compile Include="UbigeoModel.cs" />
     <Compile Include="UnidadMedida.cs" />
     <Compile Include="UsuarioDireccion.cs" />
+    <Compile Include="UsuarioDireccionInputU.cs" />
     <Compile Include="UsuarioDireccionInput.cs" />
     <Compile Include="UsuarioIngreso.cs" />
     <Compile Include="UsuarioIngresoInput.cs" />

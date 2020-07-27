@@ -41,7 +41,7 @@
             <x:String x:Key="FontsizeTitle">15</x:String>
             <x:String x:Key="LogoWidth">300</x:String>
             <x:String x:Key="TipoNegocioID">1</x:String>
-            <OnPlatform x:Key="PingFangBold" x:TypeArguments="x:String">
+            <!--<OnPlatform x:Key="PingFangBold" x:TypeArguments="x:String">
                 <On Platform="Android" Value="Fonts/PingFangBold.ttf#PingFang" />
                 <On Platform="iOS" Value="PingFangHK-Semibold" />
             </OnPlatform>
@@ -59,7 +59,7 @@
             </OnPlatform>
             <Style x:Key="LabelStyle" TargetType="Label">
                 <Setter Property="FontFamily" Value="{StaticResource PingFangRegular}" />
-            </Style>
+            </Style>-->
             <Style x:Key="IconViewStyle" TargetType="customControl:IconView">
                 <Setter Property="Foreground" Value="{StaticResource AxesoBackgroundColor}" />
                 <Setter Property="HeightRequest" Value="30" />

@@ -42,7 +42,7 @@
                 </Image>
                 <Label
                     Margin="-15,0,0,0"
-                    FontFamily="{StaticResource PingFangMedium}"
+                    
                     FontSize="15"
                     HorizontalOptions="CenterAndExpand"
                     LineBreakMode="TailTruncation"
@@ -67,7 +67,7 @@
                 VerticalOptions="FillAndExpand">
                 <SearchBar
                     x:Name="searchBtn"
-                    FontFamily="{StaticResource PingFangLight}"
+                     
                     FontSize="11"
                     HorizontalOptions="FillAndExpand"
                     Placeholder="Estoy buscando esto"
@@ -95,7 +95,7 @@
                 x:Name="lcategorias"
                 Margin="10,5,10,0"
                 FontAttributes="None"
-                FontFamily="{StaticResource PingFangMedium}"
+                
                 FontSize="12"
                 HorizontalOptions="Start"
                 VerticalOptions="Start"
@@ -166,7 +166,7 @@
                 x:Name="lbproductos"
                 Margin="20,0,10,0"
                 FontAttributes="None"
-                FontFamily="{StaticResource PingFangMedium}"
+                
                 FontSize="12"
                 HorizontalOptions="Start"
                 Text="Resultados"
@@ -201,43 +201,43 @@
                                     </StackLayout>
                                     <StackLayout BackgroundColor="#f7f7f7" VerticalOptions="CenterAndExpand">
                                         <Label
-                                            FontFamily="{StaticResource PingFangMedium}"
+                                            
                                             FontSize="12"
                                             MaxLines="2"
                                             Text="{Binding Nombre}"
                                             TextColor="#2E2E2E" />
                                         <!--<Label
-                                            FontFamily="{StaticResource PingFangRegular}"
+                                             
                                             FontSize="10"
                                             Text="{Binding Abreviatura}"
                                             TextColor="#917A7A" />-->
                                         <StackLayout Orientation="Horizontal">
                                             <Label
-                                                FontFamily="{StaticResource PingFangMedium}"
+                                                
                                                 FontSize="10"
                                                 IsVisible="{Binding RequiereReceta}"
                                                 Text="Requiere Receta"
                                                 TextColor="#917A7A" />
                                             <Label
-                                                FontFamily="{StaticResource PingFangMedium}"
+                                                
                                                 FontSize="10"
                                                 IsVisible="{Binding RequiereReceta}"
                                                 Text=" - "
                                                 TextColor="#917A7A" />
                                             <Label
-                                                FontFamily="{StaticResource PingFangMedium}"
+                                                
                                                 FontSize="10"
                                                 Text="{Binding UnidadMedida.Nombre}"
                                                 TextColor="#917A7A" />
                                         </StackLayout>
                                         <StackLayout Orientation="Horizontal">
                                             <Label
-                                                FontFamily="{StaticResource PingFangMedium}"
+                                                
                                                 FontSize="10"
                                                 Text="Precio Referencial S/."
                                                 TextColor="#917A7A" />
                                             <Label
-                                                FontFamily="{StaticResource PingFangMedium}"
+                                                
                                                 FontSize="10"
                                                 Text="{Binding PrecioRef_com}"
                                                 TextColor="#917A7A" />
@@ -249,7 +249,7 @@
                                         BackgroundColor="{StaticResource AxesoBackgroundColor}"
                                         CornerRadius="{x:OnPlatform Android=30,
                                                                     iOS=23}"
-                                        FontFamily="{StaticResource PingFangMedium}"
+                                        
                                         FontSize="10"
                                         HeightRequest="40"
                                         HorizontalOptions="EndAndExpand"

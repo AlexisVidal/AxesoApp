@@ -1737,7 +1737,7 @@ namespace Axeso_DA
             }
         }
 
-        public async Task<UsuarioDireccion> UpdateUsuarioDireccion(UsuarioDireccion usuarioDireccionToUpdate)
+        public async Task<UsuarioDireccion> UpdateUsuarioDireccion(UsuarioDireccionInputU usuarioDireccionToUpdate)
         {
             using (GraphQLClient graphQLClient = new GraphQLClient(urlgraphql))
             {

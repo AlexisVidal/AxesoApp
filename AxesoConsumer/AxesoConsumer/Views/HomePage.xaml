@@ -99,7 +99,7 @@
                 <customControl:CrossSearchBar
                     x:Name="searchBtn"
                     Margin="20,0,20,0"
-                    FontFamily="{StaticResource PingFangLight}"
+                     
                     FontSize="13"
                     HorizontalOptions="FillAndExpand"
                     Placeholder="Estoy buscando esto"
@@ -111,7 +111,7 @@
                 Orientation="Vertical">
                 <Label
                     FontAttributes="Bold"
-                    FontFamily="{StaticResource PingFangBold}"
+                     
                     Text="Marcas" />
                 <listviewx:SfListView
                     x:Name="ListViewMarcas"

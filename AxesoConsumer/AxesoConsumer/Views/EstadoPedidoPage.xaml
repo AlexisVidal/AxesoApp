@@ -35,7 +35,6 @@
                 <Label
                     x:Name="ltitulo"
                     Margin="-15,0,0,0"
-                    FontFamily="{StaticResource PingFangMedium}"
                     FontSize="15"
                     HorizontalOptions="CenterAndExpand"
                     LineBreakMode="TailTruncation"
@@ -89,22 +88,18 @@
                                         <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
 
-                                    <Label
-                                        HorizontalOptions="Center"
-                                        Style="{StaticResource PingFangLight}"
-                                        Text="{Binding Estado}" />
+                                    <Label HorizontalOptions="Center" Text="{Binding Estado}" />
 
                                     <Label
                                         Grid.Column="2"
                                         Margin="20,0"
-                                        Style="{StaticResource PingFangLight}"
                                         Text="{Binding Descripcion}" />
 
                                     <!--<Label
                                         Grid.Row="1"
                                         Grid.Column="2"
                                         Margin="20,0"
-                                        Style="{StaticResource PingFangLight}"
+
                                         Text="{Binding FechaTexto}" />-->
 
                                     <BoxView

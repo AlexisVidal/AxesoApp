@@ -27,7 +27,7 @@
             </Image>
             <Label
                         Margin="-15,0,0,0"
-                        FontFamily="{StaticResource PingFangMedium}"
+                         
                         FontSize="20"
                         HorizontalOptions="CenterAndExpand"
                         LineBreakMode="TailTruncation"

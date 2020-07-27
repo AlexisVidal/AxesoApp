@@ -1,63 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<pages:PopupPage 
+<pages:PopupPage
+    x:Class="AxesoConsumer.Views.CantProdPopUpPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    x:Class="AxesoConsumer.Views.CantProdPopUpPage"
-    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup">
-    <StackLayout
-        VerticalOptions="Center">
-        <Frame
-        Margin="30"
-        Padding="10">
-        <StackLayout VerticalOptions="CenterAndExpand">
-            <Label
-                FontAttributes="Bold"
-                FontSize="14"
-                FontFamily="{StaticResource PingFangBold}"
-                HorizontalOptions="CenterAndExpand"
-                Text="Busqueda" />
-            <Image
-                x:Name="imageCantResult"
-                Source="warning.png"
-                HeightRequest="60"></Image>
-                <!--<Label 
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    mc:Ignorable="d">
+    <StackLayout VerticalOptions="Center">
+        <Frame Margin="30" Padding="10">
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <Label
+                    FontAttributes="Bold"
+                     
+                    FontSize="14"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Busqueda" />
+                <Image
+                    x:Name="imageCantResult"
+                    HeightRequest="60"
+                    Source="warning.png" />
+                <!--<Label
                 x:Name="lCantProd"
                 TextColor="Red"
                 FontAttributes="Bold"
-                FontFamily="{StaticResource PingFangBold}"
+                 
                 HorizontalOptions="CenterAndExpand" />-->
-            <Label 
-                x:Name="lmensaje"
-                FontSize="12"
-                FontFamily="{StaticResource PingFangRegular}"
-                HorizontalOptions="CenterAndExpand"
-                Text="Para un mejor resultado refine su busqueda"
-                LineBreakMode="WordWrap"
-                HorizontalTextAlignment="Center"/>
-            <Label 
-                x:Name="lmensaje2"
-                FontSize="12"
-                FontFamily="{StaticResource PingFangRegular}"
-                HorizontalOptions="CenterAndExpand"
-                HorizontalTextAlignment="Center"/>
-            <Label 
-                x:Name="lmensaje3"
-                FontSize="12"
-                FontFamily="{StaticResource PingFangRegular}"
-                HorizontalOptions="CenterAndExpand"
-                HorizontalTextAlignment="Center"/>
-            <Button
-                x:Name="AcceptCantProd"
-                BackgroundColor="#F4F4F4"
-                TextColor="{StaticResource FontColor}"
-                BorderRadius="6"
-                Text="CONTINUAR" 
-                HeightRequest="46"
-                Margin="55,20,55,0"
-                Clicked="AcceptCantProd_Clicked"/>
+                <Label
+                    x:Name="lmensaje"
+                    FontSize="12"
+                    HorizontalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center"
+                    LineBreakMode="WordWrap"
+                    Text="Para un mejor resultado refine su busqueda" />
+                <Label
+                    x:Name="lmensaje2"
+                    FontSize="12"
+                    HorizontalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center" />
+                <Label
+                    x:Name="lmensaje3"
+                    FontSize="12"
+                    HorizontalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center" />
+                <Button
+                    x:Name="AcceptCantProd"
+                    Margin="55,20,55,0"
+                    BackgroundColor="#F4F4F4"
+                    BorderRadius="6"
+                    Clicked="AcceptCantProd_Clicked"
+                    HeightRequest="46"
+                    Text="CONTINUAR"
+                    TextColor="{StaticResource FontColor}" />
             </StackLayout>
         </Frame>
     </StackLayout>

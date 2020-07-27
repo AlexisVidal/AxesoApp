@@ -28,7 +28,6 @@
                     HeightRequest="90"></Image>-->
 
                 <Label
-                    FontFamily="{StaticResource PingFangBold}"
                     FontSize="11"
                     HorizontalOptions="CenterAndExpand"
                     HorizontalTextAlignment="Center"
@@ -39,12 +38,11 @@
                     TextColor="Black"
                     FontSize="11"
                     Margin="0,0,0,10"
-                    FontFamily="{StaticResource PingFangBold}"
+
                     HorizontalOptions="CenterAndExpand"
                     HorizontalTextAlignment="Center"/>-->
                 <Label
                     FontAttributes="Bold"
-                    FontFamily="{StaticResource PingFangBold}"
                     FontSize="16"
                     HorizontalOptions="CenterAndExpand"
                     HorizontalTextAlignment="Center"

@@ -20,7 +20,7 @@
                 <Label
                 FontAttributes="Bold"
                 FontSize="16"
-                FontFamily="{StaticResource PingFangBold}"
+                 
                 HorizontalOptions="CenterAndExpand"
                 Text="ADVERTENCIA" />
                 <Label 
@@ -29,7 +29,7 @@
                     FontAttributes="Bold"
                     FontSize="12"
                     HorizontalTextAlignment="Center"
-                    FontFamily="{StaticResource PingFangBold}"
+                     
                     HorizontalOptions="CenterAndExpand" />
                 <Button
                     x:Name="AcceptError"

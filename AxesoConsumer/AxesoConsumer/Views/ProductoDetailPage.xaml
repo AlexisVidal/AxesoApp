@@ -36,7 +36,7 @@
                     </Image>
                     <Label
                         Margin="-15,0,0,0"
-                        FontFamily="{StaticResource PingFangMedium}"
+                         
                         FontSize="15"
                         HorizontalOptions="CenterAndExpand"
                         LineBreakMode="TailTruncation"
@@ -62,7 +62,7 @@
                     <Label
                         x:Name="ProductName"
                         FontAttributes="Bold"
-                        FontFamily="{StaticResource PingFangMedium}"
+                         
                         FontSize="13"
                         HorizontalOptions="CenterAndExpand"
                         LineBreakMode="WordWrap"
@@ -80,7 +80,7 @@
                             HorizontalOptions="Start"
                             VerticalOptions="Start"
                             TextColor="Black"
-                            FontFamily="{StaticResource PingFangRegular}"
+                             
                             FontSize="12"
                             Text="Presentacion:"></Label>
                         <combobox:SfComboBox 
@@ -92,7 +92,7 @@
                             BorderColor="Black"
                             ShowBorder="True"
                             ShowDropDownHeaderView="True"
-                            FontFamily="{StaticResource PingFangRegular}"
+                             
                             TextSize="12"
                             x:Name="PickerUM"
                             IsEditableMode="False"
@@ -106,7 +106,7 @@
                     <Label
                         x:Name="lblReceta"
                         HorizontalOptions="CenterAndExpand"
-                        FontFamily="{StaticResource PingFangRegular}"
+                         
                             TextColor="Black"
                         FontSize="12"
                         IsVisible="True"
@@ -121,7 +121,7 @@
                             HorizontalOptions="Start"
                             VerticalOptions="Start"
                             TextColor="Black"
-                            FontFamily="{StaticResource PingFangRegular}"
+                             
                             FontSize="12"
                             Text="Precio Referencial S/."></Label>
                         <Label
@@ -129,7 +129,7 @@
                             HorizontalOptions="CenterAndExpand"
                             VerticalOptions="Start"
                             TextColor="Black"
-                            FontFamily="{StaticResource PingFangRegular}"
+                             
                             FontSize="12"></Label>
                     </StackLayout>
                     <!--<Button
@@ -137,7 +137,7 @@
                         BackgroundColor="{StaticResource AxesoBackgroundColor}"
                         CornerRadius="{x:OnPlatform Android=30,
                                                     iOS=23}"
-                        FontFamily="{StaticResource PingFangMedium}"
+                         
                         FontSize="11"
                         HeightRequest="40"
                         HorizontalOptions="Center"
@@ -155,7 +155,7 @@
                             HorizontalOptions="CenterAndExpand" 
                             BindingContext="{x:Reference stepper}" 
                             Text="{Binding Value}" 
-                            FontFamily="{StaticResource PingFangMedium}"
+                             
                             FontSize="16"
                             FontAttributes="Bold"/>
                         <Stepper 
@@ -170,7 +170,7 @@
                         BackgroundColor="{StaticResource GoogleBackgroundColor}"
                         CornerRadius="{x:OnPlatform Android=30,
                                                     iOS=23}"
-                        FontFamily="{StaticResource PingFangMedium}"
+                         
                         FontSize="11"
                         HeightRequest="40"
                         WidthRequest="150"
@@ -184,7 +184,7 @@
                     <StackLayout>
                         <Label
                             Margin="25,15,10,0"
-                            FontFamily="{StaticResource PingFangBold}"
+                             
                             FontSize="14"
                             HorizontalOptions="StartAndExpand"
                             LineBreakMode="TailTruncation"
@@ -192,7 +192,7 @@
                         <Label
                             x:Name="ProductDescripcion"
                             Margin="25,0,25,0"
-                            FontFamily="{StaticResource PingFangMedium}"
+                             
                             FontSize="12"
                             HorizontalOptions="FillAndExpand"
                             LineBreakMode="WordWrap"

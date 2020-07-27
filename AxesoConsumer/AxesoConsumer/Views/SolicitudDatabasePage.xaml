@@ -1,76 +1,70 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage 
+<ContentPage
+    x:Class="AxesoConsumer.Views.SolicitudDatabasePage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:customControl="clr-namespace:AxesoConsumer.Controls"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    x:Class="AxesoConsumer.Views.SolicitudDatabasePage"
     NavigationPage.HasNavigationBar="False"
-    xmlns:customControl="clr-namespace:AxesoConsumer.Controls">
+    mc:Ignorable="d">
     <ContentPage.Content>
-        <StackLayout
-            VerticalOptions="StartAndExpand">
+        <StackLayout VerticalOptions="StartAndExpand">
             <StackLayout
-                    Margin="0,10,0,0"
-                    BackgroundColor="White"
-                    HeightRequest="50"
-                    Orientation="Horizontal"
-                    Spacing="0">
+                Margin="0,10,0,0"
+                BackgroundColor="White"
+                HeightRequest="50"
+                Orientation="Horizontal"
+                Spacing="0">
                 <Image
-                        Margin="10,0,0,0"
-                        HeightRequest="30"
-                        HorizontalOptions="Start"
-                        Source="back"
-                        WidthRequest="25">
+                    Margin="10,0,0,0"
+                    HeightRequest="30"
+                    HorizontalOptions="Start"
+                    Source="back"
+                    WidthRequest="25">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Tapped="BackButton" />
                     </Image.GestureRecognizers>
                 </Image>
                 <Label
-                        Margin="-15,0,0,0"
-                        FontFamily="{StaticResource PingFangMedium}"
-                        FontSize="15"
-                        HorizontalOptions="CenterAndExpand"
-                        LineBreakMode="TailTruncation"
-                        Text="Solicitud"
-                        TextColor="#2E2E2E"
-                        VerticalOptions="CenterAndExpand"
-                        VerticalTextAlignment="Center"></Label>
+                    Margin="-15,0,0,0"
+                    FontSize="15"
+                    HorizontalOptions="CenterAndExpand"
+                    LineBreakMode="TailTruncation"
+                    Text="Solicitud"
+                    TextColor="#2E2E2E"
+                    VerticalOptions="CenterAndExpand"
+                    VerticalTextAlignment="Center" />
             </StackLayout>
-            <StackLayout
-                Orientation="Vertical"
-                HorizontalOptions="FillAndExpand">
+            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical">
                 <Label
                     Margin="15,5,15,0"
+                    FontSize="12"
                     Text="Direccion:"
-                    FontFamily="{StaticResource PingFangRegular}"
-                    TextColor="Black"
-                    FontSize="12"></Label>
+                    TextColor="Black" />
                 <Label
                     x:Name="AddressLabel"
                     Margin="15,0,15,0"
-                    HorizontalOptions="FillAndExpand"
-                    VerticalTextAlignment="Start"
-                    LineBreakMode="WordWrap"
                     FontSize="12"
+                    HorizontalOptions="FillAndExpand"
+                    LineBreakMode="WordWrap"
                     TextColor="Black"
-                    FontFamily="{StaticResource PingFangRegular}"></Label>
+                    VerticalTextAlignment="Start" />
             </StackLayout>
-            <ScrollView Margin="5,15,5,10" >
-                <customControl:RepeaterView 
-                    VerticalOptions="Start" 
-                    x:Name="ProductoItems" 
-                    Spacing="10" 
-                    BackgroundColor="White"  >
+            <ScrollView Margin="5,15,5,10">
+                <customControl:RepeaterView
+                    x:Name="ProductoItems"
+                    BackgroundColor="White"
+                    Spacing="10"
+                    VerticalOptions="Start">
                     <customControl:RepeaterView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
 
-                                <StackLayout 
-                                    Orientation="Horizontal" 
-                                    VerticalOptions="Start"  
-                                    BackgroundColor="#f7f7f7">
+                                <StackLayout
+                                    BackgroundColor="#f7f7f7"
+                                    Orientation="Horizontal"
+                                    VerticalOptions="Start">
                                     <StackLayout
                                         Padding="10"
                                         BackgroundColor="#f7f7f7"
@@ -82,49 +76,41 @@
                                             WidthRequest="60" />
 
                                     </StackLayout>
-                                    <StackLayout 
-                                        VerticalOptions="CenterAndExpand" 
+                                    <StackLayout
                                         BackgroundColor="#f7f7f7"
+                                        VerticalOptions="CenterAndExpand"
                                         WidthRequest="200">
                                         <Label
-                                            FontFamily="{StaticResource PingFangMedium}"
                                             FontSize="11"
-                                            Text="{Binding Nombre}"
                                             MaxLines="2"
+                                            Text="{Binding Nombre}"
                                             TextColor="#2E2E2E" />
-                                        <StackLayout
-                                            Orientation="Horizontal">
+                                        <StackLayout Orientation="Horizontal">
                                             <Label
-                                            FontFamily="{StaticResource PingFangMedium}"
-                                            FontSize="11"
-                                            TextColor="#2E2E2E" 
-                                            Text="Presentación:" />
+                                                FontSize="11"
+                                                Text="Presentación:"
+                                                TextColor="#2E2E2E" />
                                             <Label
-                                            FontFamily="{StaticResource PingFangMedium}"
-                                            FontSize="11"
-                                            TextColor="#2E2E2E" 
-                                            Text="{Binding UnidadNombreSelect}" />
+                                                FontSize="11"
+                                                Text="{Binding UnidadNombreSelect}"
+                                                TextColor="#2E2E2E" />
                                         </StackLayout>
-                                        <StackLayout
-                                            Orientation="Horizontal">
+                                        <StackLayout Orientation="Horizontal">
                                             <Label
-                                            FontFamily="{StaticResource PingFangMedium}"
-                                            FontSize="11"
-                                            TextColor="#2E2E2E" 
-                                            Text="Cantidad:" />
+                                                FontSize="11"
+                                                Text="Cantidad:"
+                                                TextColor="#2E2E2E" />
                                             <Label
-                                            FontFamily="{StaticResource PingFangMedium}"
-                                            FontSize="11"
-                                            Text="{Binding Cantidad }"
-                                            TextColor="#2E2E2E" 
-                                            HorizontalOptions="Start"/>
+                                                FontSize="11"
+                                                HorizontalOptions="Start"
+                                                Text="{Binding Cantidad}"
+                                                TextColor="#2E2E2E" />
 
                                             <Label
-                                            FontFamily="{StaticResource PingFangMedium}"
-                                            FontSize="11"
-                                            Text="{Binding UnidadNombreSelect }"
-                                            TextColor="#2E2E2E" 
-                                            HorizontalOptions="Start"/>
+                                                FontSize="11"
+                                                HorizontalOptions="Start"
+                                                Text="{Binding UnidadNombreSelect}"
+                                                TextColor="#2E2E2E" />
                                         </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
@@ -133,10 +119,10 @@
                     </customControl:RepeaterView.ItemTemplate>
                 </customControl:RepeaterView>
             </ScrollView>
-            <Label 
+            <Label
                 x:Name="ldatafarma"
                 HorizontalOptions="CenterAndExpand"
-                HorizontalTextAlignment="Center"></Label>
+                HorizontalTextAlignment="Center" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

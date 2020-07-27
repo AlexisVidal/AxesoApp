@@ -92,6 +92,7 @@ namespace Axeso_SL.Interfaces
         Task<IEnumerable<UsuarioDireccion>> GetAllUsuarioDireccion();
         Task<IEnumerable<UsuarioDireccion>> GetAllUsuarioDireccionByUsuario(int usuario);
         UsuarioDireccion GetAllUsuarioDireccionById(int usuariodireccionid);
+        UsuarioDireccion GetAllUsuarioDireccionByIdU(int usuariodireccionid);
         Task<UsuarioDireccion> AddUsuarioDireccion(UsuarioDireccion usuarioDireccion);
         Task<UsuarioDireccion> UpdateUsuarioDireccion(UsuarioDireccion usuariodirec, UsuarioDireccion usuariodirnew);
         Task<IEnumerable<UsuarioIngreso>> GetAllUsuarioIngreso();

@@ -32,7 +32,7 @@
                 </Image>
                 <Label
                         Margin="-15,0,0,0"
-                        FontFamily="{StaticResource PingFangMedium}"
+                         
                         FontSize="15"
                         HorizontalOptions="CenterAndExpand"
                         LineBreakMode="TailTruncation"
@@ -47,7 +47,7 @@
                 <Label
                     Margin="15,5,15,0"
                     Text="Direccion:"
-                    FontFamily="{StaticResource PingFangRegular}"
+                     
                     TextColor="Black"
                     FontSize="12"></Label>
                 <Label
@@ -58,7 +58,7 @@
                     LineBreakMode="WordWrap"
                     FontSize="12"
                     TextColor="Black"
-                    FontFamily="{StaticResource PingFangRegular}"></Label>
+                     ></Label>
             </StackLayout>
             <ScrollView Margin="5,15,5,10" >
                 <customControl:RepeaterView 
@@ -93,7 +93,7 @@
                                         BackgroundColor="#f7f7f7"
                                         WidthRequest="200">
                                         <Label
-                                            FontFamily="{StaticResource PingFangMedium}"
+                                             
                                             FontSize="11"
                                             Text="{Binding Nombre}"
                                             MaxLines="2"
@@ -101,12 +101,12 @@
                                         <StackLayout
                                             Orientation="Horizontal">
                                             <Label
-                                            FontFamily="{StaticResource PingFangMedium}"
+                                             
                                             FontSize="11"
                                             TextColor="#2E2E2E" 
                                             Text="Presentación:" />
                                             <Label
-                                            FontFamily="{StaticResource PingFangMedium}"
+                                             
                                             FontSize="11"
                                             TextColor="#2E2E2E" 
                                             Text="{Binding UnidadNombreSelect}" />
@@ -114,19 +114,19 @@
                                         <StackLayout
                                             Orientation="Horizontal">
                                             <Label
-                                            FontFamily="{StaticResource PingFangMedium}"
+                                             
                                             FontSize="11"
                                             TextColor="#2E2E2E" 
                                             Text="Cantidad:" />
                                             <Label
-                                            FontFamily="{StaticResource PingFangMedium}"
+                                             
                                             FontSize="11"
                                             Text="{Binding Cantidad }"
                                             TextColor="#2E2E2E" 
                                             HorizontalOptions="Start"/>
                                            
                                             <Label
-                                            FontFamily="{StaticResource PingFangMedium}"
+                                             
                                             FontSize="11"
                                             Text="{Binding UnidadNombreSelect }"
                                             TextColor="#2E2E2E" 
@@ -137,7 +137,7 @@
                                         VerticalOptions="CenterAndExpand" 
                                         BackgroundColor="#f7f7f7">
                                     <Label
-                                            FontFamily="{StaticResource PingFangMedium}"
+                                             
                                             FontSize="12"
                                             Text="{Binding Cantidad}"
                                             TextColor="#2E2E2E" 
@@ -147,7 +147,7 @@
                                         BackgroundColor="{StaticResource GoogleBackgroundColor}"
                                         CornerRadius="{x:OnPlatform Android=30,
                                                                     iOS=23}"
-                                        FontFamily="{StaticResource PingFangMedium}"
+                                         
                                         FontSize="10"
                                         WidthRequest="100"
                                         HeightRequest="40"
@@ -161,7 +161,7 @@
                                         VerticalOptions="CenterAndExpand" 
                                         BackgroundColor="#f7f7f7">
                                         <Label
-                                            FontFamily="{StaticResource PingFangMedium}"
+                                             
                                             FontSize="15"
                                             Text="{Binding Cantidad}"
                                             TextColor="#2E2E2E" 
@@ -171,7 +171,7 @@
                                             BackgroundColor="{StaticResource GoogleBackgroundColor}"
                                             CornerRadius="{x:OnPlatform Android=30,
                                                                         iOS=23}"
-                                            FontFamily="{StaticResource PingFangMedium}"
+                                             
                                             FontSize="10"
                                             HeightRequest="32"
                                             HorizontalOptions="FillAndExpand"

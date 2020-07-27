@@ -1,103 +1,101 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:i18n="clr-namespace:AxesoConsumer.Helpers"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="AxesoConsumer.Views.LoginPage"
-             xmlns:controls="clr-namespace:AxesoConsumer.Controls;assembly=AxesoConsumer"
-             xmlns:local="clr-namespace:AxesoConsumer.ViewModels"
-             BackgroundColor="{StaticResource AxesoBackgroundColor}"
-             NavigationPage.HasNavigationBar="False">    
+<ContentPage
+    x:Class="AxesoConsumer.Views.LoginPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:AxesoConsumer.Controls;assembly=AxesoConsumer"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:i18n="clr-namespace:AxesoConsumer.Helpers"
+    xmlns:local="clr-namespace:AxesoConsumer.ViewModels"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    BackgroundColor="{StaticResource AxesoBackgroundColor}"
+    NavigationPage.HasNavigationBar="False"
+    mc:Ignorable="d">
     <ContentPage.Content>
-        <ScrollView
-            VerticalOptions="StartAndExpand">
-            <StackLayout
-            Padding="5,35,5,0">
-                <Image Source="logowhite"
-                   Aspect="AspectFit"
-                   WidthRequest="230"
-                       Margin="0,0,0,8">
-                </Image>
+        <ScrollView VerticalOptions="StartAndExpand">
+            <StackLayout Padding="5,35,5,0">
+                <Image
+                    Margin="0,0,0,8"
+                    Aspect="AspectFit"
+                    Source="logowhite"
+                    WidthRequest="230" />
                 <ActivityIndicator
+                    HeightRequest="10"
                     IsRunning="{Binding IsRunning, Mode=TwoWay}"
-                    VerticalOptions="CenterAndExpand"
-                    HeightRequest="10"/>
+                    VerticalOptions="CenterAndExpand" />
                 <StackLayout
                     Margin="50,0,50,0"
-                    Orientation="Horizontal"
                     HorizontalOptions="CenterAndExpand"
+                    Orientation="Horizontal"
                     VerticalOptions="CenterAndExpand">
-                    <Label 
-                    HorizontalOptions="StartAndExpand"
-                    Text="Continuar con:"
-                    VerticalOptions="Center"
-                    HorizontalTextAlignment="Center"
-                    TextColor="White"/>
+                    <Label
+                        HorizontalOptions="StartAndExpand"
+                        HorizontalTextAlignment="Center"
+                        Text="Continuar con:"
+                        TextColor="White"
+                        VerticalOptions="Center" />
                 </StackLayout>
-                <StackLayout
-                    Margin="40,0,40,0"
-                    Orientation="Vertical">
+                <StackLayout Margin="40,0,40,0" Orientation="Vertical">
                     <Button
-                        BackgroundColor="#F4F4F4"
-                        TextColor="{StaticResource FontColor}"
-                        BorderRadius="6"
-                        Text="Facebook"
-                        HeightRequest="46"
-                        Image="facebook30"  
                         Margin="0,0,0,2"
                         Padding="8,0,45,0"
-                        Command="{Binding FACEBOOK}"/>
+                        BackgroundColor="#F4F4F4"
+                        BorderRadius="6"
+                        Command="{Binding FACEBOOK}"
+                        HeightRequest="46"
+                        Image="facebook30"
+                        Text="Facebook"
+                        TextColor="{StaticResource FontColor}" />
                     <Button
                         x:Name="LoginGoogle"
-                        BackgroundColor="#F4F4F4"
-                        TextColor="{StaticResource FontColor}"
-                        BorderRadius="6"
-                        Text="Google"
-                        Image="google30"  
-                        HeightRequest="46"
                         Margin="0,0,0,2"
                         Padding="8,0,45,0"
-                        Command="{Binding LoginGoogle}"/>
+                        BackgroundColor="#F4F4F4"
+                        BorderRadius="6"
+                        Command="{Binding LoginGoogle}"
+                        HeightRequest="46"
+                        Image="google30"
+                        IsEnabled="False"
+                        IsVisible="False"
+                        Text="Google"
+                        TextColor="{StaticResource FontColor}" />
                     <Button
                         x:Name="Login"
-                        BackgroundColor="#F4F4F4"
-                        TextColor="{StaticResource FontColor}"
-                        BorderRadius="6"
-                        Text="{i18n:Translate Login}"
-                        Image="axeso30"  
-                        HeightRequest="46"
-                        
                         Margin="0,0,0,2"
                         Padding="8,0,45,0"
-                        Command="{Binding Login}"/>
-                    <Label 
+                        BackgroundColor="#F4F4F4"
+                        BorderRadius="6"
+                        Command="{Binding Login}"
+                        HeightRequest="46"
+                        Image="axeso30"
+                        Text="{i18n:Translate Login}"
+                        TextColor="{StaticResource FontColor}" />
+                    <Label
                         HorizontalOptions="Center"
                         Text="o"
-                        VerticalOptions="Center"
-                        TextColor="White"/>
-                    <Button
-                        BackgroundColor="{StaticResource TwitterColor}"
                         TextColor="White"
-                        BorderRadius="6"
-                        Text="Registrar"
-                        HeightRequest="46"
+                        VerticalOptions="Center" />
+                    <Button
                         Margin="0,0,0,2"
-                        Command="{Binding Register}"/>
+                        BackgroundColor="{StaticResource TwitterColor}"
+                        BorderRadius="6"
+                        Command="{Binding Register}"
+                        HeightRequest="46"
+                        Text="Registrar"
+                        TextColor="White" />
                 </StackLayout>
                 <StackLayout
                     Margin="25,20,25,0"
+                    HorizontalOptions="CenterAndExpand"
                     Orientation="Horizontal"
-                    HorizontalOptions="CenterAndExpand"
                     VerticalOptions="EndAndExpand">
-                    <Label 
-                    HorizontalOptions="CenterAndExpand"
-                    Text="Continuar implica que has leido y aceptado los Términos y condiciones y Políticas de privacidad"
-                    VerticalOptions="Center"
-                    HorizontalTextAlignment="Center"
-                    TextColor="White"
-                        FontSize="12"/>
+                    <Label
+                        FontSize="12"
+                        HorizontalOptions="CenterAndExpand"
+                        HorizontalTextAlignment="Center"
+                        Text="Continuar implica que has leido y aceptado los Términos y condiciones y Políticas de privacidad"
+                        TextColor="White"
+                        VerticalOptions="Center" />
                 </StackLayout>
             </StackLayout>
         </ScrollView>

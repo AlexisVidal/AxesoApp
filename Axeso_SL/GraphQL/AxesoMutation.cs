@@ -98,7 +98,7 @@ namespace Axeso_SL.GraphQL
                resolve: context =>
                {
                    var usuariodirnew = context.GetArgument<UsuarioDireccion>("usuariodirnew");
-                   var dbusuariodirec = usarioRepository.GetAllUsuarioDireccionById(usuariodirnew.UsuarioDireccionID);
+                   var dbusuariodirec = usarioRepository.GetAllUsuarioDireccionByIdU(usuariodirnew.UsuarioDireccionID);
                    return usarioRepository.UpdateUsuarioDireccion(dbusuariodirec, usuariodirnew);
                });
             Field<CotizacionType>(

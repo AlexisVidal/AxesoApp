@@ -1,44 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<pages:PopupPage  
+<pages:PopupPage
+    x:Class="AxesoConsumer.Views.ResultadosPopUpPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    x:Class="AxesoConsumer.Views.ResultadosPopUpPage"
-    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup">
-    <StackLayout
-        VerticalOptions="Center">
-        <Frame
-        Margin="30"
-        Padding="10">
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    mc:Ignorable="d">
+    <StackLayout VerticalOptions="Center">
+        <Frame Margin="30" Padding="10">
             <StackLayout VerticalOptions="CenterAndExpand">
                 <Label
-                FontAttributes="Bold"
-                FontSize="16"
-                FontFamily="{StaticResource PingFangBold}"
-                HorizontalOptions="CenterAndExpand"
-                Text="BUSQUEDA" />
-                <Image
-                    Source="exclamacion.png"
-                    HeightRequest="60"></Image>
-                
-                <Label 
-                    Text="No se obtuvieron resultados en la busqueda"
-                    TextColor="Black"
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="BUSQUEDA" />
+                <Image HeightRequest="60" Source="exclamacion.png" />
+
+                <Label
                     FontAttributes="Bold"
                     FontSize="12"
-                    FontFamily="{StaticResource PingFangBold}"
-                    HorizontalOptions="CenterAndExpand" />
+                    HorizontalOptions="CenterAndExpand"
+                    Text="No se obtuvieron resultados en la busqueda"
+                    TextColor="Black" />
                 <Button
                     x:Name="AcceptResult"
-                    BackgroundColor="#F4F4F4"
-                    TextColor="{StaticResource FontColor}"
-                    BorderRadius="6"
-                    Text="CONTINUAR"
-                    HeightRequest="46"
                     Margin="55,20,55,0"
-                    Clicked="AcceptResult_Clicked"/>
+                    BackgroundColor="#F4F4F4"
+                    BorderRadius="6"
+                    Clicked="AcceptResult_Clicked"
+                    HeightRequest="46"
+                    Text="CONTINUAR"
+                    TextColor="{StaticResource FontColor}" />
             </StackLayout>
         </Frame>
     </StackLayout>

@@ -584,6 +584,14 @@ namespace Axeso_SL.Repositories
                 .ToListAsync();
             return xyz;
         }
+        public UsuarioDireccion GetAllUsuarioDireccionByIdU(int usuariodireccionid)
+        {
+            var xyz = _context
+                .UsuarioDireccion
+                .Where(x => x.Activo && x.UsuarioDireccionID == usuariodireccionid)
+                .FirstOrDefault();
+            return xyz;
+        }
         public UsuarioDireccion GetAllUsuarioDireccionById(int usuariodireccionid)
         {
             var xyz = _context

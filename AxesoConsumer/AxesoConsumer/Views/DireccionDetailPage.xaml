@@ -43,7 +43,6 @@
                 </Image>
                 <Label
                     Margin="-15,0,0,0"
-                    FontFamily="{StaticResource PingFangMedium}"
                     FontSize="15"
                     HorizontalOptions="CenterAndExpand"
                     LineBreakMode="TailTruncation"
@@ -92,7 +91,7 @@
                         Source="pin.png"
                         WidthRequest="46" />
                 </StackLayout>
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Margin="35,10,25,0" Orientation="Horizontal">
                     <Label
                         x:Name="ldistrito"
                         FontSize="12"
@@ -112,8 +111,14 @@
                         ShowBorder="True"
                         ShowDropDownHeaderView="True"
                         TextSize="12"
-                        WidthRequest="160" />
+                        WidthRequest="240" />
                 </StackLayout>
+                <controls:StandardEntry
+                    x:Name="Departamento"
+                    Margin="35,5,35,0"
+                    Keyboard="Text"
+                    Placeholder="Ingrese piso/departamento"
+                    Text="" />
                 <Button
                     x:Name="AddUpdateDireccion"
                     Margin="35,5,35,0"
