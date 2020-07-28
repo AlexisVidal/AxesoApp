@@ -43,7 +43,7 @@
                     ShowBorder="False"
                     ShowDropDownHeaderView="True"
                     TextColor="White"
-                    TextSize="13"
+                    TextSize="16"
                     Watermark="Seleccione direccion..."
                     WatermarkColor="White" />
                 <ImageButton
@@ -71,14 +71,14 @@
                     ShowBorder="False"
                     ShowDropDownFooterView="True"
                     ShowDropDownHeaderView="True"
-                    TextSize="13"
+                    TextSize="16"
                     Watermark="Farmacias cerca a ti...">
                     <combobox:SfComboBox.DropDownHeaderView>
                         <StackLayout BackgroundColor="#f0f0f0">
                             <!--<Label
                                 x:Name="label2"
                                 Text="Ver información"
-                                FontSize="15"
+                                FontSize="16"
                                 VerticalTextAlignment="Center"
                                 HorizontalOptions="Center"
                                 VerticalOptions="Center"
@@ -99,8 +99,7 @@
                 <customControl:CrossSearchBar
                     x:Name="searchBtn"
                     Margin="20,0,20,0"
-                     
-                    FontSize="13"
+                    FontSize="16"
                     HorizontalOptions="FillAndExpand"
                     Placeholder="Estoy buscando esto"
                     SearchButtonPressed="searchBtn_SearchButtonPressed" />
@@ -111,7 +110,7 @@
                 Orientation="Vertical">
                 <Label
                     FontAttributes="Bold"
-                     
+                    FontSize="16"
                     Text="Marcas" />
                 <listviewx:SfListView
                     x:Name="ListViewMarcas"
@@ -123,12 +122,27 @@
                     <listviewx:SfListView.ItemTemplate>
                         <DataTemplate>
                             <Grid>
-                                <controls:CircleImage
-                                    Aspect="AspectFill"
-                                    HeightRequest="90"
-                                    HorizontalOptions="CenterAndExpand"
-                                    Source="{Binding Imagen}"
-                                    WidthRequest="90" />
+                                <Frame
+                                    Margin="5,5,5,5"
+                                    Padding="0"
+                                    CornerRadius="10"
+                                    HorizontalOptions="FillAndExpand"
+                                    IsClippedToBounds="True"
+                                    VerticalOptions="FillAndExpand">
+                                    <!--<controls:CircleImage
+                                        Aspect="AspectFill"
+                                        HeightRequest="80"
+                                        HorizontalOptions="CenterAndExpand"
+                                        Source="{Binding Imagen}"
+                                        WidthRequest="80" />-->
+                                    <Image
+                                        Aspect="AspectFill"
+                                        HeightRequest="70"
+                                        HorizontalOptions="FillAndExpand"
+                                        Source="{Binding Imagen}"
+                                        VerticalOptions="FillAndExpand"
+                                        WidthRequest="70" />
+                                </Frame>
                             </Grid>
                         </DataTemplate>
                     </listviewx:SfListView.ItemTemplate>
@@ -158,10 +172,15 @@
                                         <StackLayout.GestureRecognizers>
                                             <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
                                         </StackLayout.GestureRecognizers>
-                                        <Image
-                                            Aspect="AspectFill"
-                                            HeightRequest="110"
-                                            Source="{Binding Imagen, Converter={StaticResource imageSourceConverter}}" />
+                                        <Frame
+                                            Padding="0"
+                                            CornerRadius="20"
+                                            IsClippedToBounds="True">
+                                            <Image
+                                                Aspect="AspectFill"
+                                                HeightRequest="110"
+                                                Source="{Binding Imagen, Converter={StaticResource imageSourceConverter}}" />
+                                        </Frame>
                                     </StackLayout>
                                 </ViewCell>
                             </DataTemplate>

@@ -22,7 +22,6 @@
                 Spacing="0">
                 <Label
                     Margin="-15,0,0,0"
-                    
                     FontSize="18"
                     HorizontalOptions="CenterAndExpand"
                     LineBreakMode="TailTruncation"
@@ -47,7 +46,7 @@
                     SelectionChanged="comboDirecciones_SelectionChanged"
                     ShowBorder="False"
                     ShowDropDownHeaderView="True"
-                    TextSize="13"
+                    TextSize="16"
                     Watermark="Seleccione direccion..." />
             </StackLayout>
             <StackLayout
@@ -65,13 +64,14 @@
                     ShowBorder="False"
                     ShowDropDownFooterView="True"
                     ShowDropDownHeaderView="True"
-                    TextSize="13"
+                    TextSize="16"
                     Watermark="Farmacias cerca a ti...">
                     <combobox:SfComboBox.DropDownHeaderView>
                         <StackLayout BackgroundColor="#f0f0f0">
                             <Button
                                 x:Name="btnViewFarmacias"
                                 Clicked="btnViewFarmacias_Clicked"
+                                FontSize="16"
                                 Text="Ver farmacias" />
                         </StackLayout>
                     </combobox:SfComboBox.DropDownHeaderView>
@@ -110,47 +110,40 @@
                                         VerticalOptions="CenterAndExpand"
                                         WidthRequest="200">
                                         <Label
-                                            
-                                            FontSize="11"
                                             MaxLines="2"
                                             Text="{Binding Nombre}"
-                                            TextColor="#2E2E2E" />
+                                            TextColor="#2E2E2E"
+                                            TextSize="16" />
                                         <StackLayout Orientation="Horizontal">
                                             <Label
-                                                
-                                                FontSize="11"
                                                 Text="{Binding Cantidad}"
-                                                TextColor="#2E2E2E" />
+                                                TextColor="#2E2E2E"
+                                                TextSize="16" />
                                             <Label
-                                                
-                                                FontSize="11"
                                                 Text="{Binding UnidadNombre}"
-                                                TextColor="#2E2E2E" />
+                                                TextColor="#2E2E2E"
+                                                TextSize="16" />
                                             <Label
-                                                
-                                                FontSize="11"
                                                 IsVisible="{Binding RequiereReceta}"
                                                 Text="|"
-                                                TextColor="#2E2E2E" />
+                                                TextColor="#2E2E2E"
+                                                TextSize="16" />
                                             <Label
-                                                
-                                                FontSize="11"
                                                 IsVisible="{Binding RequiereReceta}"
                                                 Text="Requiere Receta"
-                                                TextColor="#2E2E2E" />
+                                                TextColor="#2E2E2E"
+                                                TextSize="16" />
                                         </StackLayout>
                                         <StackLayout Orientation="Horizontal">
                                             <Label
-                                                
-                                                FontSize="11"
                                                 Text="Precio Ref.:"
-                                                TextColor="#2E2E2E" />
+                                                TextColor="#2E2E2E"
+                                                TextSize="16" />
                                             <Label
-                                                
-                                                FontSize="11"
                                                 HorizontalOptions="Start"
                                                 Text="{Binding PrecioTotal, StringFormat='{0:C2}'}"
-                                                TextColor="#2E2E2E" />
+                                                TextColor="#2E2E2E"
+                                                TextSize="16" />
                                         </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
@@ -176,16 +169,14 @@
                     <Label
                         x:Name="lbnPrecioSub"
                         Margin="0,0,0,0"
-                        
-                        FontSize="14"
+                        FontSize="16"
                         HorizontalOptions="EndAndExpand"
                         LineBreakMode="TailTruncation"
                         Text="Sub total: S/."
                         TextColor="#2E2E2E" />
                     <Label
                         Margin="0,0,0,0"
-                        
-                        FontSize="14"
+                        FontSize="16"
                         HorizontalOptions="EndAndExpand"
                         LineBreakMode="TailTruncation"
                         Text="Envio Gratis"
@@ -193,8 +184,7 @@
                     <Label
                         x:Name="lbnPrecioTot"
                         Margin="0,0,0,0"
-                        
-                        FontSize="14"
+                        FontSize="16"
                         HorizontalOptions="EndAndExpand"
                         LineBreakMode="TailTruncation"
                         Text="Total: S/."
@@ -208,6 +198,7 @@
                     BackgroundColor="#00acee"
                     BorderRadius="6"
                     Clicked="btnEnviarSolicitud_Clicked"
+                    FontSize="16"
                     HeightRequest="46"
                     Text="Solicitar"
                     TextColor="White" />
@@ -217,6 +208,7 @@
                     BackgroundColor="#F4F4F4"
                     BorderRadius="6"
                     Clicked="btnSearchProducto_Clicked"
+                    FontSize="16"
                     HeightRequest="46"
                     Text="Buscar Producto"
                     TextColor="{StaticResource FontColor}" />

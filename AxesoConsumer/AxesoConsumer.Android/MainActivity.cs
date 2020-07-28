@@ -57,7 +57,8 @@ namespace AxesoConsumer.Droid
             //CarouselViewRenderer.Init();
             CachedImageRenderer.InitImageViewHandler();
             LoadApplication(new App());
-            Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#98CA3F"));
+            //Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#98CA3F"));
+            Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#000000"));
             if ((CheckSelfPermission(Manifest.Permission.AccessCoarseLocation) != (int)Permission.Granted))
             {
                 RequestPermissions(new string[] { Manifest.Permission.AccessCoarseLocation }, 0);

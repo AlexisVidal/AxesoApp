@@ -24,12 +24,16 @@
             <x:String x:Key="FacebookRedirectURL">https://www.facebook.com/connect/login_success.html</x:String>
             <x:String x:Key="FacebookScope">email</x:String>
             <!--  Colors  -->
-            <Color x:Key="MainColor">#FFFFFF</Color>
+            <!--<Color x:Key="MainColor">#FFFFFF</Color>-->
+            <Color x:Key="MainColor">#000000</Color>
+            <!--<Color x:Key="FontColor">#000000</Color>-->
             <Color x:Key="FontColor">#000000</Color>
+            <Color x:Key="FontColorWhite">#FFFFFF</Color>
             <Color x:Key="TwitterColor">#00acee</Color>
             <Color x:Key="AccentColor1">#FF5521</Color>
             <Color x:Key="AccentColor2">#4DB84B</Color>
-            <Color x:Key="BackgroundColor">#DAEBF2</Color>
+            <!--<Color x:Key="BackgroundColor">#DAEBF2</Color>-->
+            <Color x:Key="BackgroundColor">#000000</Color>
             <Color x:Key="MasterBackgroundColor">#2A9134</Color>
             <Color x:Key="AxesoBackgroundColor">#98CA3F</Color>
             <Color x:Key="FacebookBackgroundColor">#334f8d</Color>
