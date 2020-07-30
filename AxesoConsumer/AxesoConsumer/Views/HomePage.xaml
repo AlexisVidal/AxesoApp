@@ -43,7 +43,7 @@
                     ShowBorder="False"
                     ShowDropDownHeaderView="True"
                     TextColor="White"
-                    TextSize="16"
+                    TextSize="17"
                     Watermark="Seleccione direccion..."
                     WatermarkColor="White" />
                 <ImageButton
@@ -71,7 +71,7 @@
                     ShowBorder="False"
                     ShowDropDownFooterView="True"
                     ShowDropDownHeaderView="True"
-                    TextSize="16"
+                    TextSize="17"
                     Watermark="Farmacias cerca a ti...">
                     <combobox:SfComboBox.DropDownHeaderView>
                         <StackLayout BackgroundColor="#f0f0f0">

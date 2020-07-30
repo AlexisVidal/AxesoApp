@@ -110,40 +110,40 @@
                                         VerticalOptions="CenterAndExpand"
                                         WidthRequest="200">
                                         <Label
+                                            FontSize="16"
                                             MaxLines="2"
                                             Text="{Binding Nombre}"
-                                            TextColor="#2E2E2E"
-                                            TextSize="16" />
+                                            TextColor="#2E2E2E" />
                                         <StackLayout Orientation="Horizontal">
                                             <Label
+                                                FontSize="16"
                                                 Text="{Binding Cantidad}"
-                                                TextColor="#2E2E2E"
-                                                TextSize="16" />
+                                                TextColor="#2E2E2E" />
                                             <Label
+                                                FontSize="16"
                                                 Text="{Binding UnidadNombre}"
-                                                TextColor="#2E2E2E"
-                                                TextSize="16" />
+                                                TextColor="#2E2E2E" />
                                             <Label
+                                                FontSize="16"
                                                 IsVisible="{Binding RequiereReceta}"
                                                 Text="|"
-                                                TextColor="#2E2E2E"
-                                                TextSize="16" />
+                                                TextColor="#2E2E2E" />
                                             <Label
+                                                FontSize="16"
                                                 IsVisible="{Binding RequiereReceta}"
                                                 Text="Requiere Receta"
-                                                TextColor="#2E2E2E"
-                                                TextSize="16" />
+                                                TextColor="#2E2E2E" />
                                         </StackLayout>
                                         <StackLayout Orientation="Horizontal">
                                             <Label
+                                                FontSize="16"
                                                 Text="Precio Ref.:"
-                                                TextColor="#2E2E2E"
-                                                TextSize="16" />
+                                                TextColor="#2E2E2E" />
                                             <Label
+                                                FontSize="16"
                                                 HorizontalOptions="Start"
                                                 Text="{Binding PrecioTotal, StringFormat='{0:C2}'}"
-                                                TextColor="#2E2E2E"
-                                                TextSize="16" />
+                                                TextColor="#2E2E2E" />
                                         </StackLayout>
                                     </StackLayout>
                                 </StackLayout>
